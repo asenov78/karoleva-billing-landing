@@ -435,7 +435,8 @@
     .orb-purple { background: #7c3aed; width: 300px; height: 300px; bottom: 0; left: -80px; }
 
     /* ── Side dots navigation ── */
-    #side-dots { opacity: 0; transition: opacity 0.4s; }
+    #side-dots { display: none; opacity: 0; transition: opacity 0.4s; }
+    @media (min-width: 1024px) { #side-dots { display: flex; flex-direction: column; gap: 8px; } }
     #side-dots.visible { opacity: 1; }
     .sdot { display: flex; align-items: center; justify-content: flex-end; gap: 8px; cursor: pointer; padding: 4px 0; touch-action: manipulation; }
     .sdot-circle {
@@ -2737,7 +2738,7 @@
 </script>
 
 <!-- Side dots navigation (desktop only) -->
-<nav id="side-dots" aria-label="Секции" class="hidden lg:flex fixed right-5 top-1/2 z-40 flex-col gap-2" style="transform:translateY(-50%)">
+<nav id="side-dots" aria-label="Секции" class="fixed right-5 z-40" style="top:50%;transform:translateY(-50%)">
   <a href="#hero"         class="sdot" data-s="hero">        <span class="sdot-label bg">Начало</span>        <span class="sdot-label en">Home</span>        <span class="sdot-circle"></span></a>
   <a href="#features"     class="sdot" data-s="features">    <span class="sdot-label bg">Функции</span>       <span class="sdot-label en">Features</span>    <span class="sdot-circle"></span></a>
   <a href="#how"          class="sdot" data-s="how">          <span class="sdot-label bg">Как работи</span>   <span class="sdot-label en">How it works</span><span class="sdot-circle"></span></a>
