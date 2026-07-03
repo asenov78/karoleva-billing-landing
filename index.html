@@ -2,7 +2,7 @@
 <html lang="bg">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1">
 
   <!-- Primary SEO -->
   <title>Karoleva Billing — Система за фактури и автоматични напомняния по имейл</title>
@@ -433,6 +433,39 @@
     .orb { position: absolute; border-radius: 9999px; filter: blur(80px); opacity: 0.18; pointer-events: none; }
     .orb-blue { background: #2563eb; width: 400px; height: 400px; top: -100px; right: -100px; }
     .orb-purple { background: #7c3aed; width: 300px; height: 300px; bottom: 0; left: -80px; }
+
+    /* ── Mobile / Touch ── */
+    *, *::before, *::after { -webkit-tap-highlight-color: transparent; }
+    html, body { overscroll-behavior-y: none; }
+    body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    a, button, summary { touch-action: manipulation; }
+
+    /* Safe area — notch / Dynamic Island */
+    @supports (padding-top: env(safe-area-inset-top)) {
+      nav { padding-top: env(safe-area-inset-top, 0px); }
+      #mobile-menu { top: calc(4rem + env(safe-area-inset-top, 0px)); }
+    }
+
+    /* Min 44×44 touch targets */
+    #btn-bg, #btn-en, #menu-btn { min-height: 44px; min-width: 44px; }
+    #back-to-top { width: 44px; height: 44px; }
+
+    /* Hamburger bars */
+    .mb-bar { display: block; width: 20px; height: 2px; background: #374151; border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
+    #menu-btn[aria-expanded="true"] #mb1 { transform: translateY(6px) rotate(45deg); }
+    #menu-btn[aria-expanded="true"] #mb2 { opacity: 0; transform: scaleX(0); }
+    #menu-btn[aria-expanded="true"] #mb3 { transform: translateY(-6px) rotate(-45deg); }
+
+    /* Mobile menu panel */
+    #mobile-panel { transition: transform 0.3s cubic-bezier(.22,.68,0,1.2); }
+
+    /* Inputs: 16px min prevents iOS auto-zoom */
+    input, textarea, select { font-size: max(16px, 1rem); }
+
+    /* Kill motion for users who prefer it */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    }
   </style>
 </head>
 <body class="lang-bg bg-white text-gray-900 font-sans">
@@ -476,15 +509,50 @@
     </div>
 
     <!-- Lang + CTA -->
-    <div class="flex items-center gap-3">
-      <button onclick="setLang('bg')" id="btn-bg" class="text-xs font-semibold px-2 py-1 rounded transition-colors text-primary bg-blue-50">BG</button>
-      <button onclick="setLang('en')" id="btn-en" class="text-xs font-semibold px-2 py-1 rounded transition-colors text-gray-400 hover:text-primary">EN</button>
-      <a href="#contact" class="btn-primary text-white text-sm font-semibold px-4 py-2 rounded-lg inline-block">
+    <div class="flex items-center gap-2">
+      <button onclick="setLang('bg')" id="btn-bg" class="text-xs font-semibold px-3 py-1 rounded transition-colors text-primary bg-blue-50 flex items-center justify-center">BG</button>
+      <button onclick="setLang('en')" id="btn-en" class="text-xs font-semibold px-3 py-1 rounded transition-colors text-gray-400 hover:text-primary flex items-center justify-center">EN</button>
+      <a href="#contact" class="btn-primary text-white text-sm font-semibold px-4 py-2 rounded-lg hidden sm:flex items-center justify-center">
         <span class="bg">Започнете</span><span class="en">Get started</span>
       </a>
+      <!-- Hamburger -->
+      <button id="menu-btn" aria-label="Меню" aria-expanded="false" class="md:hidden flex flex-col gap-1.5 items-center justify-center rounded-lg hover:bg-gray-100 transition-colors ml-1">
+        <span id="mb1" class="mb-bar"></span>
+        <span id="mb2" class="mb-bar"></span>
+        <span id="mb3" class="mb-bar"></span>
+      </button>
     </div>
   </div>
 </nav>
+
+<!-- Mobile menu -->
+<div id="mobile-menu" class="md:hidden fixed inset-x-0 z-40 overflow-hidden" style="top:4rem;display:none;">
+  <div id="mobile-overlay" onclick="mobileMenuClose()" class="absolute inset-0 bg-black/30 backdrop-blur-[2px]" style="bottom:-9999px;"></div>
+  <div id="mobile-panel" class="relative bg-white border-b border-gray-100 shadow-2xl px-6 pt-2 pb-6 space-y-0" style="transform:translateY(-110%)">
+    <a href="#features" onclick="mobileMenuClose()" class="flex items-center py-3.5 text-base font-medium text-gray-700 border-b border-gray-100 hover:text-primary transition-colors">
+      <span class="bg">Функции</span><span class="en">Features</span>
+    </a>
+    <a href="#stats" onclick="mobileMenuClose()" class="flex items-center py-3.5 text-base font-medium text-gray-700 border-b border-gray-100 hover:text-primary transition-colors">
+      <span class="bg">Статистики</span><span class="en">Statistics</span>
+    </a>
+    <a href="#how" onclick="mobileMenuClose()" class="flex items-center py-3.5 text-base font-medium text-gray-700 border-b border-gray-100 hover:text-primary transition-colors">
+      <span class="bg">Как работи</span><span class="en">How it works</span>
+    </a>
+    <a href="#pricing" onclick="mobileMenuClose()" class="flex items-center py-3.5 text-base font-medium text-gray-700 border-b border-gray-100 hover:text-primary transition-colors">
+      <span class="bg">Цени</span><span class="en">Pricing</span>
+    </a>
+    <a href="#testimonials" onclick="mobileMenuClose()" class="flex items-center py-3.5 text-base font-medium text-gray-700 border-b border-gray-100 hover:text-primary transition-colors">
+      <span class="bg">Отзиви</span><span class="en">Reviews</span>
+    </a>
+    <a href="#faq" onclick="mobileMenuClose()" class="flex items-center py-3.5 text-base font-medium text-gray-700 border-b border-gray-100 hover:text-primary transition-colors">FAQ</a>
+    <a href="#contact" onclick="mobileMenuClose()" class="flex items-center py-3.5 text-base font-medium text-gray-700 border-b border-gray-100 hover:text-primary transition-colors">
+      <span class="bg">Контакт</span><span class="en">Contact</span>
+    </a>
+    <a href="#contact" onclick="mobileMenuClose()" class="btn-primary text-white font-semibold py-3.5 rounded-xl text-center flex items-center justify-center mt-4">
+      <span class="bg">Свържете се с нас →</span><span class="en">Get started →</span>
+    </a>
+  </div>
+</div>
 
 <!-- HERO -->
 <section class="gradient-hero pt-32 pb-20 px-4 relative overflow-hidden">
@@ -2465,6 +2533,43 @@
     btt.style.opacity = show ? '1' : '0';
     btt.style.pointerEvents = show ? 'auto' : 'none';
   }, { passive: true });
+
+  // ── Mobile menu ──
+  function mobileMenuOpen() {
+    const menu = document.getElementById('mobile-menu');
+    const panel = document.getElementById('mobile-panel');
+    const btn = document.getElementById('menu-btn');
+    menu.style.display = 'block';
+    panel.getBoundingClientRect(); // force reflow so transition fires
+    panel.style.transform = 'translateY(0)';
+    btn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function mobileMenuClose() {
+    const panel = document.getElementById('mobile-panel');
+    const btn = document.getElementById('menu-btn');
+    panel.style.transform = 'translateY(-110%)';
+    setTimeout(() => { document.getElementById('mobile-menu').style.display = 'none'; }, 320);
+    btn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+  const menuBtn = document.getElementById('menu-btn');
+  if (menuBtn) {
+    menuBtn.addEventListener('click', () => {
+      menuBtn.getAttribute('aria-expanded') === 'true' ? mobileMenuClose() : mobileMenuOpen();
+    });
+  }
+
+  // ── Touch swipe for testimonials slider ──
+  const sliderEl = document.getElementById('slider-track');
+  if (sliderEl) {
+    let touchStartX = 0;
+    sliderEl.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    sliderEl.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 50) slideChange(dx < 0 ? 1 : -1);
+    }, { passive: true });
+  }
 </script>
 
 <!-- Back to top button -->
