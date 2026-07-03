@@ -2,7 +2,7 @@
 <html lang="bg">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1, user-scalable=no">
 
   <!-- Primary SEO -->
   <title>Karoleva Billing — Система за фактури и автоматични напомняния по имейл</title>
@@ -2679,6 +2679,11 @@
       menuBtn.getAttribute('aria-expanded') === 'true' ? mobileMenuClose() : mobileMenuOpen();
     });
   }
+
+  // ── Block pinch-zoom (iOS Safari ignores user-scalable=no since iOS 10) ──
+  document.addEventListener('gesturestart', e => e.preventDefault(), { passive: false });
+  document.addEventListener('gesturechange', e => e.preventDefault(), { passive: false });
+  document.addEventListener('touchmove', e => { if (e.touches.length > 1) e.preventDefault(); }, { passive: false });
 
   // ── Touch swipe for testimonials slider ──
   const sliderEl = document.getElementById('slider-track');
