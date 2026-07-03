@@ -434,6 +434,27 @@
     .orb-blue { background: #2563eb; width: 400px; height: 400px; top: -100px; right: -100px; }
     .orb-purple { background: #7c3aed; width: 300px; height: 300px; bottom: 0; left: -80px; }
 
+    /* ── Side dots navigation ── */
+    #side-dots { opacity: 0; transition: opacity 0.4s; }
+    #side-dots.visible { opacity: 1; }
+    .sdot { display: flex; align-items: center; justify-content: flex-end; gap: 8px; cursor: pointer; padding: 4px 0; touch-action: manipulation; }
+    .sdot-circle {
+      width: 8px; height: 8px; border-radius: 9999px;
+      background: #cbd5e1; border: 1.5px solid #fff;
+      box-shadow: 0 0 0 1px #94a3b8;
+      transition: all 0.25s;
+      flex-shrink: 0;
+    }
+    .sdot.active .sdot-circle { background: #2563eb; box-shadow: 0 0 0 3px #bfdbfe; transform: scale(1.35); }
+    .sdot:hover .sdot-circle { background: #3b82f6; transform: scale(1.2); }
+    .sdot-label {
+      opacity: 0; background: #1e293b; color: #fff;
+      font-size: 11px; font-weight: 600; padding: 3px 9px;
+      border-radius: 6px; white-space: nowrap; pointer-events: none;
+      transition: opacity 0.2s; max-width: 0; overflow: hidden;
+    }
+    .sdot:hover .sdot-label { opacity: 1; max-width: 120px; }
+
     /* ── Hero rotator ── */
     .hero-slide { transition: opacity 0.7s ease, transform 0.7s ease; }
     .hero-slide:not(.active) { opacity: 0; pointer-events: none; position: absolute; top: 0; left: 0; right: 0; transform: translateY(14px); }
@@ -560,7 +581,7 @@
 </div>
 
 <!-- HERO -->
-<section class="gradient-hero pt-32 pb-20 px-4 relative overflow-hidden">
+<section id="hero" class="gradient-hero pt-32 pb-20 px-4 relative overflow-hidden">
   <div class="orb orb-blue"></div>
   <div class="orb orb-purple"></div>
   <div class="max-w-7xl mx-auto relative">
@@ -2623,6 +2644,24 @@
     btt.style.pointerEvents = show ? 'auto' : 'none';
   }, { passive: true });
 
+  // ── Side dots ──
+  (function() {
+    const nav = document.getElementById('side-dots');
+    const dots = document.querySelectorAll('.sdot');
+    const ids = ['hero','features','how','pricing','testimonials','contact'];
+    const els = ids.map(id => document.getElementById(id)).filter(Boolean);
+    function setActive(id) {
+      dots.forEach(d => d.classList.toggle('active', d.dataset.s === id));
+    }
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+    }, { threshold: 0.25, rootMargin: '-15% 0px -15% 0px' });
+    els.forEach(el => io.observe(el));
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('visible', window.scrollY > 200);
+    }, { passive: true });
+  })();
+
   // ── Hero rotator ──
   (function() {
     const slides = document.querySelectorAll('.hero-slide');
@@ -2697,10 +2736,20 @@
   }
 </script>
 
+<!-- Side dots navigation (desktop only) -->
+<nav id="side-dots" aria-label="Секции" class="hidden lg:flex fixed right-5 top-1/2 z-40 flex-col gap-2" style="transform:translateY(-50%)">
+  <a href="#hero"         class="sdot" data-s="hero">        <span class="sdot-label bg">Начало</span>        <span class="sdot-label en">Home</span>        <span class="sdot-circle"></span></a>
+  <a href="#features"     class="sdot" data-s="features">    <span class="sdot-label bg">Функции</span>       <span class="sdot-label en">Features</span>    <span class="sdot-circle"></span></a>
+  <a href="#how"          class="sdot" data-s="how">          <span class="sdot-label bg">Как работи</span>   <span class="sdot-label en">How it works</span><span class="sdot-circle"></span></a>
+  <a href="#pricing"      class="sdot" data-s="pricing">      <span class="sdot-label bg">Цени</span>         <span class="sdot-label en">Pricing</span>     <span class="sdot-circle"></span></a>
+  <a href="#testimonials" class="sdot" data-s="testimonials"><span class="sdot-label bg">Отзиви</span>       <span class="sdot-label en">Reviews</span>     <span class="sdot-circle"></span></a>
+  <a href="#contact"      class="sdot" data-s="contact">      <span class="sdot-label bg">Контакт</span>      <span class="sdot-label en">Contact</span>     <span class="sdot-circle"></span></a>
+</nav>
+
 <!-- Back to top button -->
 <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Нагоре"
   style="opacity:0;pointer-events:none;transition:opacity 0.3s ease;"
-  class="fixed bottom-6 right-6 z-50 w-10 h-10 bg-white border border-gray-200 rounded-full shadow-md flex items-center justify-center text-gray-400 hover:text-primary hover:border-blue-300 hover:shadow-blue-100/60 hover:-translate-y-0.5 transition-all">
+  class="fixed bottom-6 right-6 z-50 w-11 h-11 bg-white border border-gray-200 rounded-full shadow-lg flex items-center justify-center text-gray-400 hover:text-primary hover:border-blue-300 hover:shadow-blue-100/60 hover:-translate-y-0.5 transition-all">
   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
   </svg>
