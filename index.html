@@ -2671,19 +2671,23 @@
     btt.style.pointerEvents = show ? 'auto' : 'none';
   }, { passive: true });
 
-  // ── Side dots ──
+  // ── Side dots — scroll tracker ──
   (function() {
-    const nav = document.getElementById('side-dots');
     const dots = document.querySelectorAll('.sdot');
     const ids = ['hero','features','how','pricing','testimonials','contact'];
     const els = ids.map(id => document.getElementById(id)).filter(Boolean);
-    function setActive(id) {
-      dots.forEach(d => d.classList.toggle('active', d.dataset.s === id));
+    function update() {
+      const mid = window.innerHeight * 0.4;
+      let best = null, bestDist = Infinity;
+      els.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        const dist = Math.abs(rect.top + rect.height / 2 - mid);
+        if (dist < bestDist) { bestDist = dist; best = el; }
+      });
+      if (best) dots.forEach(d => d.classList.toggle('active', d.dataset.s === best.id));
     }
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
-    }, { threshold: 0.25, rootMargin: '-15% 0px -15% 0px' });
-    els.forEach(el => io.observe(el));
+    window.addEventListener('scroll', update, { passive: true });
+    update();
   })();
 
   // ── Hero rotator ──
