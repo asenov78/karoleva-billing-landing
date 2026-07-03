@@ -435,9 +435,8 @@
     .orb-purple { background: #7c3aed; width: 300px; height: 300px; bottom: 0; left: -80px; }
 
     /* ── Side dots navigation ── */
-    #side-dots { display: none; opacity: 0; transition: opacity 0.4s; }
+    #side-dots { display: none; }
     @media (min-width: 1024px) { #side-dots { display: flex; flex-direction: column; gap: 8px; } }
-    #side-dots.visible { opacity: 1; }
     .sdot { display: flex; align-items: center; justify-content: flex-end; gap: 8px; cursor: pointer; padding: 4px 0; touch-action: manipulation; }
     .sdot-circle {
       width: 8px; height: 8px; border-radius: 9999px;
@@ -2658,9 +2657,6 @@
       entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
     }, { threshold: 0.25, rootMargin: '-15% 0px -15% 0px' });
     els.forEach(el => io.observe(el));
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('visible', window.scrollY > 200);
-    }, { passive: true });
   })();
 
   // ── Hero rotator ──
