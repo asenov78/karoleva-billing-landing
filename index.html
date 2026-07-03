@@ -434,6 +434,11 @@
     .orb-blue { background: #2563eb; width: 400px; height: 400px; top: -100px; right: -100px; }
     .orb-purple { background: #7c3aed; width: 300px; height: 300px; bottom: 0; left: -80px; }
 
+    /* ── Hero rotator ── */
+    .hero-slide { transition: opacity 0.7s ease, transform 0.7s ease; }
+    .hero-slide:not(.active) { opacity: 0; pointer-events: none; position: absolute; top: 0; left: 0; right: 0; transform: translateY(14px); }
+    .hero-slide.active { opacity: 1; transform: none; position: relative; }
+
     /* ── Mobile / Touch ── */
     *, *::before, *::after { -webkit-tap-highlight-color: transparent; }
     html, body { overscroll-behavior-y: none; }
@@ -565,14 +570,42 @@
         <span class="bg">Ново: Автоматично обединяване на дублирани клиенти</span>
         <span class="en">New: Automatic duplicate client merging</span>
       </div>
-      <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
-        <span class="bg">Управлявайте фактурите си.<br><span class="text-primary">Автоматично.</span></span>
-        <span class="en">Manage your invoices.<br><span class="text-primary">Automatically.</span></span>
-      </h1>
-      <p class="text-base sm:text-xl text-gray-500 mb-8 max-w-2xl mx-auto">
-        <span class="bg">Система за управление на фактури и автоматични напомняния по имейл за малки и средни фирми. Спестете часове всеки месец.</span>
-        <span class="en">Invoice management and automated email reminders for small and medium businesses. Save hours every month.</span>
-      </p>
+      <!-- Hero rotator -->
+      <div class="hero-rotator mb-8" style="min-height:clamp(200px,30vw,320px);position:relative;">
+        <!-- Slide 1 -->
+        <div class="hero-slide active">
+          <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-5">
+            <span class="bg">Управлявайте фактурите си.<br><span class="text-primary">Автоматично.</span></span>
+            <span class="en">Manage your invoices.<br><span class="text-primary">Automatically.</span></span>
+          </h1>
+          <p class="text-base sm:text-xl text-gray-500 max-w-2xl mx-auto">
+            <span class="bg">Система за управление на фактури и автоматични напомняния по имейл за малки и средни фирми. Спестете часове всеки месец.</span>
+            <span class="en">Invoice management and automated email reminders for small and medium businesses. Save hours every month.</span>
+          </p>
+        </div>
+        <!-- Slide 2 -->
+        <div class="hero-slide">
+          <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-5">
+            <span class="bg">Изпратете напомняне<br><span class="text-primary">за под 1 минута.</span></span>
+            <span class="en">Send a payment reminder<br><span class="text-primary">in under 1 minute.</span></span>
+          </h1>
+          <p class="text-base sm:text-xl text-gray-500 max-w-2xl mx-auto">
+            <span class="bg">Автоматизирайте имейл напомнянията за неплатени фактури. Спестете часове всеки месец и получете парите си по-бързо.</span>
+            <span class="en">Automate email reminders for overdue invoices. Save hours every month and collect your money faster.</span>
+          </p>
+        </div>
+        <!-- Slide 3 -->
+        <div class="hero-slide">
+          <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-5">
+            <span class="bg">78% от клиентите плащат<br><span class="text-primary">след 1-во напомняне.</span></span>
+            <span class="en">78% of clients pay<br><span class="text-primary">after the 1st reminder.</span></span>
+          </h1>
+          <p class="text-base sm:text-xl text-gray-500 max-w-2xl mx-auto">
+            <span class="bg">Системата работи автоматично — вие спестявате сотни евро, намалявате просрочените вземания и се фокусирате върху бизнеса.</span>
+            <span class="en">The system works automatically — you save hundreds of euros, reduce overdue receivables and focus on the business.</span>
+          </p>
+        </div>
+      </div>
       <div class="flex flex-col sm:flex-row gap-3 justify-center">
         <a href="#contact" class="btn-primary text-white font-bold px-8 py-4 rounded-xl text-lg inline-block">
           <span class="bg">Свържете се с нас</span>
@@ -711,24 +744,24 @@
   <div class="max-w-7xl mx-auto px-4">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
       <div class="reveal">
-        <p class="text-4xl font-extrabold stat-num stat-spin" data-val="9" data-suffix=" мин">9 мин</p>
+        <p class="text-4xl font-extrabold stat-num stat-spin" data-val="9" data-suffix-bg=" мин" data-suffix-en=" min">9 мин</p>
         <p class="text-gray-600 mt-1 text-sm font-medium bg">ръчно за 1 клиент</p>
         <p class="text-gray-600 mt-1 text-sm font-medium en">manually per client</p>
         <p class="text-xs text-green-500 font-semibold mt-1 bg">→ под 1 мин с Karoleva Billing</p>
         <p class="text-xs text-green-500 font-semibold mt-1 en">→ under 1 min with Karoleva Billing</p>
       </div>
       <div class="reveal reveal-delay-1">
-        <p class="text-4xl font-extrabold stat-num stat-spin" data-val="78" data-suffix="%">78%</p>
+        <p class="text-4xl font-extrabold stat-num stat-spin" data-val="78" data-suffix-bg="%" data-suffix-en="%">78%</p>
         <p class="text-gray-600 mt-1 text-sm font-medium bg">плащат след 1-во напомняне</p>
         <p class="text-gray-600 mt-1 text-sm font-medium en">pay after 1st reminder</p>
       </div>
       <div class="reveal reveal-delay-2">
-        <p class="text-4xl font-extrabold stat-num stat-spin" data-val="3" data-suffix="+ часа">3+ часа</p>
+        <p class="text-4xl font-extrabold stat-num stat-spin" data-val="3" data-suffix-bg="+ часа" data-suffix-en="+ hrs">3+ часа</p>
         <p class="text-gray-600 mt-1 text-sm font-medium bg">спестени на месец (средно)</p>
         <p class="text-gray-600 mt-1 text-sm font-medium en">saved per month (average)</p>
       </div>
       <div class="reveal reveal-delay-3">
-        <p class="text-4xl font-extrabold stat-num stat-spin" data-val="18" data-suffix="+">18+</p>
+        <p class="text-4xl font-extrabold stat-num stat-spin" data-val="18" data-suffix-bg="+" data-suffix-en="+">18+</p>
         <p class="text-gray-600 mt-1 text-sm font-medium bg">функции, BG/EN имейли, 24/7</p>
         <p class="text-gray-600 mt-1 text-sm font-medium en">features, BG/EN emails, 24/7</p>
       </div>
@@ -1138,7 +1171,7 @@
           <div>
             <p class="text-gray-400 line-through text-sm bg">~20€/год. другаде</p>
             <p class="text-gray-400 line-through text-sm en">~20€/yr elsewhere</p>
-            <p class="text-green-600 font-extrabold text-2xl">0€</p>
+            <p class="text-green-600 font-extrabold text-2xl counter-down" data-from="20">20€</p>
           </div>
           <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded-full bg">спестено 20€</span>
           <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded-full en">save 20€</span>
@@ -1155,7 +1188,7 @@
           <div>
             <p class="text-gray-400 line-through text-sm bg">~150€/год. другаде</p>
             <p class="text-gray-400 line-through text-sm en">~150€/yr elsewhere</p>
-            <p class="text-green-600 font-extrabold text-2xl">0€</p>
+            <p class="text-green-600 font-extrabold text-2xl counter-down" data-from="150">150€</p>
           </div>
           <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded-full bg">спестено 150€</span>
           <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded-full en">save 150€</span>
@@ -1172,7 +1205,7 @@
           <div>
             <p class="text-gray-400 line-through text-sm bg">~80€/год. другаде</p>
             <p class="text-gray-400 line-through text-sm en">~80€/yr elsewhere</p>
-            <p class="text-green-600 font-extrabold text-2xl">0€</p>
+            <p class="text-green-600 font-extrabold text-2xl counter-down" data-from="80">80€</p>
           </div>
           <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded-full bg">спестено 80€</span>
           <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded-full en">save 80€</span>
@@ -1454,6 +1487,28 @@
         </p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- MINI CTA 1 — after How it Works -->
+<section class="py-14 bg-gradient-to-r from-blue-600 to-indigo-600 px-4">
+  <div class="max-w-3xl mx-auto text-center reveal">
+    <p class="text-white/80 text-sm font-semibold uppercase tracking-widest mb-3">
+      <span class="bg">Готови да автоматизирате?</span>
+      <span class="en">Ready to automate?</span>
+    </p>
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+      <span class="bg">Три стъпки. Един ден. Пълна автоматизация.</span>
+      <span class="en">Three steps. One day. Full automation.</span>
+    </h2>
+    <p class="text-white/80 text-lg mb-8">
+      <span class="bg">Свържете се с нас и ще имате работеща система до утре.</span>
+      <span class="en">Contact us and you'll have a working system by tomorrow.</span>
+    </p>
+    <a href="#contact" class="inline-flex items-center gap-2 bg-white text-primary font-bold px-8 py-4 rounded-xl text-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all">
+      <span class="bg">Свържете се сега →</span>
+      <span class="en">Get in touch now →</span>
+    </a>
   </div>
 </section>
 
@@ -2211,6 +2266,39 @@
   </div>
 </section>
 
+<!-- MINI CTA 2 — after Testimonials -->
+<section class="py-14 bg-gray-900 px-4">
+  <div class="max-w-4xl mx-auto reveal">
+    <div class="flex flex-col md:flex-row items-center gap-8 md:gap-14">
+      <div class="flex-1 text-center md:text-left">
+        <div class="flex flex-wrap justify-center md:justify-start gap-3 mb-5">
+          <span class="bg-blue-500/20 text-blue-300 text-sm font-bold px-3 py-1 rounded-full">78% плащат след 1-во напомняне</span>
+          <span class="bg-green-500/20 text-green-300 text-sm font-bold px-3 py-1 rounded-full">3+ часа спестени/месец</span>
+          <span class="bg-purple-500/20 text-purple-300 text-sm font-bold px-3 py-1 rounded-full">250€ спестени/год.</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-3">
+          <span class="bg">Достатъчно четохте. Вижте го в действие.</span>
+          <span class="en">You've read enough. See it in action.</span>
+        </h2>
+        <p class="text-gray-400">
+          <span class="bg">Свържете се с нас за демо или достъп — отговаряме до 24 часа.</span>
+          <span class="en">Contact us for a demo or access — we respond within 24 hours.</span>
+        </p>
+      </div>
+      <div class="flex-shrink-0">
+        <a href="#contact" class="btn-primary text-white font-bold px-10 py-4 rounded-xl text-lg flex items-center gap-2">
+          <span class="bg">Искам достъп →</span>
+          <span class="en">I want access →</span>
+        </a>
+        <p class="text-gray-500 text-xs text-center mt-3">
+          <span class="bg">Без ангажимент. Отговор до 24 часа.</span>
+          <span class="en">No commitment. Reply within 24 hours.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section id="faq" class="py-20 bg-gray-50 px-4">
   <div class="max-w-3xl mx-auto">
@@ -2423,7 +2511,8 @@
   // ── Stats: count-up + typewriter ──
   function runStatSpin(el) {
     const val = parseInt(el.dataset.val);
-    const suffix = el.dataset.suffix || '';
+    const isEn = document.body.classList.contains('lang-en');
+    const suffix = (isEn ? el.dataset.suffixEn : el.dataset.suffixBg) || el.dataset.suffix || '';
     const dur = 1800;
     el.textContent = '0' + suffix;
     let startTime = null;
@@ -2533,6 +2622,37 @@
     btt.style.opacity = show ? '1' : '0';
     btt.style.pointerEvents = show ? 'auto' : 'none';
   }, { passive: true });
+
+  // ── Hero rotator ──
+  (function() {
+    const slides = document.querySelectorAll('.hero-slide');
+    if (slides.length < 2) return;
+    let current = 0;
+    function next() {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }
+    setInterval(next, 5000);
+  })();
+
+  // ── Countdown counters (N → 0) ──
+  function animateCountDown(el) {
+    const from = parseInt(el.dataset.from);
+    const dur = 1800;
+    const start = performance.now();
+    function step(now) {
+      const p = Math.min((now - start) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(from * (1 - eased)) + '€';
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  const downIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { animateCountDown(e.target); downIO.unobserve(e.target); } });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.counter-down[data-from]').forEach(el => downIO.observe(el));
 
   // ── Mobile menu ──
   function mobileMenuOpen() {
