@@ -1459,6 +1459,74 @@
         </p>
       </div>
 
+      <!-- Email Composer — big card -->
+      <div class="col-span-1 md:col-span-2 card-gradient-border card-hover p-8">
+        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+          <span class="text-2xl">✉️</span>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">
+          <span class="bg">Email Composer — генератор на напомняния</span>
+          <span class="en">Email Composer — reminder generator</span>
+        </h3>
+        <p class="text-gray-600 mb-4">
+          <span class="bg">Изберете получател, изберете език (9 опции), прегледайте текста с фактурите — и изпратете с един клик. Ако клиентът е получил писмо наскоро, системата показва <strong>cooldown badge</strong> ("Изпратен преди 3 седмици") и блокира случайно повторно изпращане. Бутон "Копирай" за ръчно изпращане по друг канал.</span>
+          <span class="en">Select recipient, choose language (9 options), preview the text with invoices — and send with one click. If the client was emailed recently, the system shows a <strong>cooldown badge</strong> ("Sent 3 weeks ago") and prevents accidental re-sends. "Copy" button for manual sending via another channel.</span>
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">9 езика</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Cooldown защита</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full bg">Избор на получател</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full en">Recipient selection</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full bg">Копирай текста</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full en">Copy text</span>
+        </div>
+      </div>
+
+      <!-- Client Profile -->
+      <div class="card-gradient-border card-hover p-8">
+        <div class="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center mb-4">
+          <span class="text-2xl">👤</span>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">
+          <span class="bg">Профил на клиент</span>
+          <span class="en">Client profile</span>
+        </h3>
+        <p class="text-gray-600">
+          <span class="bg">Три таба на един екран: история на изпратените мейли, активност (кой/кога/какво), всички фактури. Пълна картина за всеки клиент без търсене.</span>
+          <span class="en">Three tabs on one screen: sent email history, activity (who/when/what), all invoices. Complete picture of every client without searching.</span>
+        </p>
+      </div>
+
+      <!-- Anti-spam rate limiting -->
+      <div class="card-gradient-border card-hover p-8">
+        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4">
+          <span class="text-2xl">🛡️</span>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">
+          <span class="bg">Anti-spam защита</span>
+          <span class="en">Anti-spam protection</span>
+        </h3>
+        <p class="text-gray-600 mb-3">
+          <span class="bg">Лимити за изпращане на мейли: на минута / на час / на ден. Цветен widget показва натоварването в реално време — зелено, жълто или червено. Системата предупреждава преди блокиране.</span>
+          <span class="en">Email sending limits: per minute / per hour / per day. Color-coded widget shows load in real time — green, yellow or red. System warns before blocking.</span>
+        </p>
+      </div>
+
+      <!-- Live email counter + keyboard shortcuts -->
+      <div class="card-gradient-border card-hover p-8">
+        <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-4">
+          <span class="text-2xl">⚡</span>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">
+          <span class="bg">Live брояч и бързи клавиши</span>
+          <span class="en">Live counter & keyboard shortcuts</span>
+        </h3>
+        <p class="text-gray-600">
+          <span class="bg">Пулсиращ зелен брояч на изпратените мейли днес — актуализира се на 30 сек. без презареждане. Клавишни комбинации: <kbd class="bg-gray-100 px-1 rounded text-xs font-mono">S</kbd> = търсене, <kbd class="bg-gray-100 px-1 rounded text-xs font-mono">Esc</kbd> = изчисти.</span>
+          <span class="en">Pulsing green counter of emails sent today — updates every 30s without reload. Keyboard shortcuts: <kbd class="bg-gray-100 px-1 rounded text-xs font-mono">S</kbd> = search, <kbd class="bg-gray-100 px-1 rounded text-xs font-mono">Esc</kbd> = clear.</span>
+        </p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -2336,18 +2404,6 @@
 
       <details class="faq-item bg-white rounded-2xl border border-gray-100 overflow-hidden">
         <summary class="flex items-center justify-between p-6 font-semibold text-gray-900">
-          <span class="bg">На какъв хостинг работи системата?</span>
-          <span class="en">What hosting does the system work on?</span>
-          <span class="faq-icon text-primary text-2xl leading-none">+</span>
-        </summary>
-        <div class="px-6 pb-6 text-gray-500">
-          <span class="bg">Системата работи на shared hosting (cPanel), VPS или dedicated server. Изисква PHP 8.1+ и MySQL. Инсталацията се извършва от нас.</span>
-          <span class="en">The system works on shared hosting (cPanel), VPS or dedicated server. Requires PHP 8.1+ and MySQL. Installation is performed by us.</span>
-        </div>
-      </details>
-
-      <details class="faq-item bg-white rounded-2xl border border-gray-100 overflow-hidden">
-        <summary class="flex items-center justify-between p-6 font-semibold text-gray-900">
           <span class="bg">Мога ли да импортирам съществуващи данни?</span>
           <span class="en">Can I import existing data?</span>
           <span class="faq-icon text-primary text-2xl leading-none">+</span>
@@ -2379,18 +2435,6 @@
         <div class="px-6 pb-6 text-gray-500">
           <span class="bg">Системата поддържа две роли: Admin (пълен достъп) и Viewer (само преглед). Може да имате неограничен брой потребители.</span>
           <span class="en">The system supports two roles: Admin (full access) and Viewer (read-only). You can have unlimited users.</span>
-        </div>
-      </details>
-
-      <details class="faq-item bg-white rounded-2xl border border-gray-100 overflow-hidden">
-        <summary class="flex items-center justify-between p-6 font-semibold text-gray-900">
-          <span class="bg">Данните ми безопасни ли са?</span>
-          <span class="en">Is my data safe?</span>
-          <span class="faq-icon text-primary text-2xl leading-none">+</span>
-        </summary>
-        <div class="px-6 pb-6 text-gray-500">
-          <span class="bg">Системата работи на вашия собствен хостинг — данните ви са при вас. Вградена система за backup и restore с атомарно възстановяване.</span>
-          <span class="en">The system runs on your own hosting — your data stays with you. Built-in backup and restore with atomic recovery.</span>
         </div>
       </details>
 
