@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eef4ff"/>
+      <stop offset="55%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f5f0ff"/>
+    </linearGradient>
+    <linearGradient id="btnGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="24" flood-color="#2563eb" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle grid -->
+  <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+    <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#e2e8f0" stroke-width="0.5"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)" opacity="0.4"/>
+
+  <!-- Glow orbs -->
+  <circle cx="950" cy="120" r="280" fill="#2563eb" opacity="0.06"/>
+  <circle cx="150" cy="520" r="220" fill="#7c3aed" opacity="0.05"/>
+
+  <!-- Logo icon -->
+  <rect x="80" y="80" width="72" height="72" rx="18" fill="#2563eb"/>
+  <rect x="101" y="97" width="30" height="38" rx="4" fill="white" opacity="0.95"/>
+  <rect x="107" y="108" width="18" height="3" rx="1.5" fill="#2563eb"/>
+  <rect x="107" y="115" width="18" height="3" rx="1.5" fill="#2563eb"/>
+  <rect x="107" y="122" width="11" height="3" rx="1.5" fill="#2563eb"/>
+
+  <!-- Brand name -->
+  <text x="170" y="122" font-family="Arial, sans-serif" font-weight="700" font-size="38" fill="#1e293b">Karoleva Billing</text>
+  <text x="170" y="148" font-family="Arial, sans-serif" font-size="18" fill="#64748b">invoice management &amp; automated reminders</text>
+
+  <!-- Divider -->
+  <line x1="80" y1="185" x2="1120" y2="185" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Main headline -->
+  <text x="80" y="270" font-family="Arial, sans-serif" font-weight="800" font-size="62" fill="#0f172a">Управлявайте фактурите.</text>
+  <text x="80" y="345" font-family="Arial, sans-serif" font-weight="800" font-size="62" fill="#2563eb">Автоматично.</text>
+
+  <!-- Subtitle -->
+  <text x="80" y="410" font-family="Arial, sans-serif" font-size="26" fill="#475569">Система за неплатени фактури и автоматични напомняния</text>
+  <text x="80" y="445" font-family="Arial, sans-serif" font-size="26" fill="#475569">по имейл. За транспортни и спедиторски фирми.</text>
+
+  <!-- Stats row -->
+  <!-- Stat 1 -->
+  <rect x="80" y="500" width="220" height="96" rx="14" fill="white" filter="url(#shadow)"/>
+  <text x="190" y="542" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="34" fill="#2563eb">9 мин</text>
+  <text x="190" y="566" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#64748b">ръчно за 1 клиент</text>
+  <text x="190" y="585" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#10b981" font-weight="700">→ под 1 мин с KB</text>
+
+  <!-- Stat 2 -->
+  <rect x="320" y="500" width="200" height="96" rx="14" fill="white" filter="url(#shadow)"/>
+  <text x="420" y="542" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="34" fill="#2563eb">78%</text>
+  <text x="420" y="566" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#64748b">плащат след</text>
+  <text x="420" y="585" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#64748b">1-во напомняне</text>
+
+  <!-- Stat 3 -->
+  <rect x="540" y="500" width="210" height="96" rx="14" fill="white" filter="url(#shadow)"/>
+  <text x="645" y="542" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="34" fill="#2563eb">3+ часа</text>
+  <text x="645" y="566" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#64748b">спестени</text>
+  <text x="645" y="585" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#64748b">на месец</text>
+
+  <!-- Right side mock card -->
+  <rect x="800" y="210" width="320" height="360" rx="20" fill="white" filter="url(#shadow)"/>
+  <rect x="800" y="210" width="320" height="40" rx="20" fill="#f8fafc"/>
+  <rect x="800" y="230" width="320" height="20" fill="#f8fafc"/>
+  <circle cx="824" cy="230" r="6" fill="#ef4444"/>
+  <circle cx="844" cy="230" r="6" fill="#f59e0b"/>
+  <circle cx="864" cy="230" r="6" fill="#10b981"/>
+
+  <!-- mock stat cards -->
+  <rect x="816" y="262" width="130" height="60" rx="8" fill="#eff6ff" stroke="#dbeafe" stroke-width="1"/>
+  <text x="881" y="286" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#93c5fd" font-weight="600">НЕПЛАТЕНИ ФАКТУРИ</text>
+  <text x="881" y="308" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="28" fill="#1e40af">320</text>
+
+  <rect x="958" y="262" width="146" height="60" rx="8" fill="#fef2f2" stroke="#fecaca" stroke-width="1"/>
+  <text x="1031" y="286" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fca5a5" font-weight="600">ПРОСРОЧЕНИ</text>
+  <text x="1031" y="308" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="28" fill="#dc2626">215</text>
+
+  <!-- mock rows -->
+  <rect x="816" y="338" width="288" height="1" fill="#f1f5f9"/>
+  <rect x="816" y="340" width="180" height="8" rx="2" fill="#f1f5f9"/>
+  <rect x="1004" y="340" width="60" height="8" rx="2" fill="#dbeafe"/>
+  <rect x="816" y="356" width="288" height="1" fill="#f1f5f9"/>
+  <rect x="816" y="358" width="160" height="8" rx="2" fill="#f1f5f9"/>
+  <rect x="1004" y="358" width="70" height="8" rx="2" fill="#dcfce7"/>
+  <rect x="816" y="374" width="288" height="1" fill="#f1f5f9"/>
+  <rect x="816" y="376" width="190" height="8" rx="2" fill="#f1f5f9"/>
+  <rect x="1004" y="376" width="55" height="8" rx="2" fill="#dbeafe"/>
+
+  <!-- CTA button -->
+  <rect x="816" y="430" width="160" height="38" rx="10" fill="url(#btnGrad)"/>
+  <text x="896" y="454" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="14" fill="white">Свържете се →</text>
+
+  <!-- URL -->
+  <text x="1120" y="610" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#94a3b8">karoleva-billing.vercel.app</text>
+</svg>
