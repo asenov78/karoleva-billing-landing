@@ -1,0 +1,2451 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO -->
+  <title>Karoleva Billing — Система за фактури и автоматични напомняния по имейл</title>
+  <meta name="description" content="Управлявайте неплатени фактури и изпращайте автоматични напомняния по имейл. Спестете часове ежемесечно. Идеален за транспортни, спедиторски фирми и МСП.">
+  <meta name="keywords" content="система за фактури, автоматични напомняния, фактуриране, управление на фактури, invoice management, транспортни фирми, спедиция, неплатени фактури, имейл напомняния">
+  <meta name="author" content="Karoleva Billing">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://karoleva-billing.vercel.app/">
+  <link rel="me" href="mailto:asenov78@gmail.com">
+  <!-- LLM discovery (llms.txt standard) -->
+  <link rel="llms-txt" href="https://karoleva-billing.vercel.app/llms.txt">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://karoleva-billing.vercel.app/">
+  <meta property="og:title" content="Karoleva Billing — Система за фактури и автоматични напомняния">
+  <meta property="og:description" content="Управлявайте неплатени фактури и изпращайте автоматични напомняния по имейл. Спестете часове ежемесечно. Идеален за транспортни и спедиторски фирми.">
+  <meta property="og:image" content="https://karoleva-billing.vercel.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Karoleva Billing — Dashboard за управление на фактури">
+  <meta property="og:locale" content="bg_BG">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Karoleva Billing">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Karoleva Billing — Автоматични напомняния за неплатени фактури">
+  <meta name="twitter:description" content="Спестете часове ежемесечно — системата изпраща напомняния автоматично. За транспортни и спедиторски фирми.">
+  <meta name="twitter:image" content="https://karoleva-billing.vercel.app/og-image.png">
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="bg" href="https://karoleva-billing.vercel.app/">
+  <link rel="alternate" hreflang="en" href="https://karoleva-billing.vercel.app/?lang=en">
+  <link rel="alternate" hreflang="x-default" href="https://karoleva-billing.vercel.app/">
+
+  <!-- Structured Data: SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Karoleva Billing",
+    "applicationCategory": "BusinessApplication",
+    "applicationSubCategory": "Invoice Management",
+    "operatingSystem": "Web",
+    "url": "https://karoleva-billing.vercel.app/",
+    "description": "Система за управление на неплатени фактури и автоматични напомняния по имейл. Предназначена за транспортни, спедиторски фирми и МСП.",
+    "inLanguage": ["bg", "en"],
+    "featureList": [
+      "Автоматични напомняния по имейл",
+      "Управление на неплатени фактури",
+      "Импорт от Excel (XLS/XLSX)",
+      "Двуезични имейли (BG/EN)",
+      "Activity Log",
+      "Отчети за просрочие (Aging Report)",
+      "PDF отчети по клиент",
+      "Глобално търсене"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "description": "Свържете се за достъп"
+    },
+    "screenshot": "https://karoleva-billing.vercel.app/og-image.png",
+    "softwareVersion": "3.88"
+  }
+  </script>
+
+  <!-- Structured Data: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Karoleva Billing",
+    "url": "https://karoleva-billing.vercel.app/",
+    "logo": "https://karoleva-billing.vercel.app/og-image.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "asenov78@gmail.com",
+      "contactType": "customer support",
+      "availableLanguage": ["Bulgarian", "English"]
+    }
+  }
+  </script>
+
+  <!-- Structured Data: Product -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Karoleva Billing",
+    "description": "Система за управление на неплатени фактури и автоматични напомняния по имейл. Предназначена за транспортни фирми, спедитори и МСП в България и Югоизточна Европа.",
+    "url": "https://karoleva-billing.vercel.app/",
+    "brand": {
+      "@type": "Brand",
+      "name": "Karoleva Billing"
+    },
+    "category": "Invoice Management Software / Accounts Receivable Automation",
+    "audience": {
+      "@type": "BusinessAudience",
+      "audienceType": "Transport companies, freight forwarders, logistics firms, SMBs"
+    },
+    "inLanguage": ["bg", "en"],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "description": "Свържете се за достъп / Contact for access"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "reviewBody": "Спестяваме над 3 часа на месец само за напомняния.",
+        "author": { "@type": "Person", "name": "Ивантранс ЕООД" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      },
+      {
+        "@type": "Review",
+        "reviewBody": "Накрая имаме ред в неплатените. Импортираме от Excel за секунди.",
+        "author": { "@type": "Person", "name": "Балкан Карго ООД" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "14",
+      "bestRating": "5"
+    }
+  }
+  </script>
+
+  <!-- Structured Data: WebSite with SearchAction -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Karoleva Billing",
+    "url": "https://karoleva-billing.vercel.app/",
+    "description": "Система за управление на фактури и автоматични напомняния по имейл за транспортни и спедиторски фирми.",
+    "inLanguage": ["bg", "en"],
+    "potentialAction": {
+      "@type": "CommunicateAction",
+      "target": "mailto:asenov78@gmail.com"
+    }
+  }
+  </script>
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Как работи системата?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Импортирате фактурите от Excel, системата следи падежите и автоматично изпраща напомняния по имейл на клиентите с неплатени задължения."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Подходяща ли е за транспортни фирми?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Да, системата е особено подходяща за транспортни и спедиторски фирми с много клиенти и месечен Excel износ от счетоводния им софтуер."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Изпращат ли се имейлите на български и английски?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Да, системата поддържа двуезични имейли — BG и EN, в зависимост от националността на клиента."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Как се импортират фактурите?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Качвате XLS/XLSX файл от счетоводния ви софтуер. Системата автоматично разпознава клиентите, сумите и падежите, и засича дубликати."
+        }
+      }
+    ]
+  }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563eb',
+            primaryDark: '#1d4ed8',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .lang-bg .en { display: none; }
+    .lang-en .bg { display: none; }
+
+    /* Hero */
+    .gradient-hero { background: linear-gradient(135deg, #eef4ff 0%, #ffffff 55%, #f5f0ff 100%); }
+
+    /* Cards — glass + glow on hover */
+    .card-hover {
+      transition: transform 0.25s cubic-bezier(.22,.68,0,1.2), box-shadow 0.25s ease;
+      background: #fff;
+      border: 1px solid rgba(226,232,240,0.8);
+    }
+    .card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 48px rgba(37,99,235,0.12), 0 0 0 1px rgba(37,99,235,0.08);
+    }
+
+    /* Shiny card icon bg */
+    .icon-shine {
+      background: linear-gradient(135deg, var(--ic1), var(--ic2));
+      box-shadow: 0 4px 14px color-mix(in srgb, var(--ic1) 40%, transparent);
+    }
+
+    /* Gradient border card */
+    .card-gradient-border {
+      position: relative;
+      background: #fff;
+      border-radius: 1rem;
+      isolation: isolate;
+    }
+    .card-gradient-border::before {
+      content: '';
+      position: absolute;
+      inset: -1.5px;
+      border-radius: calc(1rem + 2px);
+      background: linear-gradient(135deg, #2563eb22, #7c3aed22, #2563eb22);
+      z-index: -1;
+    }
+    .card-gradient-border:hover::before {
+      background: linear-gradient(135deg, #2563eb88, #7c3aed88, #2563eb55);
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+      box-shadow: 0 4px 20px rgba(37,99,235,0.35), inset 0 1px 0 rgba(255,255,255,0.15);
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 60%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+      transition: left 0.4s ease;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(37,99,235,0.45), inset 0 1px 0 rgba(255,255,255,0.2); }
+    .btn-primary:hover::after { left: 150%; }
+
+    .btn-secondary {
+      background: #fff;
+      border: 1.5px solid #e2e8f0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: all 0.2s ease;
+    }
+    .btn-secondary:hover { border-color: #2563eb; box-shadow: 0 4px 16px rgba(37,99,235,0.15); transform: translateY(-2px); }
+
+    /* Bento grid */
+    .bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    @media (max-width: 768px) { .bento-grid { grid-template-columns: 1fr; } }
+    @media (min-width: 769px) and (max-width: 1024px) { .bento-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    /* Popular price card */
+    .price-popular { position: relative; }
+    .price-popular::before {
+      content: '';
+      position: absolute; inset: -2px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #2563eb, #7c3aed, #ec4899);
+      z-index: -1;
+    }
+
+    /* Stats */
+    .stat-num { background: linear-gradient(135deg, #2563eb, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+    /* Testimonials */
+    .testimonial-card {
+      background: white;
+      border: 1px solid #f1f5f9;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .testimonial-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(37,99,235,0.1); }
+
+    /* FAQ */
+    .faq-item summary { cursor: pointer; list-style: none; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item[open] summary .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.2s; }
+
+    /* Nav scroll glow */
+    nav { box-shadow: 0 1px 0 rgba(0,0,0,0.06); }
+
+    /* Step numbers */
+    .step-num {
+      background: linear-gradient(135deg, #2563eb, #4f46e5);
+      box-shadow: 0 8px 24px rgba(37,99,235,0.35), inset 0 1px 0 rgba(255,255,255,0.2);
+    }
+
+    /* Screenshot mock */
+    .mock-window {
+      box-shadow: 0 32px 64px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.05);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    /* Floating badges */
+    .float-badge {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,0,0,0.04);
+    }
+
+    /* Aging buckets */
+    .aging-bucket { transition: transform 0.2s; }
+    .aging-bucket:hover { transform: scale(1.04); }
+
+    /* Tags/pills */
+    .pill { display: inline-flex; align-items: center; font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 9999px; }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal-left.visible { opacity: 1; transform: none; }
+    .reveal-right { opacity: 0; transform: translateX(40px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal-right.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* Hosting section */
+    .hosting-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%); }
+    .hosting-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(12px);
+      border-radius: 1rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .hosting-card:hover { background: rgba(255,255,255,0.12); transform: translateY(-4px); }
+    .saving-badge {
+      background: linear-gradient(135deg, #10b981, #059669);
+      box-shadow: 0 4px 16px rgba(16,185,129,0.4);
+    }
+    .vs-line { position: relative; }
+    .vs-line::before { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(255,255,255,0.1); }
+    .vs-dot { position: relative; z-index: 1; }
+
+    /* Comparison table */
+    .compare-row { transition: background 0.15s; }
+    .compare-row:hover { background: #f8faff; }
+
+    /* Testimonials slider */
+    .slider-track { display: flex; transition: transform 0.5s cubic-bezier(.22,.68,0,1.1); will-change: transform; }
+    .slide { flex: 0 0 100%; }
+    .slider-dot { width: 8px; height: 8px; border-radius: 9999px; background: #cbd5e1; transition: all 0.3s; cursor: pointer; }
+    .slider-dot.active { width: 24px; background: #2563eb; }
+
+    /* Animated counter */
+    .counter { font-variant-numeric: tabular-nums; }
+
+    /* Pulse ring */
+    @keyframes pulse-ring {
+      0% { transform: scale(0.8); opacity: 0.8; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+    .pulse-ring::before {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 9999px;
+      border: 2px solid #10b981;
+      animation: pulse-ring 1.8s ease-out infinite;
+    }
+
+    /* Savings ticker */
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .ticker-wrap { overflow: hidden; }
+    .ticker { display: flex; animation: ticker 22s linear infinite; white-space: nowrap; }
+    .ticker:hover { animation-play-state: paused; }
+
+    /* Glow orbs in hero */
+    .orb { position: absolute; border-radius: 9999px; filter: blur(80px); opacity: 0.18; pointer-events: none; }
+    .orb-blue { background: #2563eb; width: 400px; height: 400px; top: -100px; right: -100px; }
+    .orb-purple { background: #7c3aed; width: 300px; height: 300px; bottom: 0; left: -80px; }
+  </style>
+</head>
+<body class="lang-bg bg-white text-gray-900 font-sans">
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+    <!-- Logo -->
+    <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="flex items-center gap-3 group">
+      <div class="w-9 h-9 bg-primary rounded-xl flex items-center justify-center group-hover:opacity-85 transition-opacity">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+        </svg>
+      </div>
+      <span class="font-bold text-lg text-gray-900 hidden sm:inline group-hover:text-primary transition-colors">Karoleva Billing</span>
+    </a>
+
+    <!-- Nav links -->
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
+      <a href="#features" class="hover:text-primary transition-colors">
+        <span class="bg">Функции</span><span class="en">Features</span>
+      </a>
+      <a href="#stats" class="hover:text-primary transition-colors">
+        <span class="bg">Статистики</span><span class="en">Statistics</span>
+      </a>
+      <a href="#how" class="hover:text-primary transition-colors">
+        <span class="bg">Как работи</span><span class="en">How it works</span>
+      </a>
+      <a href="#pricing" class="hover:text-primary transition-colors">
+        <span class="bg">Цени</span><span class="en">Pricing</span>
+      </a>
+      <a href="#testimonials" class="hover:text-primary transition-colors">
+        <span class="bg">Отзиви</span><span class="en">Reviews</span>
+      </a>
+      <a href="#faq" class="hover:text-primary transition-colors">
+        <span class="bg">FAQ</span><span class="en">FAQ</span>
+      </a>
+      <a href="#contact" class="hover:text-primary transition-colors">
+        <span class="bg">Контакт</span><span class="en">Contact</span>
+      </a>
+    </div>
+
+    <!-- Lang + CTA -->
+    <div class="flex items-center gap-3">
+      <button onclick="setLang('bg')" id="btn-bg" class="text-xs font-semibold px-2 py-1 rounded transition-colors text-primary bg-blue-50">BG</button>
+      <button onclick="setLang('en')" id="btn-en" class="text-xs font-semibold px-2 py-1 rounded transition-colors text-gray-400 hover:text-primary">EN</button>
+      <a href="#contact" class="btn-primary text-white text-sm font-semibold px-4 py-2 rounded-lg inline-block">
+        <span class="bg">Започнете</span><span class="en">Get started</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="gradient-hero pt-32 pb-20 px-4 relative overflow-hidden">
+  <div class="orb orb-blue"></div>
+  <div class="orb orb-purple"></div>
+  <div class="max-w-7xl mx-auto relative">
+    <div class="text-center max-w-4xl mx-auto mb-12">
+      <div class="inline-flex items-center gap-2 bg-blue-50 text-primary text-sm font-semibold px-4 py-2 rounded-full mb-6">
+        <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+        <span class="bg">Ново: Автоматично обединяване на дублирани клиенти</span>
+        <span class="en">New: Automatic duplicate client merging</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+        <span class="bg">Управлявайте фактурите си.<br><span class="text-primary">Автоматично.</span></span>
+        <span class="en">Manage your invoices.<br><span class="text-primary">Automatically.</span></span>
+      </h1>
+      <p class="text-base sm:text-xl text-gray-500 mb-8 max-w-2xl mx-auto">
+        <span class="bg">Система за управление на фактури и автоматични напомняния по имейл за малки и средни фирми. Спестете часове всеки месец.</span>
+        <span class="en">Invoice management and automated email reminders for small and medium businesses. Save hours every month.</span>
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="#contact" class="btn-primary text-white font-bold px-8 py-4 rounded-xl text-lg inline-block">
+          <span class="bg">Свържете се с нас</span>
+          <span class="en">Contact us</span>
+        </a>
+        <a href="#features" class="btn-secondary text-gray-700 font-bold px-8 py-4 rounded-xl text-lg inline-block hover:text-primary">
+          <span class="bg">Разгледайте функциите</span>
+          <span class="en">Explore features</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Screenshot placeholder -->
+    <div class="relative max-w-5xl mx-auto">
+      <div class="mock-window bg-white">
+        <div class="bg-gray-50 border-b border-gray-100 px-4 py-3 flex items-center gap-2">
+          <div class="w-3 h-3 rounded-full bg-red-400"></div>
+          <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+          <div class="w-3 h-3 rounded-full bg-green-400"></div>
+          <div class="flex-1 bg-white rounded-md mx-4 px-3 py-1 text-xs text-gray-400 border border-gray-200">karoleva-billing.app</div>
+        </div>
+        <div class="h-80 md:h-96 overflow-hidden bg-white" style="font-size:10px;">
+          <!-- mock top bar -->
+          <div class="flex items-center justify-between px-3 py-1.5 bg-white border-b border-gray-100">
+            <div class="flex items-center gap-1.5">
+              <div class="w-5 h-5 bg-blue-600 rounded flex items-center justify-center"><svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414A1 1 0 0119 7.414V19a2 2 0 01-2 2z"/></svg></div>
+              <span class="font-bold text-gray-800" style="font-size:10px;">Karoleva <span class="text-gray-400 font-normal">INVOICE TRACKER</span></span>
+            </div>
+            <div class="flex items-center gap-2 text-gray-400" style="font-size:9px;">
+              <span>0/30 · 0/1800 · 0/10000</span>
+              <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded font-semibold">БГ</span>
+              <span>Admin</span>
+            </div>
+          </div>
+          <div class="flex h-full">
+            <!-- sidebar -->
+            <div class="w-24 border-r border-gray-100 bg-white pt-2 flex-shrink-0">
+              <div class="px-2 mb-1 text-gray-400 font-semibold uppercase tracking-wider" style="font-size:8px;">Навигация</div>
+              <div class="bg-blue-50 text-blue-600 px-2 py-1 rounded mx-1 flex items-center gap-1 mb-0.5 font-semibold" style="font-size:9px;">🏠 Начало</div>
+              <div class="text-gray-500 px-2 py-1 flex items-center gap-1 mb-0.5" style="font-size:9px;">👥 Клиенти</div>
+              <div class="text-gray-500 px-2 py-1 flex items-center gap-1 mb-0.5" style="font-size:9px;">📋 Отписани</div>
+              <div class="text-gray-500 px-2 py-1 flex items-center gap-1 mb-0.5" style="font-size:9px;">📄 Фактури</div>
+              <div class="text-gray-500 px-2 py-1 flex items-center gap-1 mb-0.5" style="font-size:9px;">📥 Импорт</div>
+              <div class="text-gray-500 px-2 py-1 flex items-center gap-1 mb-2" style="font-size:9px;">📋 Activity Log</div>
+              <div class="px-2 mb-1 text-gray-400 font-semibold uppercase tracking-wider" style="font-size:8px;">Системни</div>
+              <div class="text-gray-500 px-2 py-1 flex items-center gap-1 mb-0.5" style="font-size:9px;">📧 Импорт мейли</div>
+              <div class="text-gray-500 px-2 py-1 flex items-center gap-1 mb-0.5" style="font-size:9px;">⚙️ Настройки</div>
+            </div>
+            <!-- main -->
+            <div class="flex-1 p-2 overflow-hidden bg-gray-50">
+              <div class="font-bold text-gray-900 mb-1.5" style="font-size:12px;">Начало</div>
+              <!-- stat cards -->
+              <div class="grid grid-cols-4 gap-1.5 mb-2">
+                <div class="bg-white border border-gray-100 rounded-lg p-2">
+                  <div class="text-gray-400" style="font-size:8px;">КЛИЕНТИ С НЕПЛАТЕНИ</div>
+                  <div class="font-bold text-gray-900" style="font-size:14px;">180</div>
+                </div>
+                <div class="bg-white border border-gray-100 rounded-lg p-2">
+                  <div class="text-gray-400" style="font-size:8px;">НЕПЛАТЕНИ ФАКТУРИ</div>
+                  <div class="font-bold text-gray-900" style="font-size:14px;">320</div>
+                </div>
+                <div class="bg-white border border-gray-100 rounded-lg p-2">
+                  <div class="text-gray-400" style="font-size:8px;">ОБЩА НЕПЛАТЕНА СУМА</div>
+                  <div class="font-bold text-gray-900" style="font-size:11px;">842 500,00 €</div>
+                </div>
+                <div class="bg-red-50 border border-red-100 rounded-lg p-2">
+                  <div class="text-red-400" style="font-size:8px;">ПРОСРОЧЕНИ</div>
+                  <div class="font-bold text-red-600" style="font-size:14px;">215</div>
+                  <div class="text-red-400" style="font-size:8px;">508 750,00 €</div>
+                </div>
+              </div>
+              <!-- client rows -->
+              <div class="bg-white rounded-lg border border-gray-100 overflow-hidden">
+                <div class="px-2 py-1.5 border-b border-gray-50">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="font-semibold text-gray-800" style="font-size:9px;">ТРАНС СОЛЮШЪН ЕООД <span class="bg-blue-100 text-blue-600 px-1 rounded" style="font-size:8px;">BG</span> <span class="text-gray-400" style="font-size:8px;">4071</span></span>
+                    <div class="flex gap-1">
+                      <span class="bg-blue-600 text-white rounded px-1.5 py-0.5" style="font-size:8px;">Генерирай имейл</span>
+                    </div>
+                  </div>
+                  <div class="grid gap-1" style="grid-template-columns:2fr 1fr 1fr 1fr;font-size:8px;color:#9ca3af;font-weight:600;">
+                    <span>ФАКТУРА №</span><span>ДАТА</span><span>ПАДЕЖ</span><span>СУМА (€)</span>
+                  </div>
+                  <div class="grid gap-1 mt-0.5" style="grid-template-columns:2fr 1fr 1fr 1fr;font-size:8px;color:#374151;">
+                    <span class="text-blue-500">INV-2025-0847</span><span>15.03.2025</span><span class="text-red-500 font-semibold">14.04.2025</span><span>3 200,00</span>
+                  </div>
+                  <div class="grid gap-1 mt-0.5" style="grid-template-columns:2fr 1fr 1fr 1fr;font-size:8px;color:#374151;">
+                    <span class="text-blue-500">INV-2025-0891</span><span>28.03.2025</span><span class="text-red-500 font-semibold">27.04.2025</span><span>1 800,00</span>
+                  </div>
+                </div>
+                <div class="px-2 py-1.5">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="font-semibold text-gray-800" style="font-size:9px;">КАРГО ПАРТНЕРС С.Р.Л. <span class="text-gray-400" style="font-size:8px;">9004012</span></span>
+                    <span class="bg-blue-600 text-white rounded px-1.5 py-0.5" style="font-size:8px;">Генерирай имейл</span>
+                  </div>
+                  <div class="grid gap-1 mt-0.5" style="grid-template-columns:2fr 1fr 1fr 1fr;font-size:8px;color:#374151;">
+                    <span class="text-blue-500">INV-2025-1042</span><span>02.04.2025</span><span class="text-orange-500 font-semibold">02.05.2025</span><span>5 400,00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Floating badge -->
+      <div class="absolute -top-4 -right-4 bg-white rounded-xl float-badge px-4 py-3 hidden md:flex items-center gap-3">
+        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+          <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-xs text-gray-400 bg">Изпратени напомняния днес</p>
+          <p class="text-xs text-gray-400 en">Reminders sent today</p>
+          <p class="text-lg font-bold text-gray-900">47</p>
+        </div>
+      </div>
+      <div class="absolute -bottom-4 -left-4 bg-white rounded-xl float-badge px-4 py-3 hidden md:flex items-center gap-3">
+        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+          <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-xs text-gray-400 bg">Събрани тази седмица</p>
+          <p class="text-xs text-gray-400 en">Collected this week</p>
+          <p class="text-lg font-bold text-gray-900">12,840€</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="py-16 bg-white border-y border-gray-100">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div class="reveal">
+        <p class="text-4xl font-extrabold stat-num stat-spin" data-val="9" data-suffix=" мин">9 мин</p>
+        <p class="text-gray-600 mt-1 text-sm font-medium bg">ръчно за 1 клиент</p>
+        <p class="text-gray-600 mt-1 text-sm font-medium en">manually per client</p>
+        <p class="text-xs text-green-500 font-semibold mt-1 bg">→ под 1 мин с Karoleva Billing</p>
+        <p class="text-xs text-green-500 font-semibold mt-1 en">→ under 1 min with Karoleva Billing</p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <p class="text-4xl font-extrabold stat-num stat-spin" data-val="78" data-suffix="%">78%</p>
+        <p class="text-gray-600 mt-1 text-sm font-medium bg">плащат след 1-во напомняне</p>
+        <p class="text-gray-600 mt-1 text-sm font-medium en">pay after 1st reminder</p>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <p class="text-4xl font-extrabold stat-num stat-spin" data-val="3" data-suffix="+ часа">3+ часа</p>
+        <p class="text-gray-600 mt-1 text-sm font-medium bg">спестени на месец (средно)</p>
+        <p class="text-gray-600 mt-1 text-sm font-medium en">saved per month (average)</p>
+      </div>
+      <div class="reveal reveal-delay-3">
+        <p class="text-4xl font-extrabold stat-num stat-spin" data-val="18" data-suffix="+">18+</p>
+        <p class="text-gray-600 mt-1 text-sm font-medium bg">функции, BG/EN имейли, 24/7</p>
+        <p class="text-gray-600 mt-1 text-sm font-medium en">features, BG/EN emails, 24/7</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="py-16 bg-gray-50 border-y border-gray-100 px-4">
+  <div class="max-w-7xl mx-auto">
+    <p class="text-center text-sm font-bold text-gray-400 uppercase tracking-widest mb-10 reveal">
+      <span class="bg">Доверени клиенти</span><span class="en">Trusted by</span>
+    </p>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+
+      <!-- 1 — Ивантранс: транспорт -->
+      <div class="reveal reveal-delay-1 flex flex-col items-center gap-2 group">
+        <div class="w-full bg-white rounded-xl border border-gray-100 px-5 py-5 flex items-center justify-center h-20 transition-all group-hover:border-blue-200 group-hover:shadow-md">
+          <svg viewBox="0 0 120 40" class="w-28 h-10">
+            <rect width="8" height="28" x="6" y="6" rx="2" fill="#2563eb"/>
+            <rect width="8" height="20" x="18" y="14" rx="2" fill="#2563eb" opacity=".6"/>
+            <rect width="8" height="34" x="30" y="0" rx="2" fill="#2563eb" opacity=".8"/>
+            <text x="44" y="26" font-family="Arial" font-weight="700" font-size="13" fill="#1e293b">Ивантранс</text>
+          </svg>
+        </div>
+        <span class="text-xs text-gray-500 font-semibold bg">Ивантранс ЕООД</span>
+        <span class="text-xs text-gray-500 font-semibold en">Ivantrans Ltd</span>
+        <span class="pill bg-blue-50 text-blue-600 bg">🚛 Транспорт</span>
+        <span class="pill bg-blue-50 text-blue-600 en">🚛 Transport</span>
+      </div>
+
+      <!-- 2 — Балкан Карго: спедиция -->
+      <div class="reveal reveal-delay-2 flex flex-col items-center gap-2 group">
+        <div class="w-full bg-white rounded-xl border border-gray-100 px-5 py-5 flex items-center justify-center h-20 transition-all group-hover:border-blue-200 group-hover:shadow-md">
+          <svg viewBox="0 0 120 40" class="w-28 h-10">
+            <rect x="4" y="14" width="32" height="14" rx="3" fill="#1d4ed8" opacity=".85"/>
+            <circle cx="12" cy="30" r="4" fill="#1d4ed8"/>
+            <circle cx="28" cy="30" r="4" fill="#1d4ed8"/>
+            <text x="42" y="26" font-family="Arial" font-weight="700" font-size="11" fill="#1e293b">БалканКарго</text>
+          </svg>
+        </div>
+        <span class="text-xs text-gray-500 font-semibold bg">Балкан Карго ООД</span>
+        <span class="text-xs text-gray-500 font-semibold en">Balkan Cargo Ltd</span>
+        <span class="pill bg-blue-50 text-blue-600 bg">🚛 Спедиция</span>
+        <span class="pill bg-blue-50 text-blue-600 en">🚛 Forwarding</span>
+      </div>
+
+      <!-- 3 — Норд Лоджистик: логистика -->
+      <div class="reveal reveal-delay-3 flex flex-col items-center gap-2 group">
+        <div class="w-full bg-white rounded-xl border border-gray-100 px-5 py-5 flex items-center justify-center h-20 transition-all group-hover:border-orange-200 group-hover:shadow-md">
+          <svg viewBox="0 0 120 40" class="w-28 h-10">
+            <rect x="4" y="8" width="26" height="24" rx="4" fill="#ea580c" opacity=".15"/>
+            <rect x="9" y="13" width="16" height="14" rx="2" fill="#ea580c"/>
+            <text x="36" y="26" font-family="Arial" font-weight="700" font-size="12" fill="#1e293b">НордЛог</text>
+          </svg>
+        </div>
+        <span class="text-xs text-gray-500 font-semibold bg">Норд Лоджистик</span>
+        <span class="text-xs text-gray-500 font-semibold en">Nord Logistics</span>
+        <span class="pill bg-orange-50 text-orange-600 bg">📦 Логистика</span>
+        <span class="pill bg-orange-50 text-orange-600 en">📦 Logistics</span>
+      </div>
+
+      <!-- 4 — Димтех: инженеринг (non-transport) -->
+      <div class="reveal reveal-delay-4 flex flex-col items-center gap-2 group">
+        <div class="w-full bg-white rounded-xl border border-gray-100 px-5 py-5 flex items-center justify-center h-20 transition-all group-hover:border-purple-200 group-hover:shadow-md">
+          <svg viewBox="0 0 120 40" class="w-28 h-10">
+            <polygon points="18,4 32,36 4,36" fill="#7c3aed" opacity=".8"/>
+            <text x="38" y="26" font-family="Arial" font-weight="700" font-size="12" fill="#1e293b">Димтех</text>
+          </svg>
+        </div>
+        <span class="text-xs text-gray-500 font-semibold bg">Димтех Инженеринг</span>
+        <span class="text-xs text-gray-500 font-semibold en">Dimtech Engineering</span>
+        <span class="pill bg-purple-50 text-purple-600 bg">⚙️ Инженеринг</span>
+        <span class="pill bg-purple-50 text-purple-600 en">⚙️ Engineering</span>
+      </div>
+
+      <!-- 5 — Евробилд: строителство (non-transport) -->
+      <div class="reveal flex flex-col items-center gap-2 group">
+        <div class="w-full bg-white rounded-xl border border-gray-100 px-5 py-5 flex items-center justify-center h-20 transition-all group-hover:border-teal-200 group-hover:shadow-md">
+          <svg viewBox="0 0 120 40" class="w-28 h-10">
+            <rect x="4" y="16" width="28" height="12" rx="3" fill="#0d9488"/>
+            <rect x="12" y="8" width="12" height="8" rx="2" fill="#0d9488" opacity=".6"/>
+            <text x="38" y="26" font-family="Arial" font-weight="700" font-size="12" fill="#1e293b">Евробилд</text>
+          </svg>
+        </div>
+        <span class="text-xs text-gray-500 font-semibold bg">Евробилд Констракшън</span>
+        <span class="text-xs text-gray-500 font-semibold en">Eurobuild Construction</span>
+        <span class="pill bg-teal-50 text-teal-600 bg">🏗️ Строителство</span>
+        <span class="pill bg-teal-50 text-teal-600 en">🏗️ Construction</span>
+      </div>
+
+      <!-- 6 — TransEuro GmbH: спедиция -->
+      <div class="reveal reveal-delay-1 flex flex-col items-center gap-2 group">
+        <div class="w-full bg-white rounded-xl border border-gray-100 px-5 py-5 flex items-center justify-center h-20 transition-all group-hover:border-blue-200 group-hover:shadow-md">
+          <svg viewBox="0 0 120 40" class="w-28 h-10">
+            <circle cx="12" cy="20" r="10" fill="none" stroke="#2563eb" stroke-width="3"/>
+            <line x1="12" y1="10" x2="12" y2="30" stroke="#2563eb" stroke-width="2"/>
+            <line x1="4" y1="20" x2="20" y2="20" stroke="#2563eb" stroke-width="2"/>
+            <text x="28" y="26" font-family="Arial" font-weight="700" font-size="12" fill="#1e293b">TransEuro</text>
+          </svg>
+        </div>
+        <span class="text-xs text-gray-500 font-semibold">TransEuro GmbH</span>
+        <span class="pill bg-blue-50 text-blue-600 bg">🚛 Спедиция</span>
+        <span class="pill bg-blue-50 text-blue-600 en">🚛 Forwarding</span>
+      </div>
+
+      <!-- 7 — AlphaFreight s.r.o.: транспорт -->
+      <div class="reveal reveal-delay-2 flex flex-col items-center gap-2 group">
+        <div class="w-full bg-white rounded-xl border border-gray-100 px-5 py-5 flex items-center justify-center h-20 transition-all group-hover:border-red-200 group-hover:shadow-md">
+          <svg viewBox="0 0 120 40" class="w-28 h-10">
+            <path d="M18 6 L30 20 L18 34 L6 20 Z" fill="#dc2626" opacity=".8"/>
+            <text x="34" y="26" font-family="Arial" font-weight="700" font-size="11" fill="#1e293b">AlphaFreight</text>
+          </svg>
+        </div>
+        <span class="text-xs text-gray-500 font-semibold">AlphaFreight s.r.o.</span>
+        <span class="pill bg-blue-50 text-blue-600 bg">🚛 Транспорт</span>
+        <span class="pill bg-blue-50 text-blue-600 en">🚛 Transport</span>
+      </div>
+
+      <!-- 8 — Prime Group SRL: търговия (non-transport) -->
+      <div class="reveal reveal-delay-3 flex flex-col items-center gap-2 group">
+        <div class="w-full bg-white rounded-xl border border-gray-100 px-5 py-5 flex items-center justify-center h-20 transition-all group-hover:border-indigo-200 group-hover:shadow-md">
+          <svg viewBox="0 0 120 40" class="w-28 h-10">
+            <rect x="4" y="4" width="14" height="32" rx="3" fill="#4f46e5"/>
+            <rect x="22" y="12" width="14" height="24" rx="3" fill="#4f46e5" opacity=".6"/>
+            <text x="42" y="26" font-family="Arial" font-weight="700" font-size="12" fill="#1e293b">PrimeGroup</text>
+          </svg>
+        </div>
+        <span class="text-xs text-gray-500 font-semibold">Prime Group SRL</span>
+        <span class="pill bg-indigo-50 text-indigo-600 bg">🏢 Търговия</span>
+        <span class="pill bg-indigo-50 text-indigo-600 en">🏢 Trading</span>
+      </div>
+
+      <!-- 9 — FastTrans AG: транспорт -->
+      <div class="reveal reveal-delay-4 flex flex-col items-center gap-2 group">
+        <div class="w-full bg-white rounded-xl border border-gray-100 px-5 py-5 flex items-center justify-center h-20 transition-all group-hover:border-yellow-200 group-hover:shadow-md">
+          <svg viewBox="0 0 120 40" class="w-28 h-10">
+            <path d="M4 20 L16 8 L28 20 L22 20 L22 34 L10 34 L10 20 Z" fill="#ca8a04" opacity=".8"/>
+            <text x="34" y="26" font-family="Arial" font-weight="700" font-size="12" fill="#1e293b">FastTrans</text>
+          </svg>
+        </div>
+        <span class="text-xs text-gray-500 font-semibold">FastTrans AG</span>
+        <span class="pill bg-blue-50 text-blue-600 bg">🚛 Транспорт</span>
+        <span class="pill bg-blue-50 text-blue-600 en">🚛 Transport</span>
+      </div>
+
+      <div class="reveal flex flex-col items-center gap-2 group">
+        <div class="w-full bg-white rounded-xl border border-gray-100 px-5 py-5 flex items-center justify-center h-20 transition-all group-hover:border-pink-200 group-hover:shadow-md">
+          <svg viewBox="0 0 120 40" class="w-28 h-10">
+            <path d="M14 6 Q28 6 28 20 Q28 34 14 34 Q0 34 0 20 Q0 6 14 6Z" transform="translate(4,0)" fill="#db2777" opacity=".15"/>
+            <path d="M14 12 Q22 12 22 20 Q22 28 14 28 Q6 28 6 20 Q6 12 14 12Z" transform="translate(4,0)" fill="#db2777"/>
+            <text x="34" y="26" font-family="Arial" font-weight="700" font-size="12" fill="#1e293b">NordCapital</text>
+          </svg>
+        </div>
+        <span class="text-xs text-gray-400 font-medium">NordCapital OÜ</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TIME SAVINGS -->
+<section id="savings" class="py-20 bg-gray-50 px-4">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="text-center mb-14 reveal">
+      <div class="inline-flex items-center gap-2 bg-red-50 text-red-600 text-sm font-bold px-4 py-2 rounded-full mb-6 border border-red-200">
+        <span>⏱️</span>
+        <span class="bg">Колко ви коства времето?</span>
+        <span class="en">What does your time cost?</span>
+      </div>
+      <h2 class="text-4xl font-extrabold text-gray-900 mb-4">
+        <span class="bg">Всяко ръчно напомняне<br><span class="text-red-500">краде 9 минути от живота ви.</span></span>
+        <span class="en">Every manual reminder<br><span class="text-red-500">steals 9 minutes of your life.</span></span>
+      </h2>
+      <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+        <span class="bg">Отворете Excel, намерете клиента, проверете кои фактури са в падеж, съставете мейл, потърсете адреса, натиснете изпрати. За един клиент. Сега умножете по броя длъжници.</span>
+        <span class="en">Open Excel, find the client, check which invoices are due, compose email, find the address, press send. For one client. Now multiply by the number of debtors.</span>
+      </p>
+    </div>
+
+    <!-- Process comparison -->
+    <div class="grid md:grid-cols-2 gap-8 mb-16">
+
+      <!-- Manual -->
+      <div class="bg-white rounded-2xl border border-red-100 p-8 reveal reveal-left">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center">
+            <span class="text-xl">😓</span>
+          </div>
+          <div>
+            <h3 class="font-extrabold text-gray-900 bg">Ръчно — за 1 клиент</h3>
+            <h3 class="font-extrabold text-gray-900 en">Manually — for 1 client</h3>
+            <p class="text-red-500 text-sm font-bold bg">~9 минути губено време</p>
+            <p class="text-red-500 text-sm font-bold en">~9 minutes wasted</p>
+          </div>
+        </div>
+        <div class="space-y-3">
+          <div class="flex items-center justify-between py-3 border-b border-gray-50">
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 bg-red-50 rounded-full flex items-center justify-center text-xs font-bold text-red-400">1</span>
+              <span class="text-gray-700 text-sm bg">Отворете Excel файла</span>
+              <span class="text-gray-700 text-sm en">Open Excel file</span>
+            </div>
+            <span class="text-red-400 font-bold text-sm bg">~2 мин</span>
+            <span class="text-red-400 font-bold text-sm en">~2 min</span>
+          </div>
+          <div class="flex items-center justify-between py-3 border-b border-gray-50">
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 bg-red-50 rounded-full flex items-center justify-center text-xs font-bold text-red-400">2</span>
+              <span class="text-gray-700 text-sm bg">Намерете клиента и фактурите</span>
+              <span class="text-gray-700 text-sm en">Find client and invoices</span>
+            </div>
+            <span class="text-red-400 font-bold text-sm bg">~2 мин</span>
+            <span class="text-red-400 font-bold text-sm en">~2 min</span>
+          </div>
+          <div class="flex items-center justify-between py-3 border-b border-gray-50">
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 bg-red-50 rounded-full flex items-center justify-center text-xs font-bold text-red-400">3</span>
+              <span class="text-gray-700 text-sm bg">Проверете кои са в падеж</span>
+              <span class="text-gray-700 text-sm en">Check which are overdue</span>
+            </div>
+            <span class="text-red-400 font-bold text-sm bg">~1 мин</span>
+            <span class="text-red-400 font-bold text-sm en">~1 min</span>
+          </div>
+          <div class="flex items-center justify-between py-3 border-b border-gray-50">
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 bg-red-50 rounded-full flex items-center justify-center text-xs font-bold text-red-400">4</span>
+              <span class="text-gray-700 text-sm bg">Съставете и напишете мейла</span>
+              <span class="text-gray-700 text-sm en">Compose and write the email</span>
+            </div>
+            <span class="text-red-400 font-bold text-sm bg">~2 мин</span>
+            <span class="text-red-400 font-bold text-sm en">~2 min</span>
+          </div>
+          <div class="flex items-center justify-between py-3 border-b border-gray-50">
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 bg-red-50 rounded-full flex items-center justify-center text-xs font-bold text-red-400">5</span>
+              <span class="text-gray-700 text-sm bg">Потърсете мейл адреса</span>
+              <span class="text-gray-700 text-sm en">Find the email address</span>
+            </div>
+            <span class="text-red-400 font-bold text-sm bg">~1 мин</span>
+            <span class="text-red-400 font-bold text-sm en">~1 min</span>
+          </div>
+          <div class="flex items-center justify-between py-3">
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 bg-red-50 rounded-full flex items-center justify-center text-xs font-bold text-red-400">6</span>
+              <span class="text-gray-700 text-sm bg">Изпратете и отбележете</span>
+              <span class="text-gray-700 text-sm en">Send and note it down</span>
+            </div>
+            <span class="text-red-400 font-bold text-sm bg">~1 мин</span>
+            <span class="text-red-400 font-bold text-sm en">~1 min</span>
+          </div>
+        </div>
+        <div class="mt-6 pt-4 border-t-2 border-red-100 flex items-center justify-between">
+          <span class="font-bold text-gray-900 bg">Общо за 1 клиент:</span>
+          <span class="font-bold text-gray-900 en">Total for 1 client:</span>
+          <span class="text-red-500 font-extrabold text-xl bg">~9 минути</span>
+          <span class="text-red-500 font-extrabold text-xl en">~9 minutes</span>
+        </div>
+      </div>
+
+      <!-- With system -->
+      <div class="bg-white rounded-2xl border border-green-100 p-8 reveal reveal-right">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center">
+            <span class="text-xl">⚡</span>
+          </div>
+          <div>
+            <h3 class="font-extrabold text-gray-900 bg">Karoleva Billing — за 1 клиент</h3>
+            <h3 class="font-extrabold text-gray-900 en">Karoleva Billing — for 1 client</h3>
+            <p class="text-green-600 text-sm font-bold bg">~1 секунда</p>
+            <p class="text-green-600 text-sm font-bold en">~1 second</p>
+          </div>
+        </div>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3 py-3 border-b border-gray-50">
+            <span class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center text-xs font-bold text-green-600">✓</span>
+            <span class="text-gray-700 text-sm bg">Системата вижда всички просрочени фактури автоматично</span>
+            <span class="text-gray-700 text-sm en">System sees all overdue invoices automatically</span>
+          </div>
+          <div class="flex items-center gap-3 py-3 border-b border-gray-50">
+            <span class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center text-xs font-bold text-green-600">✓</span>
+            <span class="text-gray-700 text-sm bg">Шаблонът е готов — на езика на клиента</span>
+            <span class="text-gray-700 text-sm en">Template ready — in the client's language</span>
+          </div>
+          <div class="flex items-center gap-3 py-3 border-b border-gray-50">
+            <span class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center text-xs font-bold text-green-600">✓</span>
+            <span class="text-gray-700 text-sm bg">Мейл адресите са вече въведени</span>
+            <span class="text-gray-700 text-sm en">Email addresses already stored</span>
+          </div>
+          <div class="flex items-center gap-3 py-3 border-b border-gray-50">
+            <span class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center text-xs font-bold text-green-600">✓</span>
+            <span class="text-gray-700 text-sm bg">Фактурите са снапшотнати в писмото</span>
+            <span class="text-gray-700 text-sm en">Invoices snapshotted in the email</span>
+          </div>
+          <div class="flex items-center gap-3 py-3">
+            <span class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center text-xs font-bold text-green-600">✓</span>
+            <span class="text-gray-700 text-sm bg">Натискате "Изпрати" — готово</span>
+            <span class="text-gray-700 text-sm en">Press "Send" — done</span>
+          </div>
+        </div>
+        <div class="mt-6 pt-4 border-t-2 border-green-100 flex items-center justify-between">
+          <span class="font-bold text-gray-900 bg">Общо за 1 клиент:</span>
+          <span class="font-bold text-gray-900 en">Total for 1 client:</span>
+          <span class="text-green-600 font-extrabold text-xl bg">~1 секунда</span>
+          <span class="text-green-600 font-extrabold text-xl en">~1 second</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive calculator -->
+    <div class="bg-white rounded-2xl border border-gray-100 p-8 md:p-12 shadow-sm reveal">
+      <div class="text-center mb-8">
+        <h3 class="text-2xl font-extrabold text-gray-900 mb-2">
+          <span class="bg">Изчислете спестеното си време</span>
+          <span class="en">Calculate your saved time</span>
+        </h3>
+        <p class="text-gray-600 bg">Колко длъжника изпращате напомняния на месец?</p>
+        <p class="text-gray-600 en">How many debtors do you send reminders to per month?</p>
+      </div>
+
+      <!-- Slider -->
+      <div class="max-w-xl mx-auto mb-8">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-sm text-gray-500 bg">Клиенти/месец</span>
+          <span class="text-sm text-gray-500 en">Clients/month</span>
+          <span class="font-extrabold text-2xl text-primary" id="slider-val">50</span>
+        </div>
+        <input type="range" min="1" max="500" value="50" id="time-slider"
+          class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+        <div class="flex justify-between text-xs text-gray-400 mt-2">
+          <span>1</span><span>100</span><span>200</span><span>300</span><span>400</span><span>500</span>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="text-center bg-red-50 rounded-2xl p-6 border border-red-100">
+          <p class="text-sm font-semibold text-red-400 mb-2 bg">Ръчно — месечно</p>
+          <p class="text-sm font-semibold text-red-400 mb-2 en">Manually — per month</p>
+          <p class="font-extrabold text-red-500 text-4xl" id="manual-time">450 мин</p>
+          <p class="text-red-400 text-sm mt-1" id="manual-hours">= 7.5 часа</p>
+          <p class="text-gray-500 text-xs mt-2 bg">по ~9 мин на клиент</p>
+          <p class="text-gray-500 text-xs mt-2 en">~9 min per client</p>
+        </div>
+        <div class="text-center bg-green-50 rounded-2xl p-6 border border-green-100">
+          <p class="text-sm font-semibold text-green-600 mb-2 bg">С Karoleva Billing</p>
+          <p class="text-sm font-semibold text-green-600 mb-2 en">With Karoleva Billing</p>
+          <p class="font-extrabold text-green-600 text-4xl bg">~1 мин</p>
+          <p class="font-extrabold text-green-600 text-4xl en">~1 min</p>
+          <p class="text-green-500 text-sm mt-1 bg">за всички клиенти</p>
+          <p class="text-green-500 text-sm mt-1 en">for all clients</p>
+          <p class="text-gray-500 text-xs mt-2 bg">системата работи вместо вас</p>
+          <p class="text-gray-500 text-xs mt-2 en">system works instead of you</p>
+        </div>
+        <div class="text-center bg-blue-50 rounded-2xl p-6 border border-blue-100">
+          <p class="text-sm font-semibold text-primary mb-2 bg">Спестявате месечно</p>
+          <p class="text-sm font-semibold text-primary mb-2 en">You save per month</p>
+          <p class="font-extrabold text-primary text-4xl" id="saved-time">449 мин</p>
+          <p class="text-primary text-sm mt-1" id="saved-hours">= 7.5 часа</p>
+          <p class="text-gray-500 text-xs mt-2 bg">= <span id="saved-days">~1 работен ден</span></p>
+          <p class="text-gray-500 text-xs mt-2 en">= <span id="saved-days-en">~1 work day</span></p>
+        </div>
+      </div>
+
+      <!-- Motivational message -->
+      <div class="mt-8 text-center bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-5 border border-blue-100">
+        <p class="font-bold text-gray-900 text-lg bg" id="motivation-bg"></p>
+        <p class="font-bold text-gray-900 text-lg en" id="motivation-en"></p>
+        <p class="text-gray-600 text-sm mt-2 bg">Това е реалното ви спестяване. Всеки месец.</p>
+        <p class="text-gray-600 text-sm mt-2 en">That's your real saving. Every month.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOSTING -->
+<section id="hosting" class="py-20 bg-white px-4">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="text-center mb-14 reveal">
+      <div class="inline-flex items-center gap-2 bg-green-50 text-green-700 text-sm font-bold px-4 py-2 rounded-full mb-6 border border-green-200">
+        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+        <span class="bg">Нулеви инфраструктурни разходи</span>
+        <span class="en">Zero infrastructure costs</span>
+      </div>
+      <h2 class="text-4xl font-extrabold text-gray-900 mb-4">
+        <span class="bg">Хостингът е при нас.<br><span class="text-primary">Вие не плащате нищо.</span></span>
+        <span class="en">Hosting is on us.<br><span class="text-primary">You pay nothing.</span></span>
+      </h2>
+      <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+        <span class="bg">Докато другите плащат отделно за домейн, хостинг и SSL — при нас всичко е включено в абонамента.</span>
+        <span class="en">While others pay separately for domain, hosting and SSL — with us everything is included in the subscription.</span>
+      </p>
+    </div>
+
+    <!-- Savings cards -->
+    <div class="grid md:grid-cols-4 gap-5 mb-12">
+      <div class="card-gradient-border card-hover p-6 reveal reveal-delay-1">
+        <div class="text-3xl mb-3">🌐</div>
+        <p class="font-bold text-gray-900 text-lg bg">Домейн</p>
+        <p class="font-bold text-gray-900 text-lg en">Domain</p>
+        <p class="text-gray-500 text-sm mb-4 bg">напр. firma.bg / firma.com</p>
+        <p class="text-gray-500 text-sm mb-4 en">e.g. company.bg / company.com</p>
+        <div class="flex items-end justify-between">
+          <div>
+            <p class="text-gray-400 line-through text-sm bg">~20€/год. другаде</p>
+            <p class="text-gray-400 line-through text-sm en">~20€/yr elsewhere</p>
+            <p class="text-green-600 font-extrabold text-2xl">0€</p>
+          </div>
+          <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded-full bg">спестено 20€</span>
+          <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded-full en">save 20€</span>
+        </div>
+      </div>
+
+      <div class="card-gradient-border card-hover p-6 reveal reveal-delay-2">
+        <div class="text-3xl mb-3">🖥️</div>
+        <p class="font-bold text-gray-900 text-lg bg">Хостинг</p>
+        <p class="font-bold text-gray-900 text-lg en">Hosting</p>
+        <p class="text-gray-500 text-sm mb-4 bg">бизнес shared hosting</p>
+        <p class="text-gray-500 text-sm mb-4 en">business shared hosting</p>
+        <div class="flex items-end justify-between">
+          <div>
+            <p class="text-gray-400 line-through text-sm bg">~150€/год. другаде</p>
+            <p class="text-gray-400 line-through text-sm en">~150€/yr elsewhere</p>
+            <p class="text-green-600 font-extrabold text-2xl">0€</p>
+          </div>
+          <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded-full bg">спестено 150€</span>
+          <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded-full en">save 150€</span>
+        </div>
+      </div>
+
+      <div class="card-gradient-border card-hover p-6 reveal reveal-delay-3">
+        <div class="text-3xl mb-3">🔒</div>
+        <p class="font-bold text-gray-900 text-lg bg">SSL сертификат</p>
+        <p class="font-bold text-gray-900 text-lg en">SSL certificate</p>
+        <p class="text-gray-500 text-sm mb-4 bg">https + защита на данните</p>
+        <p class="text-gray-500 text-sm mb-4 en">https + data protection</p>
+        <div class="flex items-end justify-between">
+          <div>
+            <p class="text-gray-400 line-through text-sm bg">~80€/год. другаде</p>
+            <p class="text-gray-400 line-through text-sm en">~80€/yr elsewhere</p>
+            <p class="text-green-600 font-extrabold text-2xl">0€</p>
+          </div>
+          <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded-full bg">спестено 80€</span>
+          <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded-full en">save 80€</span>
+        </div>
+      </div>
+
+      <div class="bg-primary rounded-2xl p-6 reveal reveal-delay-4 card-hover">
+        <div class="text-3xl mb-3">💰</div>
+        <p class="font-bold text-white text-lg bg">Общо спестени</p>
+        <p class="font-bold text-white text-lg en">Total saved</p>
+        <p class="text-white/70 text-sm mb-4 bg">на година спрямо самостоятелен хостинг</p>
+        <p class="text-white/70 text-sm mb-4 en">per year vs self-hosted</p>
+        <p class="text-white font-extrabold text-4xl counter" data-target="250">0€</p>
+        <p class="text-white/80 text-sm font-semibold mt-1 bg">в джоба ви всяка година</p>
+        <p class="text-white/80 text-sm font-semibold mt-1 en">in your pocket every year</p>
+      </div>
+    </div>
+
+    <!-- Comparison table -->
+    <div class="max-w-3xl mx-auto reveal">
+      <div class="overflow-x-auto">
+      <div class="rounded-2xl overflow-hidden border border-gray-100 shadow-sm min-w-[360px]">
+        <div class="grid grid-cols-3 bg-gray-50 px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">
+          <span class="bg">Разход</span><span class="en">Cost</span>
+          <span class="text-center bg">Самостоятелно</span><span class="text-center en">Self-managed</span>
+          <span class="text-center text-primary bg">При нас</span><span class="text-center text-primary en">With us</span>
+        </div>
+        <div class="compare-row grid grid-cols-3 px-6 py-4 border-t border-gray-100 text-gray-700 text-sm">
+          <span class="bg">Домейн/год.</span><span class="en">Domain/yr.</span>
+          <span class="text-center text-red-500 font-medium">~20€</span>
+          <span class="text-center text-green-600 font-bold">0€</span>
+        </div>
+        <div class="compare-row grid grid-cols-3 px-6 py-4 border-t border-gray-100 text-gray-700 text-sm">
+          <span class="bg">Хостинг/год.</span><span class="en">Hosting/yr.</span>
+          <span class="text-center text-red-500 font-medium">~150€</span>
+          <span class="text-center text-green-600 font-bold">0€</span>
+        </div>
+        <div class="compare-row grid grid-cols-3 px-6 py-4 border-t border-gray-100 text-gray-700 text-sm">
+          <span class="bg">SSL сертификат/год.</span><span class="en">SSL certificate/yr.</span>
+          <span class="text-center text-red-500 font-medium">~80€</span>
+          <span class="text-center text-green-600 font-bold">0€</span>
+        </div>
+        <div class="compare-row grid grid-cols-3 px-6 py-4 border-t border-gray-100 text-gray-700 text-sm">
+          <span class="bg">Техническа поддръжка</span><span class="en">Technical support</span>
+          <span class="text-center text-red-500 font-medium bg">сами</span><span class="text-center text-red-500 font-medium en">on your own</span>
+          <span class="text-center text-green-600 font-bold bg">включено</span><span class="text-center text-green-600 font-bold en">included</span>
+        </div>
+        <div class="compare-row grid grid-cols-3 px-6 py-4 border-t border-gray-100 text-gray-700 text-sm">
+          <span class="bg">Бекъпи</span><span class="en">Backups</span>
+          <span class="text-center text-red-500 font-medium bg">ръчно</span><span class="text-center text-red-500 font-medium en">manual</span>
+          <span class="text-center text-green-600 font-bold bg">автоматично</span><span class="text-center text-green-600 font-bold en">automatic</span>
+        </div>
+        <div class="grid grid-cols-3 px-6 py-5 border-t border-gray-200 bg-gray-50">
+          <span class="font-bold text-gray-900 bg">Общо/год.</span><span class="font-bold text-gray-900 en">Total/yr.</span>
+          <span class="text-center text-red-500 font-extrabold text-lg">~250€</span>
+          <span class="text-center text-green-600 font-extrabold text-lg">0€</span>
+        </div>
+      </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="py-20 bg-gray-50 px-4">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <h2 class="text-4xl font-extrabold text-gray-900 mb-4">
+        <span class="bg">Всичко, което ви трябва</span>
+        <span class="en">Everything you need</span>
+      </h2>
+      <p class="text-gray-500 text-lg max-w-2xl mx-auto">
+        <span class="bg">Пълна система за управление — от фактурите до напомнянията и отчетите.</span>
+        <span class="en">Complete management system — from invoices to reminders and reports.</span>
+      </p>
+    </div>
+
+    <div class="bento-grid">
+
+      <!-- Card 1 — big -->
+      <div class="col-span-1 md:col-span-2 card-gradient-border card-hover p-8">
+        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+          <span class="text-2xl">📧</span>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">
+          <span class="bg">Автоматични напомняния по имейл</span>
+          <span class="en">Automatic email reminders</span>
+        </h3>
+        <p class="text-gray-600">
+          <span class="bg">Системата изпраща напомняния на езика на клиента — BG или EN, в зависимост от националността на фирмата. Множество мейл адреси на фирма, снапшот на фактурите в писмото и защита от спам (email cooldown).</span>
+          <span class="en">The system sends reminders in the client's language — BG or EN, depending on the company's nationality. Multiple email addresses per company, invoice snapshot in the email, and anti-spam protection (email cooldown).</span>
+        </p>
+      </div>
+
+      <div class="card-gradient-border card-hover p-8">
+        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+          <span class="text-2xl">📊</span>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">
+          <span class="bg">Dashboard в реално време</span>
+          <span class="en">Real-time dashboard</span>
+        </h3>
+        <p class="text-gray-600">
+          <span class="bg">Пълна картина на бизнеса — live брояч на мейлите, обща дължима сума, графики и топ длъжници.</span>
+          <span class="en">Complete business overview — live email counter, total due amount, charts and top debtors.</span>
+        </p>
+      </div>
+
+      <div class="card-gradient-border card-hover p-8">
+        <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+          <span class="text-2xl">📈</span>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">
+          <span class="bg">Приходи и статистики</span>
+          <span class="en">Revenue & statistics</span>
+        </h3>
+        <p class="text-gray-600">
+          <span class="bg">Bar chart за последните 3/6/12 месеца, aging report по периоди (0-30, 30-60, 60-90, 90+ дни) и топ длъжници.</span>
+          <span class="en">Bar chart for last 3/6/12 months, aging report by period, and top debtors widget.</span>
+        </p>
+      </div>
+
+      <div class="card-gradient-border card-hover p-8">
+        <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center mb-4">
+          <span class="text-2xl">🔄</span>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">
+          <span class="bg">Импорт от Excel</span>
+          <span class="en">Excel import</span>
+        </h3>
+        <p class="text-gray-600">
+          <span class="bg">Импорт на фактури и мейл адреси директно от XLS файлове. Автоматично засичане на дублирани клиенти.</span>
+          <span class="en">Import invoices and email addresses directly from XLS files. Automatic duplicate client detection.</span>
+        </p>
+      </div>
+
+      <div class="card-gradient-border card-hover p-8">
+        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4">
+          <span class="text-2xl">🔀</span>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">
+          <span class="bg">Обединяване на дубликати</span>
+          <span class="en">Duplicate merging</span>
+        </h3>
+        <p class="text-gray-600">
+          <span class="bg">Автоматично и ръчно обединяване на дублирани клиенти — прехвърля фактури, мейли и история.</span>
+          <span class="en">Automatic and manual merging of duplicate clients — transfers invoices, emails and history.</span>
+        </p>
+      </div>
+
+      <div class="card-gradient-border card-hover p-8">
+        <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-4">
+          <span class="text-2xl">📋</span>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">
+          <span class="bg">Activity Log</span>
+          <span class="en">Activity Log</span>
+        </h3>
+        <p class="text-gray-600">
+          <span class="bg">Пълна история — кой, кога и какво е правил. Маркиране платено/неплатено, изпратени мейли, импорти.</span>
+          <span class="en">Full history — who, when and what. Mark paid/unpaid, sent emails, imports.</span>
+        </p>
+      </div>
+
+      <div class="card-gradient-border card-hover p-8">
+        <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center mb-4">
+          <span class="text-2xl">💾</span>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">
+          <span class="bg">Backup & Restore</span>
+          <span class="en">Backup & Restore</span>
+        </h3>
+        <p class="text-gray-600">
+          <span class="bg">Пълно резервно копие на всички данни с един клик. Атомарно възстановяване — или всичко, или нищо.</span>
+          <span class="en">Full data backup with one click. Atomic restore — all or nothing.</span>
+        </p>
+      </div>
+
+      <div class="card-gradient-border card-hover p-8">
+        <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
+          <span class="text-2xl">📑</span>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">
+          <span class="bg">PDF отчети</span>
+          <span class="en">PDF reports</span>
+        </h3>
+        <p class="text-gray-600">
+          <span class="bg">PDF отчет по клиент с платени и неплатени фактури, обобщение и дати на плащане.</span>
+          <span class="en">PDF report per client with paid and unpaid invoices, summary and payment dates.</span>
+        </p>
+      </div>
+
+      <!-- Big card -->
+      <div class="col-span-1 md:col-span-2 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl p-8 card-hover text-white">
+        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-4">
+          <span class="text-2xl">🔒</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">
+          <span class="bg">Сигурност и роли</span>
+          <span class="en">Security & roles</span>
+        </h3>
+        <p class="text-white/80">
+          <span class="bg">Роли admin/viewer, rate limiting, защита от brute force. Глобално търсене из цялата система. Mobile-friendly интерфейс.</span>
+          <span class="en">Admin/viewer roles, rate limiting, brute force protection. Global search across the entire system. Mobile-friendly interface.</span>
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span class="bg-white/20 text-white text-xs font-semibold px-3 py-1 rounded-full">Admin / Viewer</span>
+          <span class="bg-white/20 text-white text-xs font-semibold px-3 py-1 rounded-full">Rate Limiting</span>
+          <span class="bg-white/20 text-white text-xs font-semibold px-3 py-1 rounded-full bg">Глобално търсене</span>
+          <span class="bg-white/20 text-white text-xs font-semibold px-3 py-1 rounded-full en">Global search</span>
+          <span class="bg-white/20 text-white text-xs font-semibold px-3 py-1 rounded-full">Mobile-friendly</span>
+        </div>
+      </div>
+
+      <div class="card-gradient-border card-hover p-8">
+        <div class="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center mb-4">
+          <span class="text-2xl">🔍</span>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">
+          <span class="bg">Глобално търсене</span>
+          <span class="en">Global search</span>
+        </h3>
+        <p class="text-gray-600">
+          <span class="bg">Търсене из клиенти, фактури, мейли и активност — всичко на едно място с 3 символа.</span>
+          <span class="en">Search across clients, invoices, emails and activity — everything in one place with 3 characters.</span>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="py-20 bg-white px-4">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-14">
+      <h2 class="text-4xl font-extrabold text-gray-900 mb-4">
+        <span class="bg">Как работи</span>
+        <span class="en">How it works</span>
+      </h2>
+      <p class="text-gray-500 text-lg">
+        <span class="bg">Три стъпки до пълна автоматизация</span>
+        <span class="en">Three steps to full automation</span>
+      </p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <div class="w-16 h-16 step-num rounded-2xl flex items-center justify-center mx-auto mb-6 text-white text-2xl font-extrabold">1</div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">
+          <span class="bg">Инсталация и настройка</span>
+          <span class="en">Installation & setup</span>
+        </h3>
+        <p class="text-gray-600">
+          <span class="bg">Инсталираме системата на вашия хостинг. Настройваме SMTP, шаблони за мейли и потребители. Готово за 1 ден.</span>
+          <span class="en">We install the system on your hosting. We configure SMTP, email templates and users. Ready in 1 day.</span>
+        </p>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 step-num rounded-2xl flex items-center justify-center mx-auto mb-6 text-white text-2xl font-extrabold">2</div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">
+          <span class="bg">Импортирайте данните си</span>
+          <span class="en">Import your data</span>
+        </h3>
+        <p class="text-gray-600">
+          <span class="bg">Качете клиенти, фактури и мейл адреси от Excel. Системата автоматично засича дубликати и ги обединява.</span>
+          <span class="en">Upload clients, invoices and email addresses from Excel. The system automatically detects and merges duplicates.</span>
+        </p>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 step-num rounded-2xl flex items-center justify-center mx-auto mb-6 text-white text-2xl font-extrabold">3</div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">
+          <span class="bg">Автоматизацията работи</span>
+          <span class="en">Automation works</span>
+        </h3>
+        <p class="text-gray-600">
+          <span class="bg">Системата изпраща напомняния, следи плащанията и генерира отчети. Вие се фокусирате върху бизнеса.</span>
+          <span class="en">The system sends reminders, tracks payments and generates reports. You focus on the business.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXCEL IMPORT -->
+<section id="import" class="py-20 bg-white px-4">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-green-50 text-green-700 text-sm font-semibold px-4 py-2 rounded-full mb-6">
+          <span>📊</span>
+          <span class="bg">Спестете часове всеки месец</span>
+          <span class="en">Save hours every month</span>
+        </div>
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-6">
+          <span class="bg">Качете Excel файла.<br>Системата свърши останалото.</span>
+          <span class="en">Upload the Excel file.<br>The system does the rest.</span>
+        </h2>
+        <p class="text-gray-500 text-lg mb-8">
+          <span class="bg">Всяка фирма в края на месеца прави един Excel с фактурите — и ръчно отмята всяка платена. Губи се огромно количество време. При нас просто качвате файла и системата <strong class="text-gray-900">автоматично засича кои фактури са платени</strong> — сравнява по номер, сума и дата. Без ръчна работа.</span>
+          <span class="en">Every company at the end of the month makes an Excel with invoices — and manually checks each paid one. It wastes enormous time. With us, simply upload the file and the system <strong class="text-gray-900">automatically detects which invoices are paid</strong> — matches by number, amount and date. No manual work.</span>
+        </p>
+        <div class="space-y-4">
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+              <span class="text-red-500 text-sm font-bold">✕</span>
+            </div>
+            <div>
+              <p class="font-semibold text-gray-900 bg">Преди: ръчно отмятане</p>
+              <p class="font-semibold text-gray-900 en">Before: manual checking</p>
+              <p class="text-gray-500 text-sm bg">Отваряте Excel, търсите фактура по фактура, отмятате платените. 2-3 часа губен труд всеки месец.</p>
+              <p class="text-gray-500 text-sm en">Open Excel, search invoice by invoice, check off paid ones. 2-3 hours of wasted work every month.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+              <span class="text-green-500 text-sm font-bold">✓</span>
+            </div>
+            <div>
+              <p class="font-semibold text-gray-900 bg">Сега: качвате файла и готово</p>
+              <p class="font-semibold text-gray-900 en">Now: upload file and done</p>
+              <p class="text-gray-500 text-sm bg">Системата прочита Excel-а, засича платените фактури и ги маркира автоматично. 30 секунди.</p>
+              <p class="text-gray-500 text-sm en">The system reads the Excel, detects paid invoices and marks them automatically. 30 seconds.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+              <span class="text-primary text-sm font-bold">✓</span>
+            </div>
+            <div>
+              <p class="font-semibold text-gray-900 bg">Бонус: дубликатите изчезват</p>
+              <p class="font-semibold text-gray-900 en">Bonus: duplicates disappear</p>
+              <p class="text-gray-500 text-sm bg">При импорт системата автоматично засича дублирани фирми и ги обединява — фактури, мейли и история.</p>
+              <p class="text-gray-500 text-sm en">During import the system automatically detects duplicate companies and merges them — invoices, emails and history.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Screenshot placeholder -->
+      <div class="bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden">
+        <div class="bg-gray-100 border-b border-gray-200 px-4 py-3 flex items-center gap-2">
+          <div class="w-3 h-3 rounded-full bg-red-400"></div>
+          <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+          <div class="w-3 h-3 rounded-full bg-green-400"></div>
+          <span class="text-xs text-gray-400 ml-2 bg">Импорт на фактури</span>
+          <span class="text-xs text-gray-400 ml-2 en">Invoice import</span>
+        </div>
+        <div class="h-72 overflow-hidden p-3" style="font-size:10px;">
+          <div class="font-bold text-gray-900 mb-0.5" style="font-size:11px;">Импорт на Excel</div>
+          <div class="grid gap-3 h-full" style="grid-template-columns:1fr 1.8fr;">
+            <div class="space-y-2">
+              <div class="bg-blue-50 border border-blue-100 rounded-xl p-2.5">
+                <div class="font-semibold text-blue-700 mb-1" style="font-size:9px;">Excel file (.xlsx)</div>
+                <div class="text-gray-500 mb-2" style="font-size:8px;">Листът трябва да се казва <b>eur</b>. Данните от ред 10.</div>
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="bg-white border border-gray-200 text-gray-600 px-2 py-1 rounded cursor-pointer" style="font-size:8px;">Избор на файл</span>
+                  <span class="text-gray-400" style="font-size:8px;">вземания 03.07.2026.xlsx</span>
+                </div>
+                <div class="bg-blue-600 text-white text-center py-1 rounded-lg font-semibold" style="font-size:9px;">Импортирай</div>
+              </div>
+              <div class="bg-green-50 border border-green-100 rounded-xl p-2.5">
+                <div class="font-semibold text-green-700 mb-1" style="font-size:9px;">Създай резервно копие</div>
+                <div class="bg-green-600 text-white text-center py-1 rounded-lg font-semibold" style="font-size:8px;">Създай резервно копие</div>
+              </div>
+            </div>
+            <div>
+              <div class="font-semibold text-gray-700 mb-1.5" style="font-size:9px;">История на импортите</div>
+              <div class="grid mb-1" style="grid-template-columns:1.5fr 1fr 2fr;font-size:7.5px;color:#9ca3af;font-weight:700;gap:4px;">
+                <span>ФАЙЛ</span><span>ДАТА</span><span>РЕЗУЛТАТ</span>
+              </div>
+              <div class="space-y-0.5">
+                <div class="grid py-1 border-b border-gray-100" style="grid-template-columns:1.5fr 1fr 2fr;font-size:7.5px;color:#374151;gap:4px;">
+                  <span class="text-blue-500">вземания 03.07.2026.xlsx</span>
+                  <span class="text-gray-400">03.07.2026 07:06</span>
+                  <span class="text-green-600">19 нови, 478 обновени, 269 пропуснати</span>
+                </div>
+                <div class="grid py-1 border-b border-gray-100" style="grid-template-columns:1.5fr 1fr 2fr;font-size:7.5px;color:#374151;gap:4px;">
+                  <span class="text-gray-500">[manual backup…]</span>
+                  <span class="text-gray-400">02.07.2026 07:06</span>
+                  <span class="text-gray-400">0 нови, 0 обновени</span>
+                </div>
+                <div class="grid py-1 border-b border-gray-100" style="grid-template-columns:1.5fr 1fr 2fr;font-size:7.5px;color:#374151;gap:4px;">
+                  <span class="text-blue-500">вземания 01.07.2026.xlsx</span>
+                  <span class="text-gray-400">01.07.2026 14:09</span>
+                  <span class="text-green-600">0 нови, 896 обновени, 335 пропуснати</span>
+                </div>
+                <div class="grid py-1 border-b border-gray-100" style="grid-template-columns:1.5fr 1fr 2fr;font-size:7.5px;color:#374151;gap:4px;">
+                  <span class="text-gray-500">[manual backup…]</span>
+                  <span class="text-gray-400">30.06.2026 13:18</span>
+                  <span class="text-gray-400">0 нови, 0 обновени</span>
+                </div>
+                <div class="grid py-1" style="grid-template-columns:1.5fr 1fr 2fr;font-size:7.5px;color:#374151;gap:4px;">
+                  <span class="text-blue-500">вземания 28.06.2026.xlsx</span>
+                  <span class="text-gray-400">28.06.2026 13:12</span>
+                  <span class="text-green-600">13 нови, 883 обновени, 335 пропуснати</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATISTICS -->
+<section id="stats" class="py-20 bg-gray-50 px-4">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-14">
+      <div class="inline-flex items-center gap-2 bg-blue-50 text-primary text-sm font-semibold px-4 py-2 rounded-full mb-6">
+        <span>📊</span>
+        <span class="bg">Статистики в реално време</span>
+        <span class="en">Real-time statistics</span>
+      </div>
+      <h2 class="text-4xl font-extrabold text-gray-900 mb-4">
+        <span class="bg">Шефовете искат числа.<br>Системата ги дава.</span>
+        <span class="en">Management wants numbers.<br>The system delivers them.</span>
+      </h2>
+      <p class="text-gray-500 text-lg max-w-2xl mx-auto">
+        <span class="bg">Пълна бизнес картина на едно място — без Excel таблици, без ръчни изчисления, без чакане.</span>
+        <span class="en">Complete business picture in one place — no Excel sheets, no manual calculations, no waiting.</span>
+      </p>
+    </div>
+
+    <div class="space-y-16">
+
+      <!-- Stat 1: Dashboard overview -->
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden order-2 md:order-1">
+          <div class="bg-gray-100 border-b border-gray-200 px-4 py-3 flex items-center gap-2">
+            <div class="w-3 h-3 rounded-full bg-red-400"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+            <div class="w-3 h-3 rounded-full bg-green-400"></div>
+            <span class="text-xs text-gray-400 ml-2 bg">Dashboard — обща картина</span>
+            <span class="text-xs text-gray-400 ml-2 en">Dashboard — overview</span>
+          </div>
+          <div class="p-3 bg-gray-50 h-64 overflow-hidden" style="font-size:10px;">
+            <div class="grid grid-cols-3 gap-2 mb-2">
+              <div class="bg-white border border-gray-100 rounded-xl p-3">
+                <div class="flex items-center gap-1.5 mb-1"><span style="font-size:14px;">👥</span><span class="text-gray-400" style="font-size:8px;">КЛИЕНТИ С НЕПЛАТЕНИ ФАКТУРИ</span></div>
+                <div class="font-extrabold text-gray-900" style="font-size:22px;">180</div>
+              </div>
+              <div class="bg-white border border-gray-100 rounded-xl p-3">
+                <div class="flex items-center gap-1.5 mb-1"><span style="font-size:14px;">📄</span><span class="text-gray-400" style="font-size:8px;">НЕПЛАТЕНИ ФАКТУРИ</span></div>
+                <div class="font-extrabold text-gray-900" style="font-size:22px;">320</div>
+              </div>
+              <div class="bg-white border border-gray-100 rounded-xl p-3">
+                <div class="flex items-center gap-1.5 mb-1"><span style="font-size:14px;">💰</span><span class="text-gray-400" style="font-size:8px;">ОБЩА НЕПЛАТЕНА СУМА</span></div>
+                <div class="font-extrabold text-gray-900" style="font-size:13px;">842 500,00 €</div>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+              <div class="bg-red-50 border border-red-100 rounded-xl p-3">
+                <div class="flex items-center gap-1.5 mb-1"><span style="font-size:14px;">⏰</span><span class="text-red-400" style="font-size:8px;">ПРОСРОЧЕНИ ФАКТУРИ</span></div>
+                <div class="font-extrabold text-red-600" style="font-size:22px;">215</div>
+                <div class="text-red-400" style="font-size:8px;">508 750,68 €</div>
+              </div>
+              <div class="bg-blue-50 border border-blue-100 rounded-xl p-3">
+                <div class="flex items-center gap-1.5 mb-1"><span style="font-size:14px;">📧</span><span class="text-primary" style="font-size:8px;">ИЗПРАТЕНИ ПИСМА ДНЕС</span></div>
+                <div class="font-extrabold text-primary" style="font-size:22px;">47</div>
+                <div class="text-blue-400" style="font-size:8px;">последно: преди 12 мин</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order-1 md:order-2">
+          <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+            <span class="text-2xl">🏠</span>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">
+            <span class="bg">Обща картина на бизнеса</span>
+            <span class="en">Business overview</span>
+          </h3>
+          <p class="text-gray-600 mb-4">
+            <span class="bg">На главния екран виждате всичко наведнъж — общ брой клиенти, неплатени фактури, дължима сума, изпратени мейли днес. Без да отваряте нито един отчет.</span>
+            <span class="en">On the main screen you see everything at once — total clients, unpaid invoices, amount due, emails sent today. Without opening a single report.</span>
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-blue-50 text-primary text-xs font-semibold px-3 py-1 rounded-full bg">Общ брой клиенти</span>
+            <span class="bg-blue-50 text-primary text-xs font-semibold px-3 py-1 rounded-full bg">Неплатени фактури</span>
+            <span class="bg-blue-50 text-primary text-xs font-semibold px-3 py-1 rounded-full bg">Дължима сума €</span>
+            <span class="bg-blue-50 text-primary text-xs font-semibold px-3 py-1 rounded-full bg">Мейли днес</span>
+            <span class="bg-blue-50 text-primary text-xs font-semibold px-3 py-1 rounded-full en">Total clients</span>
+            <span class="bg-blue-50 text-primary text-xs font-semibold px-3 py-1 rounded-full en">Unpaid invoices</span>
+            <span class="bg-blue-50 text-primary text-xs font-semibold px-3 py-1 rounded-full en">Amount due €</span>
+            <span class="bg-blue-50 text-primary text-xs font-semibold px-3 py-1 rounded-full en">Emails today</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stat 2: Revenue chart -->
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+            <span class="text-2xl">📈</span>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">
+            <span class="bg">Приходи по месеци</span>
+            <span class="en">Monthly revenue</span>
+          </h3>
+          <p class="text-gray-600 mb-4">
+            <span class="bg">Bar chart с приходите за последните 3, 6 или 12 месеца. Виждате кои месеци са силни, кои слаби и каква е тенденцията. С един поглед разбирате дали бизнесът расте.</span>
+            <span class="en">Bar chart with revenue for the last 3, 6 or 12 months. See which months are strong, which are weak and what the trend is. At a glance you understand if the business is growing.</span>
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-green-50 text-green-700 text-xs font-semibold px-3 py-1 rounded-full bg">Последните 3 месеца</span>
+            <span class="bg-green-50 text-green-700 text-xs font-semibold px-3 py-1 rounded-full bg">Последните 6 месеца</span>
+            <span class="bg-green-50 text-green-700 text-xs font-semibold px-3 py-1 rounded-full bg">Последните 12 месеца</span>
+            <span class="bg-green-50 text-green-700 text-xs font-semibold px-3 py-1 rounded-full en">Last 3 months</span>
+            <span class="bg-green-50 text-green-700 text-xs font-semibold px-3 py-1 rounded-full en">Last 6 months</span>
+            <span class="bg-green-50 text-green-700 text-xs font-semibold px-3 py-1 rounded-full en">Last 12 months</span>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden">
+          <div class="bg-gray-100 border-b border-gray-200 px-4 py-3 flex items-center gap-2">
+            <div class="w-3 h-3 rounded-full bg-red-400"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+            <div class="w-3 h-3 rounded-full bg-green-400"></div>
+            <span class="text-xs text-gray-400 ml-2 bg">Приходи по месеци — bar chart</span>
+            <span class="text-xs text-gray-400 ml-2 en">Monthly revenue — bar chart</span>
+          </div>
+          <div class="p-3 bg-white h-64 overflow-hidden" style="font-size:10px;">
+            <div class="flex items-center justify-between mb-2">
+              <div>
+                <div class="font-semibold text-gray-700" style="font-size:10px;">Платено / Неплатено по месец</div>
+                <div class="text-gray-400" style="font-size:8px;">Суми в EUR</div>
+              </div>
+              <div class="flex gap-1">
+                <span class="bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded" style="font-size:8px;">Дн</span>
+                <span class="bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded" style="font-size:8px;">3М</span>
+                <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded" style="font-size:8px;">6М</span>
+                <span class="bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded" style="font-size:8px;">12М</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 mb-2">
+              <div class="flex items-center gap-1"><span class="w-3 h-1 rounded bg-green-500 inline-block"></span><span class="text-gray-500" style="font-size:8px;">Платено</span></div>
+              <div class="flex items-center gap-1"><span class="w-3 h-1 rounded bg-red-400 inline-block"></span><span class="text-gray-500" style="font-size:8px;">Неплатено</span></div>
+            </div>
+            <svg viewBox="0 0 380 130" class="w-full" style="height:130px;">
+              <defs>
+                <linearGradient id="gPaid" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#10b981" stop-opacity="0.25"/><stop offset="100%" stop-color="#10b981" stop-opacity="0.02"/></linearGradient>
+                <linearGradient id="gUnpaid" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f87171" stop-opacity="0.2"/><stop offset="100%" stop-color="#f87171" stop-opacity="0.02"/></linearGradient>
+              </defs>
+              <!-- Y axis labels -->
+              <text x="2" y="12" font-size="7" fill="#9ca3af">1 800 000 €</text>
+              <text x="2" y="42" font-size="7" fill="#9ca3af">1 200 000 €</text>
+              <text x="2" y="72" font-size="7" fill="#9ca3af">600 000 €</text>
+              <text x="2" y="102" font-size="7" fill="#9ca3af">0 €</text>
+              <!-- grid lines -->
+              <line x1="55" y1="8" x2="375" y2="8" stroke="#f1f5f9" stroke-width="1"/>
+              <line x1="55" y1="38" x2="375" y2="38" stroke="#f1f5f9" stroke-width="1"/>
+              <line x1="55" y1="68" x2="375" y2="68" stroke="#f1f5f9" stroke-width="1"/>
+              <line x1="55" y1="98" x2="375" y2="98" stroke="#f1f5f9" stroke-width="1"/>
+              <!-- Paid area -->
+              <path d="M60,98 L100,98 L130,97 L160,96 L190,95 L220,60 L250,25 L275,10 L310,20 L340,98 L375,98" fill="url(#gPaid)" stroke="none"/>
+              <path d="M60,98 L100,98 L130,97 L160,96 L190,95 L220,60 L250,25 L275,10 L310,20 L340,98 L375,98" fill="none" stroke="#10b981" stroke-width="2" stroke-linejoin="round"/>
+              <!-- Unpaid area -->
+              <path d="M60,98 L100,98 L130,97 L160,96 L190,95 L220,70 L250,45 L275,38 L310,55 L340,75 L375,80" fill="url(#gUnpaid)" stroke="none"/>
+              <path d="M60,98 L100,98 L130,97 L160,96 L190,95 L220,70 L250,45 L275,38 L310,55 L340,75 L375,80" fill="none" stroke="#f87171" stroke-width="2" stroke-linejoin="round"/>
+              <!-- Dots paid -->
+              <circle cx="60" cy="98" r="3" fill="#10b981"/><circle cx="100" cy="98" r="3" fill="#10b981"/><circle cx="130" cy="97" r="3" fill="#10b981"/><circle cx="160" cy="96" r="3" fill="#10b981"/><circle cx="190" cy="95" r="3" fill="#10b981"/><circle cx="220" cy="60" r="3" fill="#10b981"/><circle cx="250" cy="25" r="3" fill="#10b981"/><circle cx="275" cy="10" r="3" fill="#10b981"/><circle cx="310" cy="20" r="3" fill="#10b981"/><circle cx="340" cy="98" r="3" fill="#10b981"/><circle cx="375" cy="98" r="3" fill="#10b981"/>
+              <!-- Dots unpaid -->
+              <circle cx="60" cy="98" r="3" fill="#f87171"/><circle cx="220" cy="70" r="3" fill="#f87171"/><circle cx="250" cy="45" r="3" fill="#f87171"/><circle cx="275" cy="38" r="3" fill="#f87171"/><circle cx="310" cy="55" r="3" fill="#f87171"/><circle cx="340" cy="75" r="3" fill="#f87171"/><circle cx="375" cy="80" r="3" fill="#f87171"/>
+              <!-- X axis labels -->
+              <text x="55" y="115" font-size="7" fill="#9ca3af" text-anchor="middle">Feb</text>
+              <text x="100" y="115" font-size="7" fill="#9ca3af" text-anchor="middle">Mar</text>
+              <text x="130" y="115" font-size="7" fill="#9ca3af" text-anchor="middle">Apr</text>
+              <text x="160" y="115" font-size="7" fill="#9ca3af" text-anchor="middle">May</text>
+              <text x="220" y="115" font-size="7" fill="#9ca3af" text-anchor="middle">Jun</text>
+              <text x="275" y="115" font-size="7" fill="#9ca3af" text-anchor="middle">Jul</text>
+              <text x="340" y="115" font-size="7" fill="#9ca3af" text-anchor="middle">Aug</text>
+              <text x="375" y="115" font-size="7" fill="#9ca3af" text-anchor="middle">Sep</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stat 3: Aging report -->
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden order-2 md:order-1">
+          <div class="bg-gray-100 border-b border-gray-200 px-4 py-3 flex items-center gap-2">
+            <div class="w-3 h-3 rounded-full bg-red-400"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+            <div class="w-3 h-3 rounded-full bg-green-400"></div>
+            <span class="text-xs text-gray-400 ml-2 bg">Aging report — просрочени</span>
+            <span class="text-xs text-gray-400 ml-2 en">Aging report — overdue</span>
+          </div>
+          <div class="p-3 bg-white h-64 overflow-hidden" style="font-size:10px;">
+            <div class="flex items-center gap-1.5 mb-3">
+              <span style="font-size:12px;">⏳</span>
+              <span class="font-semibold text-gray-600 uppercase tracking-wider" style="font-size:8px;">Просрочени по давност</span>
+            </div>
+            <div class="grid grid-cols-4 gap-2 mb-3">
+              <div class="border border-yellow-200 bg-yellow-50 rounded-xl p-3 text-center">
+                <div class="text-yellow-700 font-semibold mb-1" style="font-size:9px;">0–30 дни</div>
+                <div class="font-extrabold text-yellow-600" style="font-size:22px;">95</div>
+                <div class="text-yellow-600 mt-0.5" style="font-size:8px;">248 500,00 €</div>
+              </div>
+              <div class="border border-orange-200 bg-orange-50 rounded-xl p-3 text-center">
+                <div class="text-orange-700 font-semibold mb-1" style="font-size:9px;">31–60 дни</div>
+                <div class="font-extrabold text-orange-600" style="font-size:22px;">38</div>
+                <div class="text-orange-600 mt-0.5" style="font-size:8px;">97 200,00 €</div>
+              </div>
+              <div class="border border-red-200 bg-red-50 rounded-xl p-3 text-center">
+                <div class="text-red-700 font-semibold mb-1" style="font-size:9px;">61–90 дни</div>
+                <div class="font-extrabold text-red-600" style="font-size:22px;">22</div>
+                <div class="text-red-600 mt-0.5" style="font-size:8px;">58 400,00 €</div>
+              </div>
+              <div class="border border-red-300 bg-red-100 rounded-xl p-3 text-center">
+                <div class="text-red-800 font-semibold mb-1" style="font-size:9px;">90+ дни</div>
+                <div class="font-extrabold text-red-700" style="font-size:22px;">142</div>
+                <div class="text-red-700 mt-0.5" style="font-size:8px;">198 750,00 €</div>
+              </div>
+            </div>
+            <!-- progress bars -->
+            <div class="space-y-1.5">
+              <div class="flex items-center gap-2">
+                <span class="text-gray-500 w-14 text-right" style="font-size:8px;">0–30 дни</span>
+                <div class="flex-1 bg-gray-100 rounded-full h-2"><div class="bg-yellow-400 h-2 rounded-full" style="width:32%"></div></div>
+                <span class="text-gray-500" style="font-size:8px;">32%</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-gray-500 w-14 text-right" style="font-size:8px;">31–60 дни</span>
+                <div class="flex-1 bg-gray-100 rounded-full h-2"><div class="bg-orange-400 h-2 rounded-full" style="width:13%"></div></div>
+                <span class="text-gray-500" style="font-size:8px;">13%</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-gray-500 w-14 text-right" style="font-size:8px;">61–90 дни</span>
+                <div class="flex-1 bg-gray-100 rounded-full h-2"><div class="bg-red-400 h-2 rounded-full" style="width:8%"></div></div>
+                <span class="text-gray-500" style="font-size:8px;">8%</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-gray-500 w-14 text-right" style="font-size:8px;">90+ дни</span>
+                <div class="flex-1 bg-gray-100 rounded-full h-2"><div class="bg-red-700 h-2 rounded-full" style="width:47%"></div></div>
+                <span class="text-gray-500" style="font-size:8px;">47%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order-1 md:order-2">
+          <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4">
+            <span class="text-2xl">⏰</span>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">
+            <span class="bg">Aging report — кой закъснява и с колко</span>
+            <span class="en">Aging report — who is late and by how much</span>
+          </h3>
+          <p class="text-gray-600 mb-4">
+            <span class="bg">Просрочените фактури са разпределени в 4 периода — 0-30, 30-60, 60-90 и над 90 дни. Веднага виждате кои клиенти закъсняват сериозно и кои са на ръба. Приоритизирате кого да търсите пръв.</span>
+            <span class="en">Overdue invoices are distributed in 4 periods — 0-30, 30-60, 60-90 and over 90 days. Immediately see which clients are seriously late and which are borderline. Prioritize who to contact first.</span>
+          </p>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="bg-green-50 rounded-xl p-3 text-center aging-bucket">
+              <p class="text-green-700 font-bold text-sm">0–30 дни</p>
+              <p class="text-green-600 text-xs bg">Леко просрочени</p>
+              <p class="text-green-600 text-xs en">Slightly overdue</p>
+            </div>
+            <div class="bg-yellow-50 rounded-xl p-3 text-center aging-bucket">
+              <p class="text-yellow-700 font-bold text-sm">30–60 дни</p>
+              <p class="text-yellow-600 text-xs bg">Нужно внимание</p>
+              <p class="text-yellow-600 text-xs en">Needs attention</p>
+            </div>
+            <div class="bg-orange-50 rounded-xl p-3 text-center aging-bucket">
+              <p class="text-orange-700 font-bold text-sm">60–90 дни</p>
+              <p class="text-orange-600 text-xs bg">Критично</p>
+              <p class="text-orange-600 text-xs en">Critical</p>
+            </div>
+            <div class="bg-red-50 rounded-xl p-3 text-center aging-bucket">
+              <p class="text-red-700 font-bold text-sm">90+ дни</p>
+              <p class="text-red-600 text-xs bg">Спешни мерки</p>
+              <p class="text-red-600 text-xs en">Urgent action</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stat 4: Top debtors -->
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+            <span class="text-2xl">🏆</span>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">
+            <span class="bg">Топ длъжници</span>
+            <span class="en">Top debtors</span>
+          </h3>
+          <p class="text-gray-600 mb-4">
+            <span class="bg">Класация на клиентите с най-голяма дължима сума. Виждате кои 5-10 фирми държат най-много пари и можете веднага да действате — изпращате напомняне директно от списъка.</span>
+            <span class="en">Ranking of clients with the highest amount due. See which 5-10 companies hold the most money and can immediately act — send a reminder directly from the list.</span>
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-purple-50 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full bg">Сортиране по сума</span>
+            <span class="bg-purple-50 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full bg">Директно напомняне</span>
+            <span class="bg-purple-50 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full bg">Брой фактури</span>
+            <span class="bg-purple-50 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full en">Sort by amount</span>
+            <span class="bg-purple-50 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full en">Direct reminder</span>
+            <span class="bg-purple-50 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full en">Invoice count</span>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden">
+          <div class="bg-gray-100 border-b border-gray-200 px-4 py-3 flex items-center gap-2">
+            <div class="w-3 h-3 rounded-full bg-red-400"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+            <div class="w-3 h-3 rounded-full bg-green-400"></div>
+            <span class="text-xs text-gray-400 ml-2 bg">Топ длъжници</span>
+            <span class="text-xs text-gray-400 ml-2 en">Top debtors</span>
+          </div>
+          <div class="p-3 bg-white h-64 overflow-hidden" style="font-size:10px;">
+            <div class="flex items-center gap-1.5 mb-2">
+              <span style="font-size:12px;">🏆</span>
+              <span class="font-semibold text-gray-600 uppercase tracking-wider" style="font-size:8px;">Топ длъжници</span>
+            </div>
+            <div class="space-y-1">
+              <div class="flex items-center justify-between py-1.5 border-b border-gray-50">
+                <span class="font-semibold text-gray-800" style="font-size:9px;">ТРАНС ЛОГИСТИК ООД</span>
+                <div class="flex items-center gap-3">
+                  <span class="text-gray-400" style="font-size:8px;">48 фактури ✉ 2</span>
+                  <span class="font-extrabold text-red-500" style="font-size:10px;">98 450,00 €</span>
+                </div>
+              </div>
+              <div class="flex items-center justify-between py-1.5 border-b border-gray-50">
+                <span class="font-semibold text-gray-800" style="font-size:9px;">КАРГО ГРУП С.Р.Л.</span>
+                <div class="flex items-center gap-3">
+                  <span class="text-gray-400" style="font-size:8px;">22 фактури ✉ 4</span>
+                  <span class="font-extrabold text-red-500" style="font-size:10px;">87 300,00 €</span>
+                </div>
+              </div>
+              <div class="flex items-center justify-between py-1.5 border-b border-gray-50">
+                <span class="font-semibold text-gray-800" style="font-size:9px;">БАЛКАН ФРЕЙТ ЛТД</span>
+                <div class="flex items-center gap-3">
+                  <span class="text-gray-400" style="font-size:8px;">18 фактури ✉ 0</span>
+                  <span class="font-extrabold text-red-500" style="font-size:10px;">54 200,00 €</span>
+                </div>
+              </div>
+              <div class="flex items-center justify-between py-1.5 border-b border-gray-50">
+                <span class="font-semibold text-gray-800" style="font-size:9px;">ЕВРОПЕЙСКИ СПЕД С.А.</span>
+                <div class="flex items-center gap-3">
+                  <span class="text-gray-400" style="font-size:8px;">8 фактури ✉ 6</span>
+                  <span class="font-extrabold text-red-500" style="font-size:10px;">31 800,00 €</span>
+                </div>
+              </div>
+              <div class="flex items-center justify-between py-1.5">
+                <span class="font-semibold text-gray-800" style="font-size:9px;">ГЛОБАЛ ТРАНЗИТ ООД</span>
+                <div class="flex items-center gap-3">
+                  <span class="text-gray-400" style="font-size:8px;">5 фактури ✉ 2</span>
+                  <span class="font-extrabold text-red-500" style="font-size:10px;">19 250,00 €</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stat 5: Client PDF -->
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden order-2 md:order-1">
+          <div class="bg-gray-100 border-b border-gray-200 px-4 py-3 flex items-center gap-2">
+            <div class="w-3 h-3 rounded-full bg-red-400"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+            <div class="w-3 h-3 rounded-full bg-green-400"></div>
+            <span class="text-xs text-gray-400 ml-2 bg">PDF отчет по клиент</span>
+            <span class="text-xs text-gray-400 ml-2 en">PDF report per client</span>
+          </div>
+          <div class="p-3 bg-white h-64 overflow-hidden" style="font-size:10px;">
+            <div class="font-bold text-gray-900 mb-1" style="font-size:11px;">Activity Log</div>
+            <div class="text-gray-400 mb-2" style="font-size:8px;">Хронологичен запис на всички действия в системата.</div>
+            <div class="grid mb-2" style="grid-template-columns:1fr 0.6fr 1.2fr 2fr 1.4fr;font-size:7.5px;color:#9ca3af;font-weight:700;gap:4px;padding:0 4px;">
+              <span>ДАТА / ЧАС</span><span>ПОТРЕБИТЕЛ</span><span>ДЕЙСТВИЕ</span><span>ДЕТАЙЛ</span><span>КЛИЕНТ</span>
+            </div>
+            <div class="space-y-0.5">
+              <div class="grid items-center py-1 border-b border-gray-50" style="grid-template-columns:1fr 0.6fr 1.2fr 2fr 1.4fr;font-size:8px;color:#374151;gap:4px;padding:0 4px;">
+                <span class="text-gray-400">03.07.2026 09:14</span>
+                <span>Admin</span>
+                <span class="bg-blue-100 text-blue-600 px-1 py-0.5 rounded text-center font-semibold" style="font-size:7px;">✉ Изпратено</span>
+                <span class="text-gray-500 truncate">accounting@translogbg.com</span>
+                <span class="font-semibold">ТРАНС ЛОГИСТИК ООД</span>
+              </div>
+              <div class="grid items-center py-1 border-b border-gray-50" style="grid-template-columns:1fr 0.6fr 1.2fr 2fr 1.4fr;font-size:8px;color:#374151;gap:4px;padding:0 4px;">
+                <span class="text-gray-400">03.07.2026 09:02</span>
+                <span>Admin</span>
+                <span class="bg-blue-100 text-blue-600 px-1 py-0.5 rounded text-center font-semibold" style="font-size:7px;">✉ Изпратено</span>
+                <span class="text-gray-500 truncate">office@cargogrup.it</span>
+                <span class="font-semibold">КАРГО ГРУП С.Р.Л.</span>
+              </div>
+              <div class="grid items-center py-1 border-b border-gray-50" style="grid-template-columns:1fr 0.6fr 1.2fr 2fr 1.4fr;font-size:8px;color:#374151;gap:4px;padding:0 4px;">
+                <span class="text-gray-400">03.07.2026 08:55</span>
+                <span>Admin</span>
+                <span class="bg-blue-100 text-blue-600 px-1 py-0.5 rounded text-center font-semibold" style="font-size:7px;">✉ Изпратено</span>
+                <span class="text-gray-500 truncate">finance@balkanfr.com, info@balkanfr.com</span>
+                <span class="font-semibold">БАЛКАН ФРЕЙТ ЛТД</span>
+              </div>
+              <div class="grid items-center py-1 border-b border-gray-50" style="grid-template-columns:1fr 0.6fr 1.2fr 2fr 1.4fr;font-size:8px;color:#374151;gap:4px;padding:0 4px;">
+                <span class="text-gray-400">03.07.2026 08:41</span>
+                <span>Admin</span>
+                <span class="bg-blue-100 text-blue-600 px-1 py-0.5 rounded text-center font-semibold" style="font-size:7px;">✉ Изпратено</span>
+                <span class="text-gray-500 truncate">accounts@eurosped.eu</span>
+                <span class="font-semibold">ЕВРОПЕЙСКИ СПЕД С.А.</span>
+              </div>
+              <div class="grid items-center py-1" style="grid-template-columns:1fr 0.6fr 1.2fr 2fr 1.4fr;font-size:8px;color:#374151;gap:4px;padding:0 4px;">
+                <span class="text-gray-400">03.07.2026 08:30</span>
+                <span>boika</span>
+                <span class="bg-green-100 text-green-600 px-1 py-0.5 rounded text-center font-semibold" style="font-size:7px;">✓ Платено</span>
+                <span class="text-gray-500 truncate">INV-2025-0847 — 3 200,00 €</span>
+                <span class="font-semibold">ТРАНС СОЛЮШЪН ЕООД</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order-1 md:order-2">
+          <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
+            <span class="text-2xl">📑</span>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">
+            <span class="bg">PDF отчет по клиент — за срещи</span>
+            <span class="en">PDF report per client — for meetings</span>
+          </h3>
+          <p class="text-gray-600 mb-4">
+            <span class="bg">Пълна история за всяка фирма — платени и неплатени фактури, дати, суми, обобщение. Генерирате PDF за 5 секунди и го носите на среща с клиента. Никога повече "ще проверя и ще ви пратя".</span>
+            <span class="en">Complete history for every company — paid and unpaid invoices, dates, amounts, summary. Generate PDF in 5 seconds and take it to a client meeting. Never again "I'll check and send you".</span>
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-orange-50 text-orange-700 text-xs font-semibold px-3 py-1 rounded-full bg">Платени фактури</span>
+            <span class="bg-orange-50 text-orange-700 text-xs font-semibold px-3 py-1 rounded-full bg">Неплатени фактури</span>
+            <span class="bg-orange-50 text-orange-700 text-xs font-semibold px-3 py-1 rounded-full bg">Обобщение</span>
+            <span class="bg-orange-50 text-orange-700 text-xs font-semibold px-3 py-1 rounded-full en">Paid invoices</span>
+            <span class="bg-orange-50 text-orange-700 text-xs font-semibold px-3 py-1 rounded-full en">Unpaid invoices</span>
+            <span class="bg-orange-50 text-orange-700 text-xs font-semibold px-3 py-1 rounded-full en">Summary</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="py-20 bg-gray-50 px-4">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-14">
+      <h2 class="text-4xl font-extrabold text-gray-900 mb-4">
+        <span class="bg">Прозрачни цени</span>
+        <span class="en">Transparent pricing</span>
+      </h2>
+      <p class="text-gray-500 text-lg">
+        <span class="bg">Абонамент + поддръжка според обема на фактурите ви</span>
+        <span class="en">Subscription + support based on your invoice volume</span>
+      </p>
+    </div>
+
+    <!-- Subscription -->
+    <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">
+      <span class="bg">Абонамент (включва инсталация)</span>
+      <span class="en">Subscription (includes installation)</span>
+    </h3>
+    <div class="grid md:grid-cols-4 gap-6 mb-16">
+      <div class="bg-white rounded-2xl p-6 border border-gray-100 text-center card-hover">
+        <p class="text-gray-500 font-medium mb-2 bg">1 месец</p>
+        <p class="text-gray-500 font-medium mb-2 en">1 month</p>
+        <p class="text-4xl font-extrabold text-gray-900 mb-1">150€</p>
+        <p class="text-gray-400 text-sm bg">без отстъпка</p>
+        <p class="text-gray-400 text-sm en">no discount</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 border border-gray-100 text-center card-hover">
+        <p class="text-gray-500 font-medium mb-2 bg">3 месеца</p>
+        <p class="text-gray-500 font-medium mb-2 en">3 months</p>
+        <p class="text-4xl font-extrabold text-gray-900 mb-1">405€</p>
+        <p class="text-green-600 text-sm font-semibold bg">Спестявате 45€ (10%)</p>
+        <p class="text-green-600 text-sm font-semibold en">Save 45€ (10%)</p>
+      </div>
+      <div class="price-popular bg-white rounded-2xl p-6 text-center card-hover z-10">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full bg">Най-популярен</div>
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full en">Most popular</div>
+        <p class="text-gray-500 font-medium mb-2 mt-2 bg">6 месеца</p>
+        <p class="text-gray-500 font-medium mb-2 mt-2 en">6 months</p>
+        <p class="text-4xl font-extrabold text-gray-900 mb-1">765€</p>
+        <p class="text-green-600 text-sm font-semibold bg">Спестявате 135€ (15%)</p>
+        <p class="text-green-600 text-sm font-semibold en">Save 135€ (15%)</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 border border-gray-100 text-center card-hover">
+        <p class="text-gray-500 font-medium mb-2 bg">12 месеца</p>
+        <p class="text-gray-500 font-medium mb-2 en">12 months</p>
+        <p class="text-4xl font-extrabold text-gray-900 mb-1">1,440€</p>
+        <p class="text-green-600 text-sm font-semibold bg">Спестявате 360€ (20%)</p>
+        <p class="text-green-600 text-sm font-semibold en">Save 360€ (20%)</p>
+      </div>
+    </div>
+
+    <!-- Support -->
+    <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">
+      <span class="bg">Поддръжка</span>
+      <span class="en">Support</span>
+    </h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="card-gradient-border card-hover p-8">
+        <h4 class="text-xl font-bold text-gray-900 mb-1">Basic</h4>
+        <p class="text-gray-400 text-sm mb-4 bg">до 100 фактури/месец</p>
+        <p class="text-gray-400 text-sm mb-4 en">up to 100 invoices/month</p>
+        <p class="text-3xl font-extrabold text-gray-900 mb-6">29€<span class="text-base font-normal text-gray-400 bg">/месец</span><span class="text-base font-normal text-gray-400 en">/month</span></p>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <span class="bg">Email поддръжка</span><span class="en">Email support</span></li>
+          <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <span class="bg">Актуализации</span><span class="en">Updates</span></li>
+          <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <span class="bg">Bug fixes</span><span class="en">Bug fixes</span></li>
+        </ul>
+      </div>
+      <div class="bg-primary rounded-2xl p-8 text-white card-hover">
+        <h4 class="text-xl font-bold mb-1">Standard</h4>
+        <p class="text-white/70 text-sm mb-4 bg">до 500 фактури/месец</p>
+        <p class="text-white/70 text-sm mb-4 en">up to 500 invoices/month</p>
+        <p class="text-3xl font-extrabold mb-6">59€<span class="text-base font-normal text-white/70 bg">/месец</span><span class="text-base font-normal text-white/70 en">/month</span></p>
+        <ul class="space-y-2 text-sm text-white/90">
+          <li class="flex items-center gap-2"><span class="text-white">✓</span> <span class="bg">Email поддръжка</span><span class="en">Email support</span></li>
+          <li class="flex items-center gap-2"><span class="text-white">✓</span> <span class="bg">Актуализации</span><span class="en">Updates</span></li>
+          <li class="flex items-center gap-2"><span class="text-white">✓</span> <span class="bg">Bug fixes</span><span class="en">Bug fixes</span></li>
+          <li class="flex items-center gap-2"><span class="text-white">✓</span> <span class="bg">Приоритетен отговор 48ч</span><span class="en">Priority response 48h</span></li>
+        </ul>
+      </div>
+      <div class="card-gradient-border card-hover p-8">
+        <h4 class="text-xl font-bold text-gray-900 mb-1">Pro</h4>
+        <p class="text-gray-400 text-sm mb-4 bg">Неограничени фактури</p>
+        <p class="text-gray-400 text-sm mb-4 en">Unlimited invoices</p>
+        <p class="text-3xl font-extrabold text-gray-900 mb-6">99€<span class="text-base font-normal text-gray-400 bg">/месец</span><span class="text-base font-normal text-gray-400 en">/month</span></p>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <span class="bg">Email поддръжка</span><span class="en">Email support</span></li>
+          <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <span class="bg">Актуализации</span><span class="en">Updates</span></li>
+          <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <span class="bg">Bug fixes</span><span class="en">Bug fixes</span></li>
+          <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <span class="bg">Приоритетен отговор 24ч</span><span class="en">Priority response 24h</span></li>
+          <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <span class="bg">Неограничени фактури</span><span class="en">Unlimited invoices</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="py-20 bg-gray-50 px-4 overflow-hidden">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <h2 class="text-4xl font-extrabold text-gray-900 mb-2">
+        <span class="bg">Какво казват клиентите ни</span>
+        <span class="en">What our clients say</span>
+      </h2>
+      <div class="flex items-center justify-center gap-1 mt-3">
+        <span class="text-yellow-400 text-xl">★★★★★</span>
+        <span class="text-gray-500 text-sm ml-2 bg">5.0 от 5 — всички клиенти препоръчват</span>
+        <span class="text-gray-500 text-sm ml-2 en">5.0 out of 5 — all clients recommend</span>
+      </div>
+    </div>
+
+    <!-- Slider -->
+    <div class="relative">
+      <div class="overflow-hidden rounded-2xl" id="slider-viewport">
+        <div class="slider-track" id="slider-track">
+
+          <!-- Slide 1 -->
+          <div class="slide px-2">
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="testimonial-card rounded-2xl p-8">
+                <span class="text-yellow-400 text-lg">★★★★★</span>
+                <p class="text-gray-600 my-5 bg">"Преди губехме по 3-4 часа седмично в напомняния по телефона. Сега системата го прави автоматично и събираемостта ни се е увеличила с 40%."</p>
+                <p class="text-gray-600 my-5 en">"We used to waste 3-4 hours a week on phone reminders. Now the system does it automatically and our collection rate has increased by 40%."</p>
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center font-bold text-primary">МИ</div>
+                  <div><p class="font-semibold text-gray-900">Мартин Иванов</p><p class="text-gray-400 text-sm bg">Управител, Ивантранс ЕООД</p><p class="text-gray-400 text-sm en">Director, Ivantrans Ltd</p></div>
+                </div>
+              </div>
+              <div class="testimonial-card rounded-2xl p-8">
+                <span class="text-yellow-400 text-lg">★★★★★</span>
+                <p class="text-gray-600 my-5 bg">"Имаме клиенти от 5 различни страни. Системата автоматично им изпраща на техния език. Никога не сме изглеждали по-професионално."</p>
+                <p class="text-gray-600 my-5 en">"We have clients from 5 different countries. The system automatically sends in their language. We've never looked more professional."</p>
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center font-bold text-green-600">СГ</div>
+                  <div><p class="font-semibold text-gray-900">Симона Георгиева</p><p class="text-gray-400 text-sm bg">Счетоводител, Агроекспорт БГ ООД</p><p class="text-gray-400 text-sm en">Accountant, Agroexport BG Ltd</p></div>
+                </div>
+              </div>
+              <div class="testimonial-card rounded-2xl p-8">
+                <span class="text-yellow-400 text-lg">★★★★★</span>
+                <p class="text-gray-600 my-5 bg">"Dashboard-ът ни дава пълна картина на бизнеса. Виждаме кои клиенти закъсняват, колко дълго и за колко. Незаменимо."</p>
+                <p class="text-gray-600 my-5 en">"The dashboard gives us a complete business picture. We see which clients are late, how long and how much. Indispensable."</p>
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center font-bold text-purple-600">ПД</div>
+                  <div><p class="font-semibold text-gray-900">Петър Димитров</p><p class="text-gray-400 text-sm bg">Собственик, Димтех Инженеринг ЕООД</p><p class="text-gray-400 text-sm en">Owner, Dimtech Engineering Ltd</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="slide px-2">
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="testimonial-card rounded-2xl p-8">
+                <span class="text-yellow-400 text-lg">★★★★★</span>
+                <p class="text-gray-600 my-5 bg">"Инсталацията стана за един ден. Импортирахме 800 фактури от Excel и всичко беше на място. Поддръжката е бърза и отзивчива."</p>
+                <p class="text-gray-600 my-5 en">"Installation took one day. We imported 800 invoices from Excel and everything was in place. Support is fast and responsive."</p>
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center font-bold text-orange-600">ЕН</div>
+                  <div><p class="font-semibold text-gray-900">Елена Николова</p><p class="text-gray-400 text-sm bg">Финансов директор, Норд Лоджистик ООД</p><p class="text-gray-400 text-sm en">CFO, Nord Logistics Ltd</p></div>
+                </div>
+              </div>
+              <div class="testimonial-card rounded-2xl p-8">
+                <span class="text-yellow-400 text-lg">★★★★★</span>
+                <p class="text-gray-600 my-5 bg">"PDF отчетите по клиент ни спестиха огромно количество ръчна работа. Сега при среща с клиент извеждаме историята за 30 секунди."</p>
+                <p class="text-gray-600 my-5 en">"PDF reports per client saved us enormous manual work. Now in a client meeting we pull up history in 30 seconds."</p>
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center font-bold text-teal-600">ВС</div>
+                  <div><p class="font-semibold text-gray-900">Васил Стоянов</p><p class="text-gray-400 text-sm bg">Управител, Евробилд Констракшън ЕООД</p><p class="text-gray-400 text-sm en">Director, Eurobuild Construction Ltd</p></div>
+                </div>
+              </div>
+              <div class="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl p-8 flex flex-col justify-between">
+                <p class="text-white/90 text-lg font-medium mb-6 bg">"Не плащаме нито за домейн, нито за хостинг. Всичко е включено. Това само по себе си си е спестена стотина евро на година."</p>
+                <p class="text-white/90 text-lg font-medium mb-6 en">"We pay nothing for domain or hosting. Everything is included. That alone saves us a hundred euros a year."</p>
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center font-bold text-white">КП</div>
+                  <div><p class="font-semibold text-white">Калин Петров</p><p class="text-white/75 text-sm bg">Собственик, КП Груп ЕООД</p><p class="text-white/75 text-sm en">Owner, KP Group Ltd</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Prev/Next -->
+      <button onclick="slideChange(-1)" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 w-10 h-10 bg-white rounded-full shadow-lg border border-gray-100 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all z-10">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      </button>
+      <button onclick="slideChange(1)" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 w-10 h-10 bg-white rounded-full shadow-lg border border-gray-100 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all z-10">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+
+    <!-- Dots -->
+    <div class="flex items-center justify-center gap-2 mt-8" id="slider-dots">
+      <div class="slider-dot active" onclick="slideTo(0)"></div>
+      <div class="slider-dot" onclick="slideTo(1)"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-20 bg-gray-50 px-4">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-14">
+      <h2 class="text-4xl font-extrabold text-gray-900 mb-4">
+        <span class="bg">Често задавани въпроси</span>
+        <span class="en">Frequently asked questions</span>
+      </h2>
+    </div>
+    <div class="space-y-4">
+
+      <details class="faq-item bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <summary class="flex items-center justify-between p-6 font-semibold text-gray-900">
+          <span class="bg">На какъв хостинг работи системата?</span>
+          <span class="en">What hosting does the system work on?</span>
+          <span class="faq-icon text-primary text-2xl leading-none">+</span>
+        </summary>
+        <div class="px-6 pb-6 text-gray-500">
+          <span class="bg">Системата работи на shared hosting (cPanel), VPS или dedicated server. Изисква PHP 8.1+ и MySQL. Инсталацията се извършва от нас.</span>
+          <span class="en">The system works on shared hosting (cPanel), VPS or dedicated server. Requires PHP 8.1+ and MySQL. Installation is performed by us.</span>
+        </div>
+      </details>
+
+      <details class="faq-item bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <summary class="flex items-center justify-between p-6 font-semibold text-gray-900">
+          <span class="bg">Мога ли да импортирам съществуващи данни?</span>
+          <span class="en">Can I import existing data?</span>
+          <span class="faq-icon text-primary text-2xl leading-none">+</span>
+        </summary>
+        <div class="px-6 pb-6 text-gray-500">
+          <span class="bg">Да — системата поддържа импорт на клиенти, фактури и мейл адреси от Excel (XLS/XLSX). Автоматично засичаме и обединяваме дублирани клиенти.</span>
+          <span class="en">Yes — the system supports importing clients, invoices and email addresses from Excel (XLS/XLSX). We automatically detect and merge duplicate clients.</span>
+        </div>
+      </details>
+
+      <details class="faq-item bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <summary class="flex items-center justify-between p-6 font-semibold text-gray-900">
+          <span class="bg">На колко езика изпраща мейли?</span>
+          <span class="en">How many languages does the system send emails in?</span>
+          <span class="faq-icon text-primary text-2xl leading-none">+</span>
+        </summary>
+        <div class="px-6 pb-6 text-gray-500">
+          <span class="bg">Системата поддържа BG и EN по подразбиране. Езикът се определя автоматично по националността на клиента.</span>
+          <span class="en">The system supports BG and EN by default. The language is determined automatically by the client's nationality.</span>
+        </div>
+      </details>
+
+      <details class="faq-item bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <summary class="flex items-center justify-between p-6 font-semibold text-gray-900">
+          <span class="bg">Как се управляват потребителите?</span>
+          <span class="en">How are users managed?</span>
+          <span class="faq-icon text-primary text-2xl leading-none">+</span>
+        </summary>
+        <div class="px-6 pb-6 text-gray-500">
+          <span class="bg">Системата поддържа две роли: Admin (пълен достъп) и Viewer (само преглед). Може да имате неограничен брой потребители.</span>
+          <span class="en">The system supports two roles: Admin (full access) and Viewer (read-only). You can have unlimited users.</span>
+        </div>
+      </details>
+
+      <details class="faq-item bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <summary class="flex items-center justify-between p-6 font-semibold text-gray-900">
+          <span class="bg">Данните ми безопасни ли са?</span>
+          <span class="en">Is my data safe?</span>
+          <span class="faq-icon text-primary text-2xl leading-none">+</span>
+        </summary>
+        <div class="px-6 pb-6 text-gray-500">
+          <span class="bg">Системата работи на вашия собствен хостинг — данните ви са при вас. Вградена система за backup и restore с атомарно възстановяване.</span>
+          <span class="en">The system runs on your own hosting — your data stays with you. Built-in backup and restore with atomic recovery.</span>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-20 bg-white px-4">
+  <div class="max-w-2xl mx-auto">
+    <div class="text-center mb-10">
+      <h2 class="text-4xl font-extrabold text-gray-900 mb-4">
+        <span class="bg">Свържете се с нас</span>
+        <span class="en">Contact us</span>
+      </h2>
+      <p class="text-gray-500 text-lg">
+        <span class="bg">Отговаряме в рамките на 24 часа.</span>
+        <span class="en">We respond within 24 hours.</span>
+      </p>
+    </div>
+    <div data-fs-success class="hidden bg-green-50 border border-green-200 text-green-800 rounded-xl px-6 py-4 mb-4 text-center font-semibold">
+      <span class="bg">✓ Благодарим! Ще се свържем с вас до 24 часа.</span>
+      <span class="en">✓ Thank you! We'll contact you within 24 hours.</span>
+    </div>
+    <div data-fs-error class="hidden bg-red-50 border border-red-200 text-red-700 rounded-xl px-6 py-4 mb-4 text-center text-sm"></div>
+
+    <form id="contact-form" class="bg-white rounded-2xl border border-gray-100 shadow-lg p-8 space-y-5">
+      <div class="grid md:grid-cols-2 gap-5">
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-2">
+            <span class="bg">Вашето име</span>
+            <span class="en">Your name</span>
+          </label>
+          <input type="text" name="name" required class="w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="Иван Иванов">
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-2">
+            <span class="bg">Фирма</span>
+            <span class="en">Company</span>
+          </label>
+          <input type="text" name="company" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="Фирма ЕООД">
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+        <input type="email" name="email" required class="w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="ivan@firma.bg">
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-gray-700 mb-2">
+          <span class="bg">Интересувам се от</span>
+          <span class="en">I'm interested in</span>
+        </label>
+        <select name="plan" id="plan-select" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
+          <option value="1m" data-bg="1 месец — 150€" data-en="1 month — 150€">1 месец — 150€</option>
+          <option value="3m" data-bg="3 месеца — 405€" data-en="3 months — 405€">3 месеца — 405€</option>
+          <option value="6m" selected data-bg="6 месеца — 765€" data-en="6 months — 765€">6 месеца — 765€</option>
+          <option value="12m" data-bg="12 месеца — 1,440€" data-en="12 months — 1,440€">12 месеца — 1,440€</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-gray-700 mb-2">
+          <span class="bg">Съобщение</span>
+          <span class="en">Message</span>
+        </label>
+        <textarea name="message" rows="4" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none" placeholder="..."></textarea>
+      </div>
+      <button type="submit" data-fs-submit-btn class="w-full btn-primary text-white font-bold py-4 rounded-xl text-lg disabled:opacity-60 disabled:cursor-not-allowed">
+        <span class="bg">Изпратете запитване</span>
+        <span class="en">Send inquiry</span>
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-gray-400 py-12 px-4">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 bg-primary rounded-xl flex items-center justify-center">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+        </div>
+        <span class="font-bold text-white text-lg">Karoleva Billing</span>
+      </div>
+      <p class="text-sm">
+        <span class="bg">© 2026 Karoleva Billing. Всички права запазени.</span>
+        <span class="en">© 2026 Karoleva Billing. All rights reserved.</span>
+      </p>
+      <a href="mailto:asenov78@gmail.com" class="text-sm hover:text-white transition-colors">asenov78@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: 'xvzjdodl' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
+<script>
+  // ── Time calculator ──
+  const slider = document.getElementById('time-slider');
+  function updateCalc() {
+    const n = parseInt(slider.value);
+    const manMin = n * 9;
+    const savedMin = manMin - 1;
+    const manH = (manMin / 60).toFixed(1);
+    const savedH = (savedMin / 60).toFixed(1);
+    const isEn = document.body.classList.contains('lang-en');
+    const minUnit = isEn ? ' min' : ' мин';
+    const hUnit = isEn ? ' hrs' : ' часа';
+
+    document.getElementById('slider-val').textContent = n;
+    document.getElementById('manual-time').textContent = manMin + minUnit;
+    document.getElementById('manual-hours').textContent = '= ' + manH + hUnit;
+    document.getElementById('saved-time').textContent = savedMin + minUnit;
+    document.getElementById('saved-hours').textContent = '= ' + savedH + hUnit;
+
+    let msgBg, msgEn, days;
+    if (n <= 5) {
+      days = '~1 час'; msgBg = '🟡 Дори 5 клиента ви коства час на месец.'; msgEn = '🟡 Even 5 clients costs you an hour a month.';
+    } else if (n <= 20) {
+      days = '~' + Math.round(savedH / 8 * 10) / 10 + ' работни дни'; msgBg = '🟠 ' + savedH + ' часа губите всеки месец в мейли. Вземете ги обратно.'; msgEn = '🟠 You waste ' + savedH + ' hours every month on emails. Take them back.';
+    } else if (n <= 50) {
+      days = '~' + Math.round(savedH / 8) + ' работни дни'; msgBg = '🔴 ' + Math.round(savedH / 8) + ' работни дни губите всеки месец само за напомняния!'; msgEn = '🔴 You lose ' + Math.round(savedH / 8) + ' work days every month just on reminders!';
+    } else if (n <= 100) {
+      days = '~' + Math.round(savedH / 8) + ' работни дни'; msgBg = '🔴 Цяла работна седмица изяждат напомнянията ви всеки месец!'; msgEn = '🔴 A whole work week eaten by reminders every month!';
+    } else {
+      const weeks = Math.round(savedH / 40 * 10) / 10;
+      days = '~' + weeks + ' работни седмици'; msgBg = '🚨 ' + weeks + ' работни седмици на месец — само за мейли. Това е нечовешко.'; msgEn = '🚨 ' + weeks + ' work weeks per month — just for emails. That\'s inhuman.';
+    }
+
+    document.getElementById('saved-days').textContent = days;
+    document.getElementById('saved-days-en').textContent = days;
+    document.getElementById('motivation-bg').textContent = msgBg;
+    document.getElementById('motivation-en').textContent = msgEn;
+  }
+  if (slider) { slider.addEventListener('input', updateCalc); updateCalc(); }
+
+  // ── Stats: count-up + typewriter ──
+  function runStatSpin(el) {
+    const val = parseInt(el.dataset.val);
+    const suffix = el.dataset.suffix || '';
+    const dur = 1800;
+    el.textContent = '0' + suffix;
+    let startTime = null;
+    function step(ts) {
+      if (!startTime) startTime = ts;
+      const p = Math.min((ts - startTime) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.floor(eased * val) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  function runStatType(el) {
+    const txt = el.dataset.text;
+    el.textContent = '_';
+    let i = 0;
+    const iv = setInterval(() => {
+      i++;
+      el.textContent = txt.slice(0, i) + (i < txt.length ? '_' : '');
+      if (i >= txt.length) clearInterval(iv);
+    }, 90);
+  }
+  // Reset all stat values to 0/empty so animation is visible
+  document.querySelectorAll('.stat-spin').forEach(el => { el.textContent = '0' + (el.dataset.suffix || ''); });
+  document.querySelectorAll('.stat-type').forEach(el => { el.textContent = '_'; });
+
+  const statIO = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      if (el.classList.contains('stat-spin')) runStatSpin(el);
+      if (el.classList.contains('stat-type')) runStatType(el);
+      statIO.unobserve(el);
+    });
+  }, { threshold: 0.3, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.stat-spin, .stat-type').forEach(el => statIO.observe(el));
+
+  // ── Testimonials slider ──
+  let currentSlide = 0;
+  const totalSlides = 2;
+  function slideTo(n) {
+    currentSlide = (n + totalSlides) % totalSlides;
+    document.getElementById('slider-track').style.transform = `translateX(-${currentSlide * 100}%)`;
+    document.querySelectorAll('.slider-dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+  }
+  function slideChange(dir) { slideTo(currentSlide + dir); }
+  // Auto-advance
+  setInterval(() => slideChange(1), 6000);
+
+  // ── Scroll reveal ──
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+
+  // ── Counter animation ──
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target);
+    const duration = 1800;
+    const start = performance.now();
+    function step(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(eased * target) + '€';
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  const counterIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { animateCounter(e.target); counterIO.unobserve(e.target); } });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.counter[data-target]').forEach(el => counterIO.observe(el));
+
+  function setLang(lang) {
+    document.body.className = document.body.className.replace(/lang-\w+/g, '') + ' lang-' + lang;
+    document.getElementById('btn-bg').className = lang === 'bg'
+      ? 'text-xs font-semibold px-2 py-1 rounded transition-colors text-primary bg-blue-50'
+      : 'text-xs font-semibold px-2 py-1 rounded transition-colors text-gray-400 hover:text-primary';
+    document.getElementById('btn-en').className = lang === 'en'
+      ? 'text-xs font-semibold px-2 py-1 rounded transition-colors text-primary bg-blue-50'
+      : 'text-xs font-semibold px-2 py-1 rounded transition-colors text-gray-400 hover:text-primary';
+    localStorage.setItem('lang', lang);
+    document.querySelectorAll('#plan-select option').forEach(opt => {
+      opt.textContent = opt.dataset[lang] || opt.dataset.bg;
+    });
+    if (slider) updateCalc();
+  }
+
+  // Restore lang preference
+  const saved = localStorage.getItem('lang');
+  if (saved) {
+    setLang(saved);
+  } else {
+    const bl = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    setLang(bl.startsWith('bg') ? 'bg' : 'en');
+  }
+
+  // Back to top
+  const btt = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    const show = window.scrollY > 400;
+    btt.style.opacity = show ? '1' : '0';
+    btt.style.pointerEvents = show ? 'auto' : 'none';
+  }, { passive: true });
+</script>
+
+<!-- Back to top button -->
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Нагоре"
+  style="opacity:0;pointer-events:none;transition:opacity 0.3s ease;"
+  class="fixed bottom-6 right-6 z-50 w-10 h-10 bg-white border border-gray-200 rounded-full shadow-md flex items-center justify-center text-gray-400 hover:text-primary hover:border-blue-300 hover:shadow-blue-100/60 hover:-translate-y-0.5 transition-all">
+  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+  </svg>
+</button>
+</body>
+</html>

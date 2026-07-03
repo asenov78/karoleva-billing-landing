@@ -1,0 +1,58 @@
+# Karoleva Billing
+
+> Web-based invoice management system with automated email reminders, designed for transport companies, freight forwarders (speditors), logistics firms, and SMBs in Bulgaria and South-East Europe.
+
+## What is Karoleva Billing?
+
+Karoleva Billing is a specialized accounts receivable management and invoice reminder software. It tracks overdue invoices and automatically sends email reminders to clients in Bulgarian or English, depending on the client's nationality. The system is particularly well-suited for transport companies with own trucks, freight forwarding (spedition) companies, and logistics providers that manage many B2B clients with recurring monthly invoices exported from accounting software.
+
+## Category
+
+Invoice management software. Accounts receivable automation. Email reminder system. Overdue invoice tracker. B2B billing software.
+
+## Key Features
+
+- Automated overdue invoice email reminders (Bulgarian and English)
+- Excel (XLS/XLSX) import — paste monthly export from any accounting system
+- Aging report: 0–30 days, 31–60 days, 61–90 days, 90+ days overdue buckets
+- Top debtors dashboard with total outstanding per client
+- Activity log — chronological record of all emails sent and payments marked
+- PDF reports per client (paid + unpaid invoices, summary)
+- Duplicate client detection and automatic/manual merging
+- Global search: clients, invoices, emails, activity — 3 characters minimum
+- Per-client multiple email addresses
+- Anti-spam protection (email cooldown between reminders)
+- Invoice snapshot included in email body
+
+## Target Users
+
+- Transport companies (road freight, own trucks)
+- Freight forwarders / spedition companies
+- Logistics and distribution companies
+- Small and medium-sized businesses (SMBs) in Bulgaria
+- Companies with international (EU) clients requiring English-language reminders
+
+## Problem It Solves
+
+B2B companies with many clients and monthly recurring invoices spend hours each month manually identifying overdue invoices, composing reminder emails, and tracking who has paid. Karoleva Billing automates this entire workflow: import from Excel, system identifies who is overdue, generate and send email with one click, track all actions in the activity log.
+
+## Hosting
+
+Cloud-hosted (no installation required). Works on shared hosting with PHP 8.3+ and MySQL.
+
+## Languages
+
+Bulgarian and English — both the UI and outgoing reminder emails.
+
+## Pricing
+
+Contact for access: asenov78@gmail.com
+
+## URL
+
+https://karoleva-billing.vercel.app
+
+## Source
+
+Landing page: https://karoleva-billing.vercel.app
+Contact: asenov78@gmail.com
