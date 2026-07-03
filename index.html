@@ -310,6 +310,9 @@
     @media (max-width: 768px) { .bento-grid { grid-template-columns: 1fr; } }
     @media (min-width: 769px) and (max-width: 1024px) { .bento-grid { grid-template-columns: repeat(2, 1fr); } }
 
+    /* Period toggle active */
+    .active-period { background: #fff; color: #1e293b; box-shadow: 0 1px 4px rgba(0,0,0,0.10); }
+
     /* Popular price card */
     .price-popular { position: relative; }
     .price-popular::before {
@@ -2198,100 +2201,160 @@
 <!-- PRICING -->
 <section id="pricing" class="py-20 bg-gray-50 px-4">
   <div class="max-w-7xl mx-auto">
-    <div class="text-center mb-14">
+    <div class="text-center mb-10">
       <h2 class="text-4xl font-extrabold text-gray-900 mb-4">
         <span class="bg">Прозрачни цени</span>
         <span class="en">Transparent pricing</span>
       </h2>
       <p class="text-gray-500 text-lg">
-        <span class="bg">Абонамент + поддръжка според обема на фактурите ви</span>
-        <span class="en">Subscription + support based on your invoice volume</span>
+        <span class="bg">Поддръжката, актуализациите и инсталацията са включени във всеки план.</span>
+        <span class="en">Support, updates and installation are included in every plan.</span>
       </p>
     </div>
 
-    <!-- Subscription -->
-    <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">
-      <span class="bg">Абонамент (включва инсталация)</span>
-      <span class="en">Subscription (includes installation)</span>
-    </h3>
-    <div class="grid md:grid-cols-4 gap-6 mb-16">
-      <div class="bg-white rounded-2xl p-6 border border-gray-100 text-center card-hover">
-        <p class="text-gray-500 font-medium mb-2 bg">1 месец</p>
-        <p class="text-gray-500 font-medium mb-2 en">1 month</p>
-        <p class="text-4xl font-extrabold text-gray-900 mb-1">150€</p>
-        <p class="text-gray-400 text-sm bg">без отстъпка</p>
-        <p class="text-gray-400 text-sm en">no discount</p>
-      </div>
-      <div class="bg-white rounded-2xl p-6 border border-gray-100 text-center card-hover">
-        <p class="text-gray-500 font-medium mb-2 bg">3 месеца</p>
-        <p class="text-gray-500 font-medium mb-2 en">3 months</p>
-        <p class="text-4xl font-extrabold text-gray-900 mb-1">405€</p>
-        <p class="text-green-600 text-sm font-semibold bg">Спестявате 45€ (10%)</p>
-        <p class="text-green-600 text-sm font-semibold en">Save 45€ (10%)</p>
-      </div>
-      <div class="price-popular bg-white rounded-2xl p-6 text-center card-hover z-10">
-        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full bg">Най-популярен</div>
-        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full en">Most popular</div>
-        <p class="text-gray-500 font-medium mb-2 mt-2 bg">6 месеца</p>
-        <p class="text-gray-500 font-medium mb-2 mt-2 en">6 months</p>
-        <p class="text-4xl font-extrabold text-gray-900 mb-1">765€</p>
-        <p class="text-green-600 text-sm font-semibold bg">Спестявате 135€ (15%)</p>
-        <p class="text-green-600 text-sm font-semibold en">Save 135€ (15%)</p>
-      </div>
-      <div class="bg-white rounded-2xl p-6 border border-gray-100 text-center card-hover">
-        <p class="text-gray-500 font-medium mb-2 bg">12 месеца</p>
-        <p class="text-gray-500 font-medium mb-2 en">12 months</p>
-        <p class="text-4xl font-extrabold text-gray-900 mb-1">1,440€</p>
-        <p class="text-green-600 text-sm font-semibold bg">Спестявате 360€ (20%)</p>
-        <p class="text-green-600 text-sm font-semibold en">Save 360€ (20%)</p>
+    <!-- Period toggle -->
+    <div class="flex justify-center mb-10">
+      <div class="inline-flex bg-gray-100 rounded-xl p-1 gap-1">
+        <button onclick="setPeriod('3')" id="period-btn-3" class="period-btn active-period px-5 py-2 rounded-lg text-sm font-bold transition-all">
+          <span class="bg">3 месеца</span><span class="en">3 months</span>
+          <span class="ml-1.5 text-xs text-green-600 font-semibold">−5%</span>
+        </button>
+        <button onclick="setPeriod('6')" id="period-btn-6" class="period-btn px-5 py-2 rounded-lg text-sm font-bold transition-all text-gray-500">
+          <span class="bg">6 месеца</span><span class="en">6 months</span>
+          <span class="ml-1.5 text-xs text-green-600 font-semibold">−10%</span>
+        </button>
+        <button onclick="setPeriod('12')" id="period-btn-12" class="period-btn px-5 py-2 rounded-lg text-sm font-bold transition-all text-gray-500">
+          <span class="bg">12 месеца</span><span class="en">12 months</span>
+          <span class="ml-1.5 text-xs text-green-600 font-semibold">−20%</span>
+        </button>
       </div>
     </div>
 
-    <!-- Support -->
-    <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">
-      <span class="bg">Поддръжка</span>
-      <span class="en">Support</span>
-    </h3>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="card-gradient-border card-hover p-8">
-        <h4 class="text-xl font-bold text-gray-900 mb-1">Basic</h4>
-        <p class="text-gray-400 text-sm mb-4 bg">до 100 фактури/месец</p>
-        <p class="text-gray-400 text-sm mb-4 en">up to 100 invoices/month</p>
-        <p class="text-3xl font-extrabold text-gray-900 mb-6">29€<span class="text-base font-normal text-gray-400 bg">/месец</span><span class="text-base font-normal text-gray-400 en">/month</span></p>
-        <ul class="space-y-2 text-sm text-gray-600">
-          <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <span class="bg">Email поддръжка</span><span class="en">Email support</span></li>
-          <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <span class="bg">Актуализации</span><span class="en">Updates</span></li>
-          <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <span class="bg">Bug fixes</span><span class="en">Bug fixes</span></li>
+    <!-- Plan cards -->
+    <div class="grid md:grid-cols-3 gap-6 items-start">
+
+      <!-- Beginner -->
+      <div class="bg-white rounded-2xl p-8 border border-gray-100 card-hover">
+        <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Beginner</p>
+        <div class="mb-1">
+          <span class="text-5xl font-extrabold text-gray-900 price-mo" data-3="95" data-6="90" data-12="80">95</span>
+          <span class="text-gray-400 text-lg font-normal bg">/месец</span>
+          <span class="text-gray-400 text-lg font-normal en">/month</span>
+        </div>
+        <p class="text-sm text-gray-400 mb-1">
+          <span class="bg">Общо: </span><span class="en">Total: </span>
+          <strong class="text-gray-700 price-total" data-3="285" data-6="540" data-12="960">285€</strong>
+        </p>
+        <p class="text-xs text-green-600 font-semibold mb-6 price-save" data-3="Спестяваш 15€" data-6="Спестяваш 60€" data-12="Спестяваш 240€" data-3en="Save 15€" data-6en="Save 60€" data-12en="Save 240€">Спестяваш 15€</p>
+        <a href="#contact" class="block text-center border-2 border-primary text-primary font-bold py-3 rounded-xl hover:bg-blue-50 transition-colors mb-6 bg">Поискай демо</a>
+        <a href="#contact" class="block text-center border-2 border-primary text-primary font-bold py-3 rounded-xl hover:bg-blue-50 transition-colors mb-6 en">Request demo</a>
+        <ul class="space-y-2.5 text-sm text-gray-600">
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span class="bg">До 3 потребители</span><span class="en">Up to 3 users</span></li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span class="bg">Всички функции</span><span class="en">All features</span></li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span class="bg">9 езика за мейли</span><span class="en">9 email languages</span></li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span class="bg">Инсталация включена</span><span class="en">Installation included</span></li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span class="bg">Email поддръжка (72ч)</span><span class="en">Email support (72h)</span></li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span class="bg">Актуализации</span><span class="en">Updates</span></li>
         </ul>
       </div>
-      <div class="bg-primary rounded-2xl p-8 text-white card-hover">
-        <h4 class="text-xl font-bold mb-1">Standard</h4>
-        <p class="text-white/70 text-sm mb-4 bg">до 500 фактури/месец</p>
-        <p class="text-white/70 text-sm mb-4 en">up to 500 invoices/month</p>
-        <p class="text-3xl font-extrabold mb-6">59€<span class="text-base font-normal text-white/70 bg">/месец</span><span class="text-base font-normal text-white/70 en">/month</span></p>
-        <ul class="space-y-2 text-sm text-white/90">
-          <li class="flex items-center gap-2"><span class="text-white">✓</span> <span class="bg">Email поддръжка</span><span class="en">Email support</span></li>
-          <li class="flex items-center gap-2"><span class="text-white">✓</span> <span class="bg">Актуализации</span><span class="en">Updates</span></li>
-          <li class="flex items-center gap-2"><span class="text-white">✓</span> <span class="bg">Bug fixes</span><span class="en">Bug fixes</span></li>
-          <li class="flex items-center gap-2"><span class="text-white">✓</span> <span class="bg">Приоритетен отговор 48ч</span><span class="en">Priority response 48h</span></li>
+
+      <!-- Standard — highlighted -->
+      <div class="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl p-8 card-hover text-white relative shadow-2xl shadow-blue-500/30 scale-105">
+        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-yellow-400 text-gray-900 text-xs font-extrabold px-4 py-1 rounded-full uppercase tracking-wide bg">Най-популярен</div>
+        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-yellow-400 text-gray-900 text-xs font-extrabold px-4 py-1 rounded-full uppercase tracking-wide en">Most popular</div>
+        <p class="text-xs font-bold text-white/60 uppercase tracking-widest mb-3 mt-2">Standard</p>
+        <div class="mb-1">
+          <span class="text-5xl font-extrabold text-white price-mo" data-3="143" data-6="135" data-12="120">143</span>
+          <span class="text-white/70 text-lg font-normal bg">/месец</span>
+          <span class="text-white/70 text-lg font-normal en">/month</span>
+        </div>
+        <p class="text-sm text-white/60 mb-1">
+          <span class="bg">Общо: </span><span class="en">Total: </span>
+          <strong class="text-white price-total" data-3="428" data-6="810" data-12="1 440">428€</strong>
+        </p>
+        <p class="text-xs text-yellow-300 font-semibold mb-6 price-save" data-3="Спестяваш 22€" data-6="Спестяваш 90€" data-12="Спестяваш 360€" data-3en="Save 22€" data-6en="Save 90€" data-12en="Save 360€">Спестяваш 22€</p>
+        <a href="#contact" class="block text-center bg-white text-blue-700 font-bold py-3 rounded-xl hover:bg-blue-50 transition-colors mb-6 bg">Поискай демо</a>
+        <a href="#contact" class="block text-center bg-white text-blue-700 font-bold py-3 rounded-xl hover:bg-blue-50 transition-colors mb-6 en">Request demo</a>
+        <ul class="space-y-2.5 text-sm text-white/90">
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-yellow-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span class="bg">До 10 потребители</span><span class="en">Up to 10 users</span></li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-yellow-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span class="bg">Всички функции</span><span class="en">All features</span></li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-yellow-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span class="bg">9 езика за мейли</span><span class="en">9 email languages</span></li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-yellow-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span class="bg">Инсталация включена</span><span class="en">Installation included</span></li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-yellow-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span class="bg">Приоритетна поддръжка (48ч)</span><span class="en">Priority support (48h)</span></li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-yellow-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span class="bg">Актуализации</span><span class="en">Updates</span></li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-yellow-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span class="bg">1 сесия обучение</span><span class="en">1 training session</span></li>
         </ul>
       </div>
-      <div class="card-gradient-border card-hover p-8">
-        <h4 class="text-xl font-bold text-gray-900 mb-1">Pro</h4>
-        <p class="text-gray-400 text-sm mb-4 bg">Неограничени фактури</p>
-        <p class="text-gray-400 text-sm mb-4 en">Unlimited invoices</p>
-        <p class="text-3xl font-extrabold text-gray-900 mb-6">99€<span class="text-base font-normal text-gray-400 bg">/месец</span><span class="text-base font-normal text-gray-400 en">/month</span></p>
-        <ul class="space-y-2 text-sm text-gray-600">
-          <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <span class="bg">Email поддръжка</span><span class="en">Email support</span></li>
-          <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <span class="bg">Актуализации</span><span class="en">Updates</span></li>
-          <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <span class="bg">Bug fixes</span><span class="en">Bug fixes</span></li>
-          <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <span class="bg">Приоритетен отговор 24ч</span><span class="en">Priority response 24h</span></li>
-          <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <span class="bg">Неограничени фактури</span><span class="en">Unlimited invoices</span></li>
+
+      <!-- Pro -->
+      <div class="bg-white rounded-2xl p-8 border border-gray-100 card-hover">
+        <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Pro</p>
+        <div class="mb-1">
+          <span class="text-5xl font-extrabold text-gray-900 price-mo" data-3="190" data-6="180" data-12="160">190</span>
+          <span class="text-gray-400 text-lg font-normal bg">/месец</span>
+          <span class="text-gray-400 text-lg font-normal en">/month</span>
+        </div>
+        <p class="text-sm text-gray-400 mb-1">
+          <span class="bg">Общо: </span><span class="en">Total: </span>
+          <strong class="text-gray-700 price-total" data-3="570" data-6="1 080" data-12="1 920">570€</strong>
+        </p>
+        <p class="text-xs text-green-600 font-semibold mb-6 price-save" data-3="Спестяваш 30€" data-6="Спестяваш 120€" data-12="Спестяваш 480€" data-3en="Save 30€" data-6en="Save 120€" data-12en="Save 480€">Спестяваш 30€</p>
+        <a href="#contact" class="block text-center border-2 border-primary text-primary font-bold py-3 rounded-xl hover:bg-blue-50 transition-colors mb-6 bg">Поискай демо</a>
+        <a href="#contact" class="block text-center border-2 border-primary text-primary font-bold py-3 rounded-xl hover:bg-blue-50 transition-colors mb-6 en">Request demo</a>
+        <ul class="space-y-2.5 text-sm text-gray-600">
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span class="bg">Неограничен брой потребители</span><span class="en">Unlimited users</span></li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span class="bg">Всички функции</span><span class="en">All features</span></li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span class="bg">9 езика за мейли</span><span class="en">9 email languages</span></li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span class="bg">Инсталация включена</span><span class="en">Installation included</span></li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span class="bg">VIP поддръжка (24ч)</span><span class="en">VIP support (24h)</span></li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span class="bg">Актуализации</span><span class="en">Updates</span></li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span class="bg">2 сесии обучение</span><span class="en">2 training sessions</span></li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span class="bg">Персонализирани шаблони</span><span class="en">Custom templates</span></li>
         </ul>
       </div>
+
     </div>
   </div>
 </section>
+
+<script>
+(function(){
+  var current = '3';
+  var isEn = document.body.classList.contains('lang-en');
+
+  function setPeriod(p) {
+    current = p;
+    isEn = document.body.classList.contains('lang-en');
+    // Toggle active button
+    ['3','6','12'].forEach(function(x){
+      var btn = document.getElementById('period-btn-'+x);
+      if(btn) {
+        btn.classList.toggle('active-period', x===p);
+        btn.classList.toggle('text-gray-500', x!==p);
+      }
+    });
+    // Update prices
+    document.querySelectorAll('.price-mo').forEach(function(el){
+      el.textContent = el.dataset[p] + '€';
+    });
+    document.querySelectorAll('.price-total').forEach(function(el){
+      el.textContent = el.dataset[p] + '€';
+    });
+    document.querySelectorAll('.price-save').forEach(function(el){
+      el.textContent = isEn ? el.dataset[p+'en'] : el.dataset[p];
+    });
+  }
+
+  window.setPeriod = setPeriod;
+
+  // Re-run on lang switch
+  var orig = window.setLang;
+  window.setLang = function(l){
+    if(orig) orig(l);
+    setTimeout(function(){ setPeriod(current); }, 50);
+  };
+})();
+</script>
 
 <!-- TESTIMONIALS -->
 <section id="testimonials" class="py-20 bg-gray-50 px-4 overflow-hidden">
