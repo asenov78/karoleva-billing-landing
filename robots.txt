@@ -38,4 +38,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://karoleva-billing.vercel.app/sitemap.xml
+Sitemap: https://invoicealert.app/sitemap.xml
