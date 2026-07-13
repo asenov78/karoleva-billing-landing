@@ -239,6 +239,12 @@
     .lang-bg .en { display: none; }
     .lang-en .bg { display: none; }
 
+    /* Promo bar */
+    #promo-bar { background: linear-gradient(90deg, #dc2626 0%, #ea580c 50%, #dc2626 100%); background-size: 200% 100%; animation: promo-shimmer 3s linear infinite; }
+    @keyframes promo-shimmer { 0%{background-position:0% 0%} 100%{background-position:200% 0%} }
+    .promo-stamp { transform: rotate(-12deg); background: #fbbf24; color: #7c2d12; font-weight: 900; font-size: 13px; line-height: 1.1; text-align: center; padding: 14px 10px; border-radius: 50%; width: 90px; height: 90px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 0 0 4px #f59e0b, 0 0 0 7px #fef3c7, 0 8px 24px rgba(0,0,0,0.25); letter-spacing: 0.5px; user-select: none; }
+    .promo-stamp-lg { width: 130px; height: 130px; font-size: 18px; padding: 18px 12px; }
+
     /* Hero */
     .gradient-hero { background: linear-gradient(135deg, #0a0f1e 0%, #0f172a 50%, #1a1040 100%); }
 
@@ -502,8 +508,18 @@
 </head>
 <body class="lang-bg bg-white text-gray-900 font-sans">
 
+<!-- PROMO BAR -->
+<div id="promo-bar" class="fixed top-0 left-0 right-0 z-[60] text-white text-sm font-bold py-2 px-4 text-center flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5">
+  <span class="text-base">🔥</span>
+  <span class="bg"><span class="hidden sm:inline">Лятна промоция — </span><strong>15% отстъпка</strong><span class="hidden sm:inline"> от всички планове до 31 август!</span></span>
+  <span class="en"><span class="hidden sm:inline">Summer sale — </span><strong>15% off</strong><span class="hidden sm:inline"> all plans until Aug 31!</span></span>
+  <a href="#pricing" class="bg-white/20 hover:bg-white/30 text-white font-extrabold px-2.5 py-0.5 rounded-full text-xs transition-all border border-white/30 bg">Виж →</a>
+  <a href="#pricing" class="bg-white/20 hover:bg-white/30 text-white font-extrabold px-2.5 py-0.5 rounded-full text-xs transition-all border border-white/30 en">See →</a>
+  <button id="promo-close" class="absolute right-2 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-lg leading-none w-8 h-8 flex items-center justify-center" aria-label="Close">×</button>
+</div>
+
 <!-- NAV -->
-<nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
+<nav id="main-nav" class="fixed left-0 right-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100" style="top:40px"><!-- top updated by JS -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
     <!-- Logo -->
     <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="flex items-center gap-3 group">
@@ -587,15 +603,15 @@
 </div>
 
 <!-- HERO -->
-<section id="hero" class="gradient-hero pt-32 pb-20 px-4 relative overflow-hidden">
+<section id="hero" class="gradient-hero pt-44 pb-20 px-4 relative overflow-hidden">
   <div class="orb orb-blue"></div>
   <div class="orb orb-purple"></div>
   <div class="max-w-7xl mx-auto relative">
     <div class="text-center max-w-4xl mx-auto mb-12">
-      <div class="inline-flex items-center gap-2 bg-white/10 text-blue-300 text-sm font-semibold px-4 py-2 rounded-full mb-6 border border-white/15">
-        <span class="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></span>
-        <span class="bg">Ново: Автоматично обединяване на дублирани клиенти</span>
-        <span class="en">New: Automatic duplicate client merging</span>
+      <div class="inline-flex items-center gap-2 bg-gradient-to-r from-red-500/30 to-orange-500/30 text-orange-300 text-sm font-bold px-4 py-2 rounded-full mb-6 border border-orange-400/30">
+        <span class="text-base">🔥</span>
+        <span class="bg">Лятна промоция — <span class="text-white">15% отстъпка</span> от всички планове до 31 август</span>
+        <span class="en">Summer sale — <span class="text-white">15% off</span> all plans until August 31</span>
       </div>
       <!-- Hero rotator -->
       <div class="hero-rotator mb-8" style="min-height:clamp(200px,30vw,320px);position:relative;">
@@ -2216,10 +2232,43 @@
         <span class="bg">Прозрачни цени.</span>
         <span class="en">Transparent pricing.</span>
       </h2>
-      <p class="text-gray-500 text-lg">
+      <p class="text-gray-500 text-lg mb-6">
         <span class="bg">Поддръжката, актуализациите и инсталацията са включени във всеки план.</span>
         <span class="en">Support, updates and installation are included in every plan.</span>
       </p>
+      <!-- PROMO BANNER -->
+      <div class="inline-flex flex-col sm:flex-row items-center gap-4 bg-gradient-to-r from-red-50 to-orange-50 border-2 border-red-200 rounded-2xl px-6 py-4 mb-2">
+        <div class="promo-stamp">
+          <span style="font-size:20px">🔥</span>
+          <span>−15%</span>
+          <span style="font-size:10px;font-weight:700">ЛЯТО</span>
+        </div>
+        <div class="text-left">
+          <p class="text-red-700 font-extrabold text-xl bg">🎉 Лятна промоция — 15% отстъпка!</p>
+          <p class="text-red-700 font-extrabold text-xl en">🎉 Summer sale — 15% off!</p>
+          <p class="text-gray-600 text-sm mt-1 bg">Стандартните цени са задраскани. Промоцията важи до:</p>
+          <p class="text-gray-600 text-sm mt-1 en">Standard prices are struck through. Offer valid until:</p>
+          <div class="flex items-center gap-2 mt-2">
+            <div class="bg-red-600 text-white rounded-lg px-3 py-1.5 text-center min-w-[48px]">
+              <div id="cd-days" class="text-2xl font-extrabold leading-none">--</div>
+              <div class="text-xs font-semibold mt-0.5 bg">дни</div>
+              <div class="text-xs font-semibold mt-0.5 en">days</div>
+            </div>
+            <span class="text-red-600 font-extrabold text-xl">:</span>
+            <div class="bg-red-600 text-white rounded-lg px-3 py-1.5 text-center min-w-[48px]">
+              <div id="cd-hours" class="text-2xl font-extrabold leading-none">--</div>
+              <div class="text-xs font-semibold mt-0.5 bg">часа</div>
+              <div class="text-xs font-semibold mt-0.5 en">hrs</div>
+            </div>
+            <span class="text-red-600 font-extrabold text-xl">:</span>
+            <div class="bg-red-600 text-white rounded-lg px-3 py-1.5 text-center min-w-[48px]">
+              <div id="cd-mins" class="text-2xl font-extrabold leading-none">--</div>
+              <div class="text-xs font-semibold mt-0.5 bg">мин</div>
+              <div class="text-xs font-semibold mt-0.5 en">min</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Period toggle -->
@@ -2246,16 +2295,18 @@
       <!-- Beginner -->
       <div class="bg-white rounded-2xl p-8 border border-gray-100 card-hover">
         <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Beginner</p>
-        <div class="mb-1">
-          <span class="text-5xl font-extrabold text-gray-900 price-mo" data-3="95" data-6="90" data-12="80">95</span>
+        <div class="mb-1 flex items-baseline gap-2 flex-wrap">
+          <del class="text-xl text-gray-400 price-orig" data-3="95" data-6="90" data-12="80">95€</del>
+          <span class="text-5xl font-extrabold text-red-600 price-mo" data-3="81" data-6="77" data-12="68">81</span>
           <span class="text-gray-400 text-lg font-normal bg">/месец</span>
           <span class="text-gray-400 text-lg font-normal en">/month</span>
         </div>
         <p class="text-sm text-gray-400 mb-1">
           <span class="bg">Общо: </span><span class="en">Total: </span>
-          <strong class="text-gray-700 price-total" data-3="285" data-6="540" data-12="960">285€</strong>
+          <del class="text-gray-400 price-orig-total" data-3="285" data-6="540" data-12="960">285€</del>
+          <strong class="text-red-600 ml-1 price-total" data-3="242" data-6="459" data-12="816">242€</strong>
         </p>
-        <p class="text-xs text-green-600 font-semibold mb-6 price-save" data-3="Спестяваш 15€" data-6="Спестяваш 60€" data-12="Спестяваш 240€" data-3en="Save 15€" data-6en="Save 60€" data-12en="Save 240€">Спестяваш 15€</p>
+        <p class="text-xs text-orange-600 font-bold mb-6 price-save" data-3="🔥 −15% лятна промоция" data-6="🔥 −15% лятна промоция" data-12="🔥 −15% лятна промоция" data-3en="🔥 −15% summer promo" data-6en="🔥 −15% summer promo" data-12en="🔥 −15% summer promo">🔥 −15% лятна промоция</p>
         <a href="#contact" class="block text-center border-2 border-primary text-primary font-bold py-3 rounded-xl hover:bg-blue-50 transition-colors mb-6 bg">Поискай демо</a>
         <a href="#contact" class="block text-center border-2 border-primary text-primary font-bold py-3 rounded-xl hover:bg-blue-50 transition-colors mb-6 en">Request demo</a>
         <ul class="space-y-2.5 text-sm text-gray-600">
@@ -2269,20 +2320,22 @@
       </div>
 
       <!-- Standard — highlighted -->
-      <div class="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl p-8 card-hover text-white relative shadow-2xl shadow-blue-500/30 scale-105">
+      <div class="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl p-8 card-hover text-white relative shadow-2xl shadow-blue-500/30 md:scale-105">
         <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-yellow-400 text-gray-900 text-xs font-extrabold px-4 py-1 rounded-full uppercase tracking-wide bg">Най-популярен</div>
         <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-yellow-400 text-gray-900 text-xs font-extrabold px-4 py-1 rounded-full uppercase tracking-wide en">Most popular</div>
         <p class="text-xs font-bold text-white/60 uppercase tracking-widest mb-3 mt-2">Standard</p>
-        <div class="mb-1">
-          <span class="text-5xl font-extrabold text-white price-mo" data-3="143" data-6="135" data-12="120">143</span>
+        <div class="mb-1 flex items-baseline gap-2 flex-wrap">
+          <del class="text-xl text-white/50 price-orig" data-3="143" data-6="135" data-12="120">143€</del>
+          <span class="text-5xl font-extrabold text-yellow-300 price-mo" data-3="122" data-6="115" data-12="102">122</span>
           <span class="text-white/70 text-lg font-normal bg">/месец</span>
           <span class="text-white/70 text-lg font-normal en">/month</span>
         </div>
         <p class="text-sm text-white/60 mb-1">
           <span class="bg">Общо: </span><span class="en">Total: </span>
-          <strong class="text-white price-total" data-3="428" data-6="810" data-12="1 440">428€</strong>
+          <del class="text-white/50 price-orig-total" data-3="428" data-6="810" data-12="1 440">428€</del>
+          <strong class="text-yellow-300 ml-1 price-total" data-3="364" data-6="689" data-12="1 224">364€</strong>
         </p>
-        <p class="text-xs text-yellow-300 font-semibold mb-6 price-save" data-3="Спестяваш 22€" data-6="Спестяваш 90€" data-12="Спестяваш 360€" data-3en="Save 22€" data-6en="Save 90€" data-12en="Save 360€">Спестяваш 22€</p>
+        <p class="text-xs text-yellow-300 font-bold mb-6 price-save" data-3="🔥 −15% лятна промоция" data-6="🔥 −15% лятна промоция" data-12="🔥 −15% лятна промоция" data-3en="🔥 −15% summer promo" data-6en="🔥 −15% summer promo" data-12en="🔥 −15% summer promo">🔥 −15% лятна промоция</p>
         <a href="#contact" class="block text-center bg-white text-blue-700 font-bold py-3 rounded-xl hover:bg-blue-50 transition-colors mb-6 bg">Поискай демо</a>
         <a href="#contact" class="block text-center bg-white text-blue-700 font-bold py-3 rounded-xl hover:bg-blue-50 transition-colors mb-6 en">Request demo</a>
         <ul class="space-y-2.5 text-sm text-white/90">
@@ -2299,16 +2352,18 @@
       <!-- Pro -->
       <div class="bg-white rounded-2xl p-8 border border-gray-100 card-hover">
         <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Pro</p>
-        <div class="mb-1">
-          <span class="text-5xl font-extrabold text-gray-900 price-mo" data-3="190" data-6="180" data-12="160">190</span>
+        <div class="mb-1 flex items-baseline gap-2 flex-wrap">
+          <del class="text-xl text-gray-400 price-orig" data-3="190" data-6="180" data-12="160">190€</del>
+          <span class="text-5xl font-extrabold text-red-600 price-mo" data-3="162" data-6="153" data-12="136">162</span>
           <span class="text-gray-400 text-lg font-normal bg">/месец</span>
           <span class="text-gray-400 text-lg font-normal en">/month</span>
         </div>
         <p class="text-sm text-gray-400 mb-1">
           <span class="bg">Общо: </span><span class="en">Total: </span>
-          <strong class="text-gray-700 price-total" data-3="570" data-6="1 080" data-12="1 920">570€</strong>
+          <del class="text-gray-400 price-orig-total" data-3="570" data-6="1 080" data-12="1 920">570€</del>
+          <strong class="text-red-600 ml-1 price-total" data-3="485" data-6="918" data-12="1 632">485€</strong>
         </p>
-        <p class="text-xs text-green-600 font-semibold mb-6 price-save" data-3="Спестяваш 30€" data-6="Спестяваш 120€" data-12="Спестяваш 480€" data-3en="Save 30€" data-6en="Save 120€" data-12en="Save 480€">Спестяваш 30€</p>
+        <p class="text-xs text-orange-600 font-bold mb-6 price-save" data-3="🔥 −15% лятна промоция" data-6="🔥 −15% лятна промоция" data-12="🔥 −15% лятна промоция" data-3en="🔥 −15% summer promo" data-6en="🔥 −15% summer promo" data-12en="🔥 −15% summer promo">🔥 −15% лятна промоция</p>
         <a href="#contact" class="block text-center border-2 border-primary text-primary font-bold py-3 rounded-xl hover:bg-blue-50 transition-colors mb-6 bg">Поискай демо</a>
         <a href="#contact" class="block text-center border-2 border-primary text-primary font-bold py-3 rounded-xl hover:bg-blue-50 transition-colors mb-6 en">Request demo</a>
         <ul class="space-y-2.5 text-sm text-gray-600">
@@ -2335,7 +2390,6 @@
   function setPeriod(p) {
     current = p;
     isEn = document.body.classList.contains('lang-en');
-    // Toggle active button
     ['3','6','12'].forEach(function(x){
       var btn = document.getElementById('period-btn-'+x);
       if(btn) {
@@ -2343,11 +2397,16 @@
         btn.classList.toggle('text-gray-500', x!==p);
       }
     });
-    // Update prices
     document.querySelectorAll('.price-mo').forEach(function(el){
       el.textContent = el.dataset[p] + '€';
     });
+    document.querySelectorAll('.price-orig').forEach(function(el){
+      el.textContent = el.dataset[p] + '€';
+    });
     document.querySelectorAll('.price-total').forEach(function(el){
+      el.textContent = el.dataset[p] + '€';
+    });
+    document.querySelectorAll('.price-orig-total').forEach(function(el){
       el.textContent = el.dataset[p] + '€';
     });
     document.querySelectorAll('.price-save').forEach(function(el){
@@ -2357,12 +2416,72 @@
 
   window.setPeriod = setPeriod;
 
-  // Re-run on lang switch
-  var orig = window.setLang;
+  var origSetLang = window.setLang;
   window.setLang = function(l){
-    if(orig) orig(l);
+    if(origSetLang) origSetLang(l);
     setTimeout(function(){ setPeriod(current); }, 50);
   };
+
+  // Promo bar: dynamic nav offset
+  function updateNavOffset() {
+    var bar = document.getElementById('promo-bar');
+    var nav = document.getElementById('main-nav');
+    var hero = document.getElementById('hero');
+    if (!bar || bar.style.display === 'none') return;
+    var h = bar.offsetHeight;
+    if (nav) nav.style.top = h + 'px';
+  }
+
+  // Promo close button
+  document.addEventListener('DOMContentLoaded', function(){
+    updateNavOffset();
+    window.addEventListener('resize', updateNavOffset);
+
+    var closeBtn = document.getElementById('promo-close');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function(){
+        var bar = document.getElementById('promo-bar');
+        var nav = document.getElementById('main-nav');
+        var hero = document.getElementById('hero');
+        if (bar) bar.style.display = 'none';
+        if (nav) nav.style.top = '0';
+        if (hero) hero.style.paddingTop = '8rem';
+        sessionStorage.setItem('promo-dismissed', '1');
+      });
+    }
+
+    if (sessionStorage.getItem('promo-dismissed') === '1') {
+      var bar = document.getElementById('promo-bar');
+      var nav = document.getElementById('main-nav');
+      if (bar) bar.style.display = 'none';
+      if (nav) nav.style.top = '0';
+    }
+
+    // Countdown to Aug 31 2026
+    function updateCountdown() {
+      var end = new Date('2026-08-31T23:59:59');
+      var now = new Date();
+      var diff = end - now;
+      if (diff <= 0) {
+        ['cd-days','cd-hours','cd-mins'].forEach(function(id){
+          var el = document.getElementById(id);
+          if (el) el.textContent = '00';
+        });
+        return;
+      }
+      var days  = Math.floor(diff / 86400000);
+      var hours = Math.floor((diff % 86400000) / 3600000);
+      var mins  = Math.floor((diff % 3600000) / 60000);
+      var d = document.getElementById('cd-days');
+      var h = document.getElementById('cd-hours');
+      var m = document.getElementById('cd-mins');
+      if (d) d.textContent = String(days).padStart(2,'0');
+      if (h) h.textContent = String(hours).padStart(2,'0');
+      if (m) m.textContent = String(mins).padStart(2,'0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 60000);
+  });
 })();
 </script>
 
