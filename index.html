@@ -94,7 +94,7 @@
       "priceCurrency": "EUR",
       "description": "Свържете се за достъп"
     },
-    "screenshot": "https://karoleva-billing.vercel.app/og-image.png",
+    "screenshot": "https://karoleva-billing.vercel.app/og-image.svg",
     "softwareVersion": "3.88"
   }
   </script>
@@ -106,7 +106,7 @@
     "@type": "Organization",
     "name": "Karoleva Billing",
     "url": "https://karoleva-billing.vercel.app/",
-    "logo": "https://karoleva-billing.vercel.app/og-image.png",
+    "logo": "https://karoleva-billing.vercel.app/og-image.svg",
     "contactPoint": {
       "@type": "ContactPoint",
       "email": "asenov78@gmail.com",
@@ -412,8 +412,10 @@
     /* Testimonials slider */
     .slider-track { display: flex; transition: transform 0.5s cubic-bezier(.22,.68,0,1.1); will-change: transform; }
     .slide { flex: 0 0 100%; }
-    .slider-dot { width: 8px; height: 8px; border-radius: 9999px; background: #cbd5e1; transition: all 0.3s; cursor: pointer; }
-    .slider-dot.active { width: 24px; background: #2563eb; }
+    .slider-dot { width: 8px; height: 8px; border-radius: 9999px; background: #cbd5e1; transition: all 0.3s; cursor: pointer; min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center; }
+    .slider-dot::after { content: ''; display: block; width: 8px; height: 8px; border-radius: 9999px; background: #cbd5e1; transition: all 0.3s; }
+    .slider-dot.active::after { width: 24px; background: #2563eb; }
+    .slider-dot.active { background: transparent; }
 
     /* Animated counter */
     .counter { font-variant-numeric: tabular-nums; }
@@ -660,8 +662,8 @@
         </a>
       </div>
       <p class="mt-5 text-slate-500 text-sm">
-        <span class="bg">Планове <a href="#pricing" class="text-blue-400 hover:underline">от 80€/месец</a> · Поддръжка включена · Инсталация в рамките на 1 ден</span>
-        <span class="en">Plans <a href="#pricing" class="text-blue-400 hover:underline">from 80€/month</a> · Support included · Installation within 1 day</span>
+        <span class="bg">Планове <a href="#pricing" class="text-blue-400 hover:underline">от 68€/месец</a> · Поддръжка включена · Инсталация в рамките на 1 ден</span>
+        <span class="en">Plans <a href="#pricing" class="text-blue-400 hover:underline">from 68€/month</a> · Support included · Installation within 1 day</span>
       </p>
     </div>
 
@@ -2274,17 +2276,17 @@
     <!-- Period toggle -->
     <div class="flex justify-center mb-10">
       <div class="inline-flex bg-gray-100 rounded-xl p-1 gap-1">
-        <button onclick="setPeriod('3')" id="period-btn-3" class="period-btn active-period px-5 py-2 rounded-lg text-sm font-bold transition-all">
-          <span class="bg">3 месеца</span><span class="en">3 months</span>
-          <span class="ml-1.5 text-xs text-green-600 font-semibold">−5%</span>
+        <button onclick="setPeriod('3')" id="period-btn-3" class="period-btn active-period px-3 sm:px-5 py-2 rounded-lg text-sm font-bold transition-all">
+          <span class="bg"><span class="hidden sm:inline">3 месеца</span><span class="sm:hidden">3М</span></span><span class="en"><span class="hidden sm:inline">3 months</span><span class="sm:hidden">3M</span></span>
+          <span class="ml-1 text-xs text-green-600 font-semibold">−5%</span>
         </button>
-        <button onclick="setPeriod('6')" id="period-btn-6" class="period-btn px-5 py-2 rounded-lg text-sm font-bold transition-all text-gray-500">
-          <span class="bg">6 месеца</span><span class="en">6 months</span>
-          <span class="ml-1.5 text-xs text-green-600 font-semibold">−10%</span>
+        <button onclick="setPeriod('6')" id="period-btn-6" class="period-btn px-3 sm:px-5 py-2 rounded-lg text-sm font-bold transition-all text-gray-500">
+          <span class="bg"><span class="hidden sm:inline">6 месеца</span><span class="sm:hidden">6М</span></span><span class="en"><span class="hidden sm:inline">6 months</span><span class="sm:hidden">6M</span></span>
+          <span class="ml-1 text-xs text-green-600 font-semibold">−10%</span>
         </button>
-        <button onclick="setPeriod('12')" id="period-btn-12" class="period-btn px-5 py-2 rounded-lg text-sm font-bold transition-all text-gray-500">
-          <span class="bg">12 месеца</span><span class="en">12 months</span>
-          <span class="ml-1.5 text-xs text-green-600 font-semibold">−20%</span>
+        <button onclick="setPeriod('12')" id="period-btn-12" class="period-btn px-3 sm:px-5 py-2 rounded-lg text-sm font-bold transition-all text-gray-500">
+          <span class="bg"><span class="hidden sm:inline">12 месеца</span><span class="sm:hidden">12М</span></span><span class="en"><span class="hidden sm:inline">12 months</span><span class="sm:hidden">12M</span></span>
+          <span class="ml-1 text-xs text-green-600 font-semibold">−20%</span>
         </button>
       </div>
     </div>
