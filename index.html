@@ -3097,7 +3097,7 @@
   function updateCta(){
     if(!hero||!cta) return;
     var rect = hero.getBoundingClientRect();
-    cta.style.display = rect.bottom < 0 ? 'block' : 'none';
+    cta.style.display = (rect.bottom < 0 && window.innerWidth < 768) ? 'block' : 'none';
   }
   window.addEventListener('scroll', updateCta, {passive:true});
   updateCta();
