@@ -578,6 +578,10 @@
 
     <!-- Nav links -->
     <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
+      <a href="#demo" class="flex items-center gap-1.5 bg-green-500 hover:bg-green-600 text-white font-bold px-3 py-1.5 rounded-lg transition-colors text-xs">
+        <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse inline-block"></span>
+        <span class="bg">Демо</span><span class="en">Demo</span>
+      </a>
       <a href="#features" class="hover:text-primary transition-colors">
         <span class="bg">Функции</span><span class="en">Features</span>
       </a>
@@ -625,6 +629,10 @@
 <div id="mobile-menu" class="md:hidden fixed inset-x-0 z-40 overflow-hidden" style="top:4rem;display:none;">
   <div id="mobile-overlay" onclick="mobileMenuClose()" class="absolute inset-0 bg-black/30 backdrop-blur-[2px]" style="bottom:-9999px;"></div>
   <div id="mobile-panel" class="relative bg-white border-b border-gray-100 shadow-2xl px-6 pt-2 pb-6 space-y-0" style="transform:translateY(-110%)">
+    <a href="#demo" onclick="mobileMenuClose()" class="flex items-center gap-2 py-3.5 text-base font-bold text-green-600 border-b border-gray-100">
+      <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse inline-block"></span>
+      <span class="bg">Демо</span><span class="en">Demo</span>
+    </a>
     <a href="#features" onclick="mobileMenuClose()" class="flex items-center py-3.5 text-base font-medium text-gray-700 border-b border-gray-100 hover:text-primary transition-colors">
       <span class="bg">Функции</span><span class="en">Features</span>
     </a>
@@ -1036,6 +1044,55 @@
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- LIVE DEMO -->
+<section id="demo" class="py-16 bg-gradient-to-br from-blue-600 to-indigo-700 px-4">
+  <div class="max-w-4xl mx-auto text-center">
+    <div class="inline-flex items-center gap-2 bg-white/20 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6">
+      <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse inline-block"></span>
+      <span class="bg">Работещо демо</span><span class="en">Live demo</span>
+    </div>
+    <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">
+      <span class="bg">Разгледайте системата сега</span>
+      <span class="en">Try the system right now</span>
+    </h2>
+    <p class="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+      <span class="bg">Пълна демо версия с реални данни. Без регистрация. Базата данни се нулира автоматично на всеки 2 часа.</span>
+      <span class="en">Full demo with real data. No registration needed. Database resets automatically every 2 hours.</span>
+    </p>
+
+    <!-- Credential cards -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+      <div class="bg-white/10 border border-white/20 rounded-2xl px-8 py-5 text-left">
+        <p class="text-white/60 text-xs font-bold uppercase tracking-widest mb-3 bg">Достъп до демото</p>
+        <p class="text-white/60 text-xs font-bold uppercase tracking-widest mb-3 en">Demo access</p>
+        <div class="space-y-2">
+          <div class="flex items-center gap-3">
+            <span class="text-white/50 text-sm w-20 bg">Адрес:</span>
+            <span class="text-white/50 text-sm w-20 en">URL:</span>
+            <a href="https://demo.invoicealert.app" target="_blank" class="text-yellow-300 font-bold text-sm hover:underline">demo.invoicealert.app</a>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-white/50 text-sm w-20 bg">Потребител:</span>
+            <span class="text-white/50 text-sm w-20 en">Username:</span>
+            <code class="bg-white/20 text-white font-mono text-sm px-2 py-0.5 rounded">admin</code>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-white/50 text-sm w-20 bg">Парола:</span>
+            <span class="text-white/50 text-sm w-20 en">Password:</span>
+            <code class="bg-white/20 text-white font-mono text-sm px-2 py-0.5 rounded">changeme</code>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="https://demo.invoicealert.app" target="_blank"
+       class="inline-flex items-center gap-2 bg-white text-blue-700 font-extrabold px-8 py-4 rounded-xl text-lg shadow-lg hover:bg-yellow-300 hover:text-blue-900 transition-all">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+      <span class="bg">Отвори демото</span><span class="en">Open demo</span>
+    </a>
   </div>
 </section>
 
@@ -3235,7 +3292,7 @@
   // ── Side dots — scroll tracker ──
   (function() {
     const dots = document.querySelectorAll('.sdot');
-    const ids = ['hero','features','how','pricing','testimonials','contact'];
+    const ids = ['hero','demo','features','how','pricing','testimonials','contact'];
     const els = ids.map(id => document.getElementById(id)).filter(Boolean);
     function update() {
       const mid = window.innerHeight * 0.4;
@@ -3328,6 +3385,7 @@
 <!-- Side dots navigation (desktop only) -->
 <nav id="side-dots" aria-label="Секции" class="fixed right-5 z-40" style="top:50%;transform:translateY(-50%)">
   <a href="#hero"         class="sdot" data-s="hero">        <span class="sdot-label bg">Начало</span>        <span class="sdot-label en">Home</span>        <span class="sdot-circle"></span></a>
+  <a href="#demo"         class="sdot" data-s="demo">         <span class="sdot-label bg">Демо</span>          <span class="sdot-label en">Demo</span>         <span class="sdot-circle"></span></a>
   <a href="#features"     class="sdot" data-s="features">    <span class="sdot-label bg">Функции</span>       <span class="sdot-label en">Features</span>    <span class="sdot-circle"></span></a>
   <a href="#how"          class="sdot" data-s="how">          <span class="sdot-label bg">Как работи</span>   <span class="sdot-label en">How it works</span><span class="sdot-circle"></span></a>
   <a href="#pricing"      class="sdot" data-s="pricing">      <span class="sdot-label bg">Цени</span>         <span class="sdot-label en">Pricing</span>     <span class="sdot-circle"></span></a>
