@@ -3448,5 +3448,50 @@
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
   </svg>
 </button>
+
+<script>
+(function() {
+  var planOrder = ['beginner', 'standard', 'pro'];
+  function applyPrices(data) {
+    var prices = {};
+    (data.prices || []).forEach(function(p) { prices[p.plan] = p; });
+    var moEls = document.querySelectorAll('.price-mo');
+    var origEls = document.querySelectorAll('.price-orig');
+    var totEls = document.querySelectorAll('.price-total');
+    var totOrigEls = document.querySelectorAll('.price-orig-total');
+    planOrder.forEach(function(plan, i) {
+      var p = prices[plan]; if (!p) return;
+      if (moEls[i]) { moEls[i].dataset['3']=p.price_3m; moEls[i].dataset['6']=p.price_6m; moEls[i].dataset['12']=p.price_12m; }
+      if (origEls[i]) { origEls[i].dataset['3']=p.price_3m_orig; origEls[i].dataset['6']=p.price_6m_orig; origEls[i].dataset['12']=p.price_12m_orig; }
+      if (totEls[i]) { totEls[i].dataset['3']=p.total_3m; totEls[i].dataset['6']=p.total_6m; totEls[i].dataset['12']=p.total_12m; }
+      if (totOrigEls[i]) { totOrigEls[i].dataset['3']=p.total_3m_orig; totOrigEls[i].dataset['6']=p.total_6m_orig; totOrigEls[i].dataset['12']=p.total_12m_orig; }
+    });
+    var promo = data.promo;
+    var bar = document.getElementById('promo-bar');
+    if (promo) {
+      if (bar) bar.style.display = '';
+      var stamps = document.querySelectorAll('.promo-stamp span');
+      if (stamps[1]) stamps[1].textContent = '-' + promo.discount_pct + '%';
+      if (stamps[2]) stamps[2].textContent = promo.label_bg;
+      if (stamps[3]) stamps[3].textContent = promo.label_en;
+      document.querySelectorAll('#promo-bar .text-red-700.bg').forEach(function(el){ el.textContent = promo.name_bg + ' — ' + promo.discount_pct + '% отстъпка!'; });
+      document.querySelectorAll('#promo-bar .text-red-700.en').forEach(function(el){ el.textContent = promo.name_en + ' — ' + promo.discount_pct + '% off!'; });
+      document.querySelectorAll('.price-save').forEach(function(el) {
+        ['3','6','12'].forEach(function(x){ el.dataset[x]='-'+promo.discount_pct+'% '+promo.name_bg; el.dataset[x+'en']='-'+promo.discount_pct+'% '+promo.name_en; });
+      });
+    } else {
+      if (bar) bar.style.display = 'none';
+      document.querySelectorAll('.price-save').forEach(function(el){el.textContent='';});
+      document.querySelectorAll('.price-orig,.price-orig-total').forEach(function(el){el.style.display='none';});
+    }
+    setTimeout(function(){ if(window.setPeriod) window.setPeriod(window.current||'3'); },100);
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    fetch('https://admin.invoicealert.app/api/prices')
+      .then(function(r){return r.json();}).then(applyPrices).catch(function(){});
+  });
+})();
+</script>
+
 </body>
 </html>
