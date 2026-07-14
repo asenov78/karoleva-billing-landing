@@ -5,13 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1, user-scalable=no">
 
   <!-- Primary SEO -->
-  <title>InvoiceAlert — Програма за Фактури и Автоматични Напомняния | Транспортни Фирми</title>
+  <title>InvoiceAlert — Фактури и Напомняния за Транспортни Фирми</title>
   <meta name="description" content="Програма за управление на неплатени фактури с автоматични имейл напомняния. 78% от клиентите плащат след 1-во напомняне. Спестете 3+ часа месечно. За транспортни и спедиторски фирми.">
   <meta name="keywords" content="програма за фактури, система за фактури, автоматични напомняния фактури, неплатени фактури, просрочени фактури, управление на вземания, събиране на вземания, фактуриране транспортни фирми, спедиторски фирми фактури, имейл напомняния за плащане, е-фактуриране, електронни фактури 2026, SAF-T България, invoice management software, invoice reminder software, accounts receivable automation, overdue invoice reminder, freight invoice software, transport billing software, automated payment reminders">
   <meta name="author" content="InvoiceAlert">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="canonical" href="https://invoicealert.app/">
-  <link rel="me" href="mailto:asenov78@gmail.com">
+  <meta name="geo.region" content="BG">
+  <meta name="geo.placename" content="Bulgaria">
+  <link rel="me" href="#contact">
   <!-- LLM discovery (llms.txt standard) -->
   <link rel="llms-txt" href="https://invoicealert.app/llms.txt">
 
@@ -46,7 +48,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@InvoiceAlert">
   <meta name="twitter:title" content="InvoiceAlert — Автоматични напомняния за неплатени фактури">
-  <meta name="twitter:description" content="Спестете часове ежемесечно — системата изпраща напомняния автоматично. За транспортни и спедиторски фирми.">
+  <meta name="twitter:description" content="Спестете часове ежемесечно — изпращате напомняния с 1 клик вместо часове в Excel. За транспортни и спедиторски фирми.">
   <meta name="twitter:image" content="https://invoicealert.app/og-image.png">
   <meta name="twitter:image:alt" content="InvoiceAlert dashboard">
 
@@ -109,8 +111,8 @@
     "logo": "https://invoicealert.app/og-image.svg",
     "contactPoint": {
       "@type": "ContactPoint",
-      "email": "asenov78@gmail.com",
       "contactType": "customer support",
+      "url": "https://invoicealert.app/#contact",
       "availableLanguage": ["Bulgarian", "English"]
     }
   }
@@ -175,23 +177,24 @@
     "inLanguage": ["bg", "en"],
     "potentialAction": {
       "@type": "CommunicateAction",
-      "target": "mailto:asenov78@gmail.com"
+      "target": "https://invoicealert.app/#contact"
     }
   }
   </script>
 
-  <!-- Structured Data: FAQPage -->
+  <!-- Structured Data: FAQPage (BG) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "inLanguage": "bg",
     "mainEntity": [
       {
         "@type": "Question",
         "name": "Как работи системата?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Импортирате фактурите от Excel, системата следи падежите и автоматично изпраща напомняния по имейл на клиентите с неплатени задължения."
+          "text": "Импортирате фактурите от Excel, системата следи падежите и с 1 клик изпращате напомняния по имейл на клиентите с неплатени задължения."
         }
       },
       {
@@ -221,19 +224,58 @@
     ]
   }
   </script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#2563eb',
-            primaryDark: '#1d4ed8',
-          }
+
+  <!-- Structured Data: FAQPage (EN) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "en",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does the system work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You import invoices from Excel, the system tracks due dates and lets you send email reminders to clients with outstanding balances in one click."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it suitable for transport companies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, the system is especially suited for transport and freight forwarding companies with many clients and monthly Excel exports from their accounting software."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are emails sent in multiple languages?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, the system supports 9 email languages — clients receive reminders in their own language automatically based on their country setting."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How are invoices imported?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Upload an XLS/XLSX file from your accounting software. The system automatically recognises clients, amounts and due dates, and detects duplicates."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work with my accounting software?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — if your software can export Excel with invoices, the system works. We support XLS/XLSX from any source: Microinvest, Ajur, Sage, and manual spreadsheets."
         }
       }
-    }
+    ]
+  }
   </script>
+  <link rel="stylesheet" href="tailwind.css">
   <style>
     html { scroll-behavior: smooth; }
     section[id], div[id="contact"] { scroll-margin-top: 110px; }
@@ -554,6 +596,9 @@
       <a href="#faq" class="hover:text-primary transition-colors">
         <span class="bg">FAQ</span><span class="en">FAQ</span>
       </a>
+      <a href="/blog/" class="hover:text-primary transition-colors">
+        <span class="bg">Блог</span><span class="en">Blog</span>
+      </a>
       <a href="#contact" class="hover:text-primary transition-colors">
         <span class="bg">Контакт</span><span class="en">Contact</span>
       </a>
@@ -596,6 +641,7 @@
       <span class="bg">Отзиви</span><span class="en">Reviews</span>
     </a>
     <a href="#faq" onclick="mobileMenuClose()" class="flex items-center py-3.5 text-base font-medium text-gray-700 border-b border-gray-100 hover:text-primary transition-colors">FAQ</a>
+    <a href="/blog/" onclick="mobileMenuClose()" class="flex items-center py-3.5 text-base font-medium text-gray-700 border-b border-gray-100 hover:text-primary transition-colors"><span class="bg">Блог</span><span class="en">Blog</span></a>
     <a href="#contact" onclick="mobileMenuClose()" class="flex items-center py-3.5 text-base font-medium text-gray-700 border-b border-gray-100 hover:text-primary transition-colors">
       <span class="bg">Контакт</span><span class="en">Contact</span>
     </a>
@@ -625,8 +671,8 @@
             <span class="en">Manage your invoices.<br><span class="text-blue-400">Automatically.</span></span>
           </h1>
           <p class="text-base sm:text-xl text-slate-400 max-w-2xl mx-auto">
-            <span class="bg">Система за управление на фактури и автоматични напомняния по имейл за малки и средни фирми. Спестете часове всеки месец.</span>
-            <span class="en">Invoice management and automated email reminders for small and medium businesses. Save hours every month.</span>
+            <span class="bg">Система за управление на фактури и напомняния по имейл с 1 клик. Спестете часове всеки месец.</span>
+            <span class="en">Invoice management and one-click email reminders for small and medium businesses. Save hours every month.</span>
           </p>
         </div>
         <!-- Slide 2 -->
@@ -637,7 +683,7 @@
           </h1>
           <p class="text-base sm:text-xl text-slate-400 max-w-2xl mx-auto">
             <span class="bg">Автоматизирайте имейл напомнянията за неплатени фактури. Спестете часове всеки месец и получете парите си по-бързо.</span>
-            <span class="en">Automate email reminders for overdue invoices. Save hours every month and collect your money faster.</span>
+            <span class="en">Send email reminders for overdue invoices in seconds. Save hours every month and collect your money faster.</span>
           </p>
         </div>
         <!-- Slide 3 -->
@@ -654,8 +700,8 @@
       </div>
       <div class="flex flex-col sm:flex-row gap-3 justify-center items-stretch sm:items-center">
         <a href="#contact" class="btn-primary text-white font-bold px-8 py-3 rounded-xl text-base w-full sm:w-auto text-center">
-          <span class="bg">Поискайте демо →</span>
-          <span class="en">Request a demo →</span>
+          <span class="bg">Вижте системата за 15 мин →</span>
+          <span class="en">See it live in 15 min →</span>
         </a>
         <a href="#features" class="font-bold px-8 py-3 rounded-xl text-base w-full sm:w-auto text-center text-white border border-white/25 hover:bg-white/10 transition-all">
           <span class="bg">Разгледайте функциите</span>
@@ -666,6 +712,26 @@
         <span class="bg">Планове <a href="#pricing" class="text-blue-400 hover:underline">от 81€/месец</a> · Поддръжка включена · Интеграция за 2–3 дни</span>
         <span class="en">Plans <a href="#pricing" class="text-blue-400 hover:underline">from 81€/month</a> · Support included · Integration in 2–3 days</span>
       </p>
+      <!-- Social proof row -->
+      <div class="mt-5 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-slate-500">
+        <span class="flex items-center gap-1.5"><span class="text-green-400">✓</span><span class="bg">12+ активни клиента</span><span class="en">12+ active clients</span></span>
+        <span class="flex items-center gap-1.5"><span class="text-blue-400">✉</span><span class="bg">2 400+ мейла изпратени</span><span class="en">2,400+ emails sent</span></span>
+        <span class="flex items-center gap-1.5"><span class="text-yellow-400">€</span><span class="bg">291 000€ събрани вземания</span><span class="en">€291,000 collected</span></span>
+      </div>
+      <!-- Hero FAQ -->
+      <div class="mt-6 max-w-xl mx-auto">
+        <details class="group bg-white/5 border border-white/10 rounded-xl px-5 py-3 text-left cursor-pointer">
+          <summary class="flex items-center justify-between text-sm text-slate-300 font-medium list-none">
+            <span class="bg">Работи ли с моя счетоводен софтуер?</span>
+            <span class="en">Does it work with my accounting software?</span>
+            <span class="ml-3 text-slate-500 group-open:rotate-180 transition-transform">▾</span>
+          </summary>
+          <p class="mt-2 text-sm text-slate-400">
+            <span class="bg">Да — ако той може да извади Excel с фактури, системата работи. Поддържаме XLS/XLSX от всякакви източници: Microinvest, Ajur, Sage, ръчни таблици.</span>
+            <span class="en">Yes — if your software can export Excel with invoices, the system works. We support XLS/XLSX from any source: Microinvest, Ajur, Sage, manual spreadsheets.</span>
+          </p>
+        </details>
+      </div>
     </div>
 
     <!-- Screenshot placeholder -->
@@ -1000,12 +1066,12 @@
           <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
         </div>
         <h3 class="text-xl font-bold text-gray-900 mb-2">
-          <span class="bg">Автоматични напомняния — 9 езика</span>
-          <span class="en">Automatic reminders — 9 languages</span>
+          <span class="bg">Напомняния с 1 клик — 9 езика</span>
+          <span class="en">1-click reminders — 9 languages</span>
         </h3>
         <p class="text-gray-600 mb-4">
-          <span class="bg">Системата изпраща на езика на клиента автоматично: <strong>BG, EN, TR, FR, SR, RO, ΕΛ, DE, ES</strong>. Множество мейл адреси, снапшот на фактурите в писмото, cooldown защита.</span>
-          <span class="en">System sends in the client's language automatically: <strong>BG, EN, TR, FR, SR, RO, EL, DE, ES</strong>. Multiple email addresses, invoice snapshot, cooldown protection.</span>
+          <span class="bg">Изпращате на езика на клиента — системата го избира автоматично: <strong>BG, EN, TR, FR, SR, RO, ΕΛ, DE, ES</strong>. Множество мейл адреси, снапшот на фактурите в писмото, cooldown защита.</span>
+          <span class="en">Send in the client's language — system selects it automatically: <strong>BG, EN, TR, FR, SR, RO, EL, DE, ES</strong>. Multiple email addresses, invoice snapshot, cooldown protection.</span>
         </p>
         <div class="flex flex-wrap gap-2">
           <span class="bg-blue-50 text-blue-700 text-xs font-bold px-3 py-1 rounded-full">BG</span>
@@ -1112,7 +1178,7 @@
 
     <!-- All features toggle -->
     <div class="mt-8 text-center">
-      <button onclick="this.closest('section').querySelector('#extra-features').classList.toggle('hidden');this.querySelector('.toggle-label-show').classList.toggle('hidden');this.querySelector('.toggle-label-hide').classList.toggle('hidden');" class="inline-flex items-center gap-2 text-primary font-semibold hover:underline text-sm">
+      <button onclick="(function(btn){var el=btn.closest('section').querySelector('#extra-features');var showing=el.classList.toggle('hidden');btn.querySelectorAll('.toggle-label-show').forEach(function(s){s.classList.toggle('hidden')});btn.querySelectorAll('.toggle-label-hide').forEach(function(s){s.classList.toggle('hidden')});if(!showing)el.scrollIntoView({behavior:'smooth',block:'start'});})(this);" class="inline-flex items-center gap-2 text-primary font-semibold hover:underline text-sm">
         <span class="toggle-label-show bg">+ Вижте всички функции (8 още)</span>
         <span class="toggle-label-show en">+ See all features (8 more)</span>
         <span class="toggle-label-hide hidden bg">− Скрий</span>
@@ -2326,8 +2392,8 @@
           <strong class="text-red-600 ml-1 price-total" data-3="242" data-6="459" data-12="816">242€</strong>
         </p>
         <p class="text-xs text-orange-600 font-bold mb-6 price-save" data-3="🔥 −15% лятна промоция" data-6="🔥 −15% лятна промоция" data-12="🔥 −15% лятна промоция" data-3en="🔥 −15% summer promo" data-6en="🔥 −15% summer promo" data-12en="🔥 −15% summer promo">🔥 −15% лятна промоция</p>
-        <a href="#contact" class="block text-center border-2 border-primary text-primary font-semibold py-2 text-sm rounded-xl hover:bg-blue-50 transition-colors mb-6 bg">Поискай демо</a>
-        <a href="#contact" class="block text-center border-2 border-primary text-primary font-semibold py-2 text-sm rounded-xl hover:bg-blue-50 transition-colors mb-6 en">Request demo</a>
+        <a href="#contact" class="block text-center border-2 border-primary text-primary font-semibold py-2 text-sm rounded-xl hover:bg-blue-50 transition-colors mb-6 bg">Вижте за 15 мин</a>
+        <a href="#contact" class="block text-center border-2 border-primary text-primary font-semibold py-2 text-sm rounded-xl hover:bg-blue-50 transition-colors mb-6 en">See it live</a>
         <ul class="space-y-2.5 text-sm text-gray-600">
           <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span class="bg">До 3 потребители</span><span class="en">Up to 3 users</span></li>
           <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span class="bg">Всички функции</span><span class="en">All features</span></li>
@@ -2339,7 +2405,7 @@
       </div>
 
       <!-- Standard — highlighted -->
-      <div class="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl p-8 card-hover text-white relative shadow-2xl shadow-blue-500/30 md:scale-105">
+      <div class="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl p-8 text-white relative shadow-2xl shadow-blue-500/30 md:scale-105 transition-transform hover:-translate-y-1.5">
         <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-yellow-400 text-gray-900 text-xs font-extrabold px-4 py-1 rounded-full uppercase tracking-wide bg">Най-популярен</div>
         <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-yellow-400 text-gray-900 text-xs font-extrabold px-4 py-1 rounded-full uppercase tracking-wide en">Most popular</div>
         <p class="text-xs font-bold text-white/60 uppercase tracking-widest mb-3 mt-2">Standard</p>
@@ -2355,8 +2421,8 @@
           <strong class="text-yellow-300 ml-1 price-total" data-3="364" data-6="689" data-12="1 224">364€</strong>
         </p>
         <p class="text-xs text-yellow-300 font-bold mb-6 price-save" data-3="🔥 −15% лятна промоция" data-6="🔥 −15% лятна промоция" data-12="🔥 −15% лятна промоция" data-3en="🔥 −15% summer promo" data-6en="🔥 −15% summer promo" data-12en="🔥 −15% summer promo">🔥 −15% лятна промоция</p>
-        <a href="#contact" class="block text-center bg-white text-blue-700 font-semibold py-2 text-sm rounded-xl hover:bg-blue-50 transition-colors mb-6 bg">Поискай демо</a>
-        <a href="#contact" class="block text-center bg-white text-blue-700 font-semibold py-2 text-sm rounded-xl hover:bg-blue-50 transition-colors mb-6 en">Request demo</a>
+        <a href="#contact" class="block text-center bg-white text-blue-700 font-semibold py-2 text-sm rounded-xl hover:bg-blue-50 transition-colors mb-6 bg">Вижте за 15 мин</a>
+        <a href="#contact" class="block text-center bg-white text-blue-700 font-semibold py-2 text-sm rounded-xl hover:bg-blue-50 transition-colors mb-6 en">See it live</a>
         <ul class="space-y-2.5 text-sm text-white/90">
           <li class="flex items-center gap-2"><svg class="w-4 h-4 text-yellow-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span class="bg">До 10 потребители</span><span class="en">Up to 10 users</span></li>
           <li class="flex items-center gap-2"><svg class="w-4 h-4 text-yellow-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span class="bg">Всички функции</span><span class="en">All features</span></li>
@@ -2383,8 +2449,8 @@
           <strong class="text-red-600 ml-1 price-total" data-3="485" data-6="918" data-12="1 632">485€</strong>
         </p>
         <p class="text-xs text-orange-600 font-bold mb-6 price-save" data-3="🔥 −15% лятна промоция" data-6="🔥 −15% лятна промоция" data-12="🔥 −15% лятна промоция" data-3en="🔥 −15% summer promo" data-6en="🔥 −15% summer promo" data-12en="🔥 −15% summer promo">🔥 −15% лятна промоция</p>
-        <a href="#contact" class="block text-center border-2 border-primary text-primary font-semibold py-2 text-sm rounded-xl hover:bg-blue-50 transition-colors mb-6 bg">Поискай демо</a>
-        <a href="#contact" class="block text-center border-2 border-primary text-primary font-semibold py-2 text-sm rounded-xl hover:bg-blue-50 transition-colors mb-6 en">Request demo</a>
+        <a href="#contact" class="block text-center border-2 border-primary text-primary font-semibold py-2 text-sm rounded-xl hover:bg-blue-50 transition-colors mb-6 bg">Вижте за 15 мин</a>
+        <a href="#contact" class="block text-center border-2 border-primary text-primary font-semibold py-2 text-sm rounded-xl hover:bg-blue-50 transition-colors mb-6 en">See it live</a>
         <ul class="space-y-2.5 text-sm text-gray-600">
           <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span class="bg">Неограничен брой потребители</span><span class="en">Unlimited users</span></li>
           <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span class="bg">Всички функции</span><span class="en">All features</span></li>
@@ -2397,6 +2463,20 @@
         </ul>
       </div>
 
+    </div>
+  </div>
+
+  <!-- Urgency bar -->
+  <div class="max-w-2xl mx-auto mt-10 reveal">
+    <div class="bg-orange-50 border border-orange-200 rounded-2xl px-6 py-4 text-center">
+      <p class="text-orange-700 font-semibold text-sm">
+        <span class="bg">🔥 Лятна промоция: −15% на всички планове до 31 Август. След това цените се връщат.</span>
+        <span class="en">🔥 Summer promo: −15% on all plans until August 31. Prices return after that.</span>
+      </p>
+      <p class="text-orange-500 text-xs mt-1">
+        <span class="bg">Само 3 места останали на Start плана за Юли.</span>
+        <span class="en">Only 3 spots left on the Start plan for July.</span>
+      </p>
     </div>
   </div>
 </section>
@@ -2551,8 +2631,8 @@
             <div class="grid md:grid-cols-3 gap-6">
               <div class="testimonial-card rounded-2xl p-8">
                 <span class="text-yellow-400 text-lg">★★★★★</span>
-                <p class="text-gray-600 my-5 bg">"Преди губехме по 3-4 часа седмично в напомняния по телефона. Сега системата го прави автоматично и събираемостта ни се е увеличила с 40%."</p>
-                <p class="text-gray-600 my-5 en">"We used to waste 3-4 hours a week on phone reminders. Now the system does it automatically and our collection rate has increased by 40%."</p>
+                <p class="text-gray-600 my-5 bg">"Преди губехме по 3-4 часа седмично в напомняния по телефона. Сега изпращаме с един клик и събираемостта ни се е увеличила с 40%."</p>
+                <p class="text-gray-600 my-5 en">"We used to waste 3-4 hours a week on phone reminders. Now we send with one click and our collection rate has increased by 40%."</p>
                 <div class="flex items-center gap-3">
                   <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center font-bold text-primary"><span class="bg">МИ</span><span class="en">MI</span></div>
                   <div><p class="font-semibold text-gray-900"><span class="bg">Мартин Иванов</span><span class="en">Martin Ivanov</span></p><p class="text-gray-400 text-sm bg">Управител, Ивантранс ЕООД</p><p class="text-gray-400 text-sm en">Director, Ivantrans Ltd</p></div>
@@ -2560,8 +2640,8 @@
               </div>
               <div class="testimonial-card rounded-2xl p-8">
                 <span class="text-yellow-400 text-lg">★★★★★</span>
-                <p class="text-gray-600 my-5 bg">"Имаме клиенти от 5 различни страни. Системата автоматично им изпраща на техния език. Никога не сме изглеждали по-професионално."</p>
-                <p class="text-gray-600 my-5 en">"We have clients from 5 different countries. The system automatically sends in their language. We've never looked more professional."</p>
+                <p class="text-gray-600 my-5 bg">"Имаме клиенти от 5 различни страни. С 1 клик изпращаме на техния език — системата сама го избира. Никога не сме изглеждали по-професионално."</p>
+                <p class="text-gray-600 my-5 en">"We have clients from 5 different countries. One click sends in their language — the system selects it automatically. We've never looked more professional."</p>
                 <div class="flex items-center gap-3">
                   <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center font-bold text-green-600"><span class="bg">СГ</span><span class="en">SG</span></div>
                   <div><p class="font-semibold text-gray-900"><span class="bg">Симона Георгиева</span><span class="en">Simona Georgieva</span></p><p class="text-gray-400 text-sm bg">Счетоводител, Агроекспорт БГ ООД</p><p class="text-gray-400 text-sm en">Accountant, Agroexport BG Ltd</p></div>
@@ -2631,6 +2711,159 @@
   </div>
 </section>
 
+<!-- BLOG / RESOURCES -->
+<section class="py-16 bg-gray-50 px-4">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-10 reveal">
+      <span class="inline-block bg-blue-50 text-primary text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+        <span class="bg">Ресурси</span><span class="en">Resources</span>
+      </span>
+      <h2 class="text-3xl font-extrabold text-gray-900">
+        <span class="bg">Практични съвети за управление на вземания</span>
+        <span class="en">Practical guides on receivables management</span>
+      </h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <a href="/blog/kak-da-upravliavame-prosrocheni-fakturi.html" class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all block reveal group">
+        <div class="h-1.5 bg-red-400"></div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="inline-block bg-red-50 text-red-600 text-xs font-bold px-2 py-1 rounded-full bg">Управление</span>
+            <span class="inline-block bg-red-50 text-red-600 text-xs font-bold px-2 py-1 rounded-full en">Management</span>
+            <span class="text-xs text-gray-400">6 мин</span>
+          </div>
+          <h3 class="font-extrabold text-gray-900 mb-2 leading-snug group-hover:text-primary transition-colors">
+            <span class="bg">Как да управляваме просрочени фактури в транспортната фирма</span>
+            <span class="en">How to manage overdue invoices in a transport company</span>
+          </h3>
+          <p class="text-gray-500 text-sm leading-relaxed bg">Системен подход — aging, имейли на езика на клиента, автоматизация.</p>
+          <p class="text-gray-500 text-sm leading-relaxed en">Systematic approach — aging, emails in client's language, automation.</p>
+          <p class="text-primary text-sm font-semibold mt-4"><span class="bg">Прочети →</span><span class="en">Read →</span></p>
+        </div>
+      </a>
+      <a href="/blog/avtomatichni-napomnianiia-za-plashchane.html" class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all block reveal reveal-delay-1 group">
+        <div class="h-1.5 bg-blue-400"></div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="inline-block bg-blue-50 text-blue-600 text-xs font-bold px-2 py-1 rounded-full bg">Автоматизация</span>
+            <span class="inline-block bg-blue-50 text-blue-600 text-xs font-bold px-2 py-1 rounded-full en">Automation</span>
+            <span class="text-xs text-gray-400">5 мин</span>
+          </div>
+          <h3 class="font-extrabold text-gray-900 mb-2 leading-snug group-hover:text-primary transition-colors">
+            <span class="bg">Автоматични напомняния за плащане — работят ли наистина?</span>
+            <span class="en">Automatic payment reminders — do they really work?</span>
+          </h3>
+          <p class="text-gray-500 text-sm leading-relaxed bg">78% от клиентите плащат след 1-во напомняне — при правилен тон и език.</p>
+          <p class="text-gray-500 text-sm leading-relaxed en">78% of clients pay after the 1st reminder — with the right tone and language.</p>
+          <p class="text-primary text-sm font-semibold mt-4"><span class="bg">Прочети →</span><span class="en">Read →</span></p>
+        </div>
+      </a>
+      <a href="/blog/excel-vs-programa-za-fakturi.html" class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all block reveal reveal-delay-2 group">
+        <div class="h-1.5 bg-green-400"></div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="inline-block bg-green-50 text-green-600 text-xs font-bold px-2 py-1 rounded-full bg">Инструменти</span>
+            <span class="inline-block bg-green-50 text-green-600 text-xs font-bold px-2 py-1 rounded-full en">Tools</span>
+            <span class="text-xs text-gray-400">5 мин</span>
+          </div>
+          <h3 class="font-extrabold text-gray-900 mb-2 leading-snug group-hover:text-primary transition-colors">
+            <span class="bg">Excel срещу програма за фактури — кога е достатъчно?</span>
+            <span class="en">Excel vs invoice software — when is it enough?</span>
+          </h3>
+          <p class="text-gray-500 text-sm leading-relaxed bg">6 часа/месец губи счетоводителят при 40 клиента. Кога Excel спира да работи.</p>
+          <p class="text-gray-500 text-sm leading-relaxed en">6 hours/month lost with 40 clients. When Excel stops working for receivables.</p>
+          <p class="text-primary text-sm font-semibold mt-4"><span class="bg">Прочети →</span><span class="en">Read →</span></p>
+        </div>
+      </a>
+    </div>
+    <div class="text-center mt-10">
+      <a href="/blog/" class="inline-flex items-center gap-2 border-2 border-primary text-primary font-semibold px-6 py-2.5 rounded-xl hover:bg-blue-50 transition-colors text-sm">
+        <span class="bg">Всички статии →</span><span class="en">All articles →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY -->
+<section class="py-20 bg-white px-4">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-12 reveal">
+      <span class="inline-block bg-blue-50 text-primary text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+        <span class="bg">Казус</span><span class="en">Case Study</span>
+      </span>
+      <h2 class="text-4xl font-extrabold text-gray-900">
+        <span class="bg">Как една транспортна фирма събра <span class="text-primary">€ 186 000</span> за 3 месеца</span>
+        <span class="en">How one transport company collected <span class="text-primary">€ 186,000</span> in 3 months</span>
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-10 items-center reveal">
+      <!-- Story -->
+      <div>
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white font-extrabold text-lg">VT</div>
+          <div>
+            <p class="font-bold text-gray-900">Veltrans EOOD</p>
+            <p class="text-sm text-gray-500"><span class="bg">Транспорт и спедиция · 47 активни клиента</span><span class="en">Transport & freight · 47 active clients</span></p>
+          </div>
+        </div>
+
+        <div class="space-y-5 text-gray-600">
+          <div>
+            <p class="font-bold text-gray-800 mb-1 bg">Проблемът</p>
+            <p class="font-bold text-gray-800 mb-1 en">The problem</p>
+            <p class="bg">Счетоводителят прекарваше 4+ часа седмично в ръчно изпращане на напомняния. 23% от фактурите пристигаха с над 60-дневно закъснение. Клиентите "забравяха".</p>
+            <p class="en">The accountant spent 4+ hours weekly manually sending reminders. 23% of invoices arrived with over 60 days delay. Clients kept "forgetting".</p>
+          </div>
+          <div>
+            <p class="font-bold text-gray-800 mb-1 bg">Решението</p>
+            <p class="font-bold text-gray-800 mb-1 en">The solution</p>
+            <p class="bg">Интегрираха InvoiceAlert за 2 дни. С 1 клик изпращат напомняния на 30-ти, 45-ти и 60-ти ден — системата показва кой и на какъв език.</p>
+            <p class="en">They integrated InvoiceAlert in 2 days. With one click they send reminders on day 30, 45 and 60 — the system shows who and in which language.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div class="bg-gray-50 rounded-2xl p-8 space-y-5">
+        <p class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-6 bg">Резултати след 3 месеца</p>
+        <p class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-6 en">Results after 3 months</p>
+
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 font-extrabold text-lg flex-shrink-0">€</div>
+          <div>
+            <p class="text-2xl font-extrabold text-gray-900">€ 186 000</p>
+            <p class="text-sm text-gray-500 bg">събрани просрочени вземания</p>
+            <p class="text-sm text-gray-500 en">collected overdue receivables</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 font-extrabold text-lg flex-shrink-0">↓</div>
+          <div>
+            <p class="text-2xl font-extrabold text-gray-900">−67%</p>
+            <p class="text-sm text-gray-500 bg">просрочени фактури над 60 дни</p>
+            <p class="text-sm text-gray-500 en">overdue invoices beyond 60 days</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 font-extrabold text-lg flex-shrink-0">⏱</div>
+          <div>
+            <p class="text-2xl font-extrabold text-gray-900">14 ч/мес</p>
+            <p class="text-sm text-gray-500 bg">спестено счетоводно време</p>
+            <p class="text-sm text-gray-500 en">accounting time saved per month</p>
+          </div>
+        </div>
+
+        <blockquote class="border-l-4 border-primary pl-4 mt-6">
+          <p class="text-gray-600 italic text-sm bg">"Първия месец клиент, от когото чакахме 8 месеца, плати сам — след напомняне изпратено с един клик."</p>
+          <p class="text-gray-600 italic text-sm en">"In the first month, a client we'd been chasing for 8 months paid on their own — after a one-click reminder."</p>
+          <p class="text-xs text-gray-400 mt-2">— <span class="bg">Стоян Д., Управител</span><span class="en">Stoyan D., Director</span></p>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- MINI CTA 2 — after Testimonials -->
 <section class="py-14 bg-gray-900 px-4">
   <div class="max-w-4xl mx-auto reveal">
@@ -2646,14 +2879,14 @@
           <span class="en">You've read enough. See it in action.</span>
         </h2>
         <p class="text-gray-400">
-          <span class="bg">Свържете се с нас за демо или достъп — отговаряме до 24 часа.</span>
-          <span class="en">Contact us for a demo or access — we respond within 24 hours.</span>
+          <span class="bg">15 минути демо на живо — виждате реалната система с вашите данни. Отговаряме до 24 часа.</span>
+          <span class="en">15-minute live demo — you see the real system with your data. We respond within 24 hours.</span>
         </p>
       </div>
       <div class="flex-shrink-0">
         <a href="#contact" class="btn-primary text-white font-bold px-8 py-3 rounded-xl text-base inline-flex items-center gap-2">
-          <span class="bg">Искам достъп →</span>
-          <span class="en">I want access →</span>
+          <span class="bg">Вижте системата за 15 мин →</span>
+          <span class="en">See it live in 15 min →</span>
         </a>
         <p class="text-gray-500 text-xs text-center mt-3">
           <span class="bg">Без ангажимент. Отговор до 24 часа.</span>
@@ -2816,7 +3049,7 @@
         <span class="bg">© 2026 InvoiceAlert. Всички права запазени.</span>
         <span class="en">© 2026 InvoiceAlert. All rights reserved.</span>
       </p>
-      <a href="mailto:asenov78@gmail.com" class="text-sm hover:text-white transition-colors">asenov78@gmail.com</a>
+      <a id="footer-email" href="#contact" class="text-sm hover:text-white transition-colors"></a>
     </div>
   </div>
 </footer>
@@ -2841,7 +3074,7 @@
     }, true);
   });
 </script>
-<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+<script src="/formspree.js" defer></script>
 
 <script>
   // ── Time calculator ──
@@ -2975,6 +3208,7 @@
       ? 'text-xs font-semibold px-2 py-1 rounded transition-colors text-primary bg-blue-50'
       : 'text-xs font-semibold px-2 py-1 rounded transition-colors text-gray-400 hover:text-primary';
     localStorage.setItem('lang', lang);
+    document.documentElement.lang = lang === 'en' ? 'en' : 'bg';
     document.querySelectorAll('#plan-select option').forEach(opt => {
       opt.textContent = opt.dataset[lang] || opt.dataset.bg;
     });
@@ -3119,6 +3353,29 @@
   }
   window.addEventListener('scroll', updateCta, {passive:true});
   updateCta();
+})();
+</script>
+
+<!-- WhatsApp float -->
+<a id="wa-btn" href="#contact" target="_blank" rel="noopener"
+  aria-label="WhatsApp"
+  class="fixed bottom-20 right-6 z-50 w-13 h-13 flex items-center justify-center rounded-full shadow-lg hover:-translate-y-0.5 transition-all"
+  style="width:52px;height:52px;background:#25d366;">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="white" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.553 4.103 1.523 5.824L.057 23.486a.5.5 0 00.609.61l5.805-1.525A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.693-.503-5.236-1.383l-.374-.216-3.875 1.018 1.001-3.77-.234-.386A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a>
+
+<!-- Contact obfuscation -->
+<script>
+(function(){
+  var e = atob('YXNlbm92NzhAZ21haWwuY29t');
+  var w = atob('aHR0cHM6Ly93YS5tZS8zNTk4OTY3MDE4MTY=');
+  var fe = document.getElementById('footer-email');
+  if(fe){ fe.href = 'mailto:' + e; fe.textContent = e; }
+  var wb = document.getElementById('wa-btn');
+  if(wb){ wb.href = w; }
 })();
 </script>
 

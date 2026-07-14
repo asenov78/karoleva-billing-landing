@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Как да управляваме просрочени фактури в транспортната фирма | InvoiceAlert</title>
+  <meta name="description" content="Системен подход към управлението на просрочени фактури в транспортни и спедиторски фирми. Практически стъпки, шаблони и инструменти за събиране на вземания.">
+  <link rel="canonical" href="https://invoicealert.app/blog/kak-da-upravliavame-prosrocheni-fakturi.html">
+  <meta property="og:title" content="Как да управляваме просрочени фактури в транспортната фирма">
+  <meta property="og:description" content="Системен подход към управлението на просрочени фактури. Практически стъпки за събиране на вземания.">
+  <meta property="og:url" content="https://invoicealert.app/blog/kak-da-upravliavame-prosrocheni-fakturi.html">
+  <meta name="robots" content="index, follow">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Как да управляваме просрочени фактури в транспортната фирма",
+    "description": "Системен подход към управлението на просрочени фактури в транспортни и спедиторски фирми.",
+    "url": "https://invoicealert.app/blog/kak-da-upravliavame-prosrocheni-fakturi.html",
+    "datePublished": "2026-07-13",
+    "dateModified": "2026-07-13",
+    "author": {"@type": "Organization", "name": "InvoiceAlert"},
+    "publisher": {"@type": "Organization", "name": "InvoiceAlert", "url": "https://invoicealert.app"}
+  }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{primary:'#2563eb'}}}}</script>
+</head>
+<body class="bg-white text-gray-900">
+
+  <nav class="border-b border-gray-100 px-4 py-4">
+    <div class="max-w-3xl mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 font-extrabold text-lg">
+        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414A1 1 0 0119 7.414V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        Invoice<span class="text-primary">Alert</span>
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="/blog/" class="text-sm text-gray-500 hover:text-primary">← Блог</a>
+        <a href="/#contact" class="hidden sm:inline-block bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Вижте системата →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero band -->
+  <div class="bg-gradient-to-r from-red-500 to-red-400 px-4 py-10">
+    <div class="max-w-3xl mx-auto">
+      <span class="inline-block bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full mb-4">Управление</span>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight mb-4">Как да управляваме просрочени фактури в транспортната фирма</h1>
+      <div class="flex items-center gap-3">
+        <span class="text-white/80 text-sm">13 юли 2026</span>
+        <span class="text-white/40">·</span>
+        <span class="text-white/80 text-sm">6 мин четене</span>
+      </div>
+    </div>
+  </div>
+
+  <article class="max-w-3xl mx-auto px-4 py-12">
+
+    <div class="text-gray-700 space-y-6 leading-relaxed">
+
+      <p class="text-xl text-gray-600 font-medium">Просрочените фактури са един от най-честите проблеми в транспортния бизнес. Клиентите "забравят", плащат частично или просто мълчат. Резултатът — замразен паричен поток и часове изгубено счетоводно време.</p>
+
+      <h2 class="text-2xl font-extrabold text-gray-900 mt-10">Защо транспортните фирми страдат повече</h2>
+      <p>За разлика от магазините, транспортните и спедиторски фирми работят на кредит — услугата е извършена, фактурата е издадена, но плащането може да дойде след 30, 60, дори 90 дни. При десетки активни клиента и стотици фактури месечно, ръчното следене е невъзможно.</p>
+      <p>Типичната картина: счетоводителят поддържа Excel с просрочени фактури, изпраща ръчни имейли "при настроение" и разчита на паметта си. Резултатът — непоследователни напомняния, неудобни разговори и пропуснати плащания.</p>
+
+      <h2 class="text-2xl font-extrabold text-gray-900 mt-10">Системен подход в 4 стъпки</h2>
+
+      <h3 class="text-xl font-bold text-gray-900">1. Категоризирайте по aging периоди</h3>
+      <p>Разделете просрочените фактури на групи:</p>
+      <ul class="list-disc pl-6 space-y-1">
+        <li><strong>0–30 дни</strong> — автоматично напомняне, мек тон</li>
+        <li><strong>31–60 дни</strong> — второ напомняне, по-директно</li>
+        <li><strong>61–90 дни</strong> — трето напомняне + телефонно обаждане</li>
+        <li><strong>90+ дни</strong> — ескалация към ръководството или правни действия</li>
+      </ul>
+      <p>Всяка група изисква различен подход. Клиент с 5-дневно закъснение и клиент с 90-дневно закъснение не трябва да получават един и същи имейл.</p>
+
+      <h3 class="text-xl font-bold text-gray-900">2. Стандартизирайте комуникацията</h3>
+      <p>Имейлите за напомняне трябва да са на езика на клиента. Германски спедитор получава немски имейл, румънски клиент — румънски. Лошо преведено напомняне се игнорира или обижда.</p>
+      <p>Ключови елементи в ефективния имейл за напомняне:</p>
+      <ul class="list-disc pl-6 space-y-1">
+        <li>Конкретен номер на фактурата и сума</li>
+        <li>Ясна дата на падеж</li>
+        <li>Лесен начин за плащане (банкова сметка, линк)</li>
+        <li>Неутрален, не обвинителен тон</li>
+      </ul>
+
+      <h3 class="text-xl font-bold text-gray-900">3. Автоматизирайте повторяемите действия</h3>
+      <p>80% от напомнянията могат да се изпращат автоматично. Само останалите 20% — сложни случаи, стари дългове, VIP клиенти — изискват лична намеса.</p>
+      <p><a href="/" class="text-primary hover:underline">Системи като InvoiceAlert</a> следят падежите, изпращат автоматични напомняния на правилния език и ви уведомяват само когато е нужна ръчна намеса. Резултатът: счетоводителят се занимава с изключенията, не с рутината.</p>
+
+      <h3 class="text-xl font-bold text-gray-900">4. Измервайте и оптимизирайте</h3>
+      <p>Следете ключови метрики:</p>
+      <ul class="list-disc pl-6 space-y-1">
+        <li>% фактури платени в срок</li>
+        <li>Среден брой дни до плащане (DSO)</li>
+        <li>% платени след 1-во напомняне</li>
+        <li>Стойност на просрочени вземания по период</li>
+      </ul>
+
+      <h2 class="text-2xl font-extrabold text-gray-900 mt-10">Реален пример: Veltrans EOOD</h2>
+      <p>Транспортна фирма с 47 активни клиента и проблем с 23% просрочени фактури над 60 дни. След внедряване на автоматична система за напомняния:</p>
+      <ul class="list-disc pl-6 space-y-1">
+        <li>€186 000 събрани просрочени вземания за 3 месеца</li>
+        <li>−67% фактури с над 60-дневно закъснение</li>
+        <li>14 часа счетоводно време спестени месечно</li>
+      </ul>
+
+      <h2 class="text-2xl font-extrabold text-gray-900 mt-10">Заключение</h2>
+      <p>Управлението на просрочени фактури не е въпрос на агресивност — а на последователност. Систематично, навременно и персонализирано напомняне работи по-добре от всяко извинение по телефона.</p>
+      <p>Ако все още разчитате на Excel и ръчни имейли, вероятно губите часове всеки месец — и пари, без да го знаете.</p>
+    </div>
+
+    <div class="mt-14 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-8 text-center text-white">
+      <h3 class="text-2xl font-extrabold mb-2">Готови да автоматизирате?</h3>
+      <p class="text-blue-100 mb-6">Вижте как InvoiceAlert следи падежите и изпраща напомняния автоматично — на езика на всеки клиент.</p>
+      <a href="/#contact" class="inline-block bg-white text-blue-700 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-colors">Вижте системата за 15 мин →</a>
+    </div>
+
+    <div class="mt-12 border-t border-gray-100 pt-10">
+      <p class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-6">Още статии</p>
+      <div class="grid md:grid-cols-2 gap-5">
+        <a href="/blog/avtomatichni-napomnianiia-za-plashchane.html" class="block bg-gray-50 rounded-2xl overflow-hidden hover:shadow-md hover:-translate-y-0.5 transition-all group">
+          <div class="h-1.5 bg-blue-400"></div>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full">Автоматизация</span>
+              <span class="text-xs text-gray-400">5 мин</span>
+            </div>
+            <p class="font-bold text-gray-900 group-hover:text-primary transition-colors text-sm leading-snug">Автоматични напомняния за плащане — работят ли наистина?</p>
+            <p class="text-primary text-xs font-semibold mt-3">Прочети →</p>
+          </div>
+        </a>
+        <a href="/blog/excel-vs-programa-za-fakturi.html" class="block bg-gray-50 rounded-2xl overflow-hidden hover:shadow-md hover:-translate-y-0.5 transition-all group">
+          <div class="h-1.5 bg-green-400"></div>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full">Инструменти</span>
+              <span class="text-xs text-gray-400">5 мин</span>
+            </div>
+            <p class="font-bold text-gray-900 group-hover:text-primary transition-colors text-sm leading-snug">Excel срещу програма за фактури — кога е достатъчно?</p>
+            <p class="text-primary text-xs font-semibold mt-3">Прочети →</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <footer class="border-t border-gray-100 py-8 text-center text-gray-400 text-sm">
+    <p>© 2026 InvoiceAlert · <a href="/" class="hover:text-primary">invoicealert.app</a></p>
+  </footer>
+
+</body>
+</html>

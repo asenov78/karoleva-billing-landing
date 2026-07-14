@@ -1,0 +1,23 @@
+{
+  "name": "karoleva-billing-landing",
+  "version": "1.0.0",
+  "description": "**Invoice management system with automated email reminders for transport companies, freight forwarders, and SMBs.**",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asenov78/karoleva-billing-landing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asenov78/karoleva-billing-landing/issues"
+  },
+  "homepage": "https://github.com/asenov78/karoleva-billing-landing#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}
