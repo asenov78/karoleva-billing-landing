@@ -4,6 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1, user-scalable=no">
 
+  <!-- Consent Mode v2 defaults — MUST run before any analytics/ads tag.
+       Everything starts denied; cookie-consent.js upgrades to 'granted'
+       only after the visitor opts in via the banner. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+  </script>
+
   <!-- Primary SEO -->
   <title>InvoiceAlert — Фактури и Напомняния за Транспортни Фирми</title>
   <meta name="description" content="Програма за управление на неплатени фактури с автоматични имейл напомняния. 78% от клиентите плащат след 1-во напомняне. Спестете 3+ часа месечно. За транспортни и спедиторски фирми.">
@@ -220,6 +235,14 @@
           "@type": "Answer",
           "text": "Качвате XLS/XLSX файл от счетоводния ви софтуер. Системата автоматично разпознава клиентите, сумите и падежите, и засича дубликати."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "Правите ли резервни копия на данните ми?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Да, автоматичен ежедневен backup на всичките ви данни, пазен 7 дни назад. Ако нещо се обърка неочаквано, можем да възстановим акаунта точно както е бил във всеки от последните 7 дни."
+        }
       }
     ]
   }
@@ -270,6 +293,14 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Yes — if your software can export Excel with invoices, the system works. We support XLS/XLSX from any source: Microinvest, Ajur, Sage, and manual spreadsheets."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you back up my data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, automatic daily backup of all your data, kept for the last 7 days. If something goes wrong unexpectedly, we can restore your account exactly as it was on any of the last 7 days."
         }
       }
     ]
@@ -2983,6 +3014,18 @@
 
       <details class="faq-item bg-white rounded-2xl border border-gray-100 overflow-hidden">
         <summary class="flex items-center justify-between p-6 font-semibold text-gray-900">
+          <span class="bg">Правите ли резервни копия на данните ми?</span>
+          <span class="en">Do you back up my data?</span>
+          <span class="faq-icon text-primary text-2xl leading-none">+</span>
+        </summary>
+        <div class="px-6 pb-6 text-gray-500">
+          <span class="bg">Да — <strong>автоматичен ежедневен backup на всичките ви данни, пазен 7 дни назад</strong>. Ако нещо се обърка неочаквано (грешен импорт, случайно изтриване), можем да възстановим точно както е бил акаунтът във всеки от последните 7 дни. Виждате директно в приложението за кои дни имате наличен backup.</span>
+          <span class="en">Yes — <strong>automatic daily backup of all your data, kept for the last 7 days</strong>. If something goes wrong unexpectedly (a bad import, an accidental deletion), we can restore your account exactly as it was on any of the last 7 days. You can see directly in the app which days have a backup on file.</span>
+        </div>
+      </details>
+
+      <details class="faq-item bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <summary class="flex items-center justify-between p-6 font-semibold text-gray-900">
           <span class="bg">На колко езика изпраща мейли?</span>
           <span class="en">How many languages does the system send emails in?</span>
           <span class="faq-icon text-primary text-2xl leading-none">+</span>
@@ -3090,6 +3133,37 @@
   </div>
 </section>
 
+<!-- COOKIE POLICY (short — full Privacy Policy/DPA for the app itself lives on the product domain) -->
+<section id="cookie-policy" class="py-12 px-4 bg-gray-50 border-t border-gray-100">
+  <div class="max-w-3xl mx-auto text-sm text-gray-600 leading-relaxed">
+    <h2 class="text-lg font-bold text-gray-900 mb-3">
+      <span class="bg">Политика за бисквитки</span><span class="en">Cookie Policy</span>
+    </h2>
+    <p class="mb-3">
+      <span class="bg">Тази страница (invoicealert.app) използва следните категории бисквитки:</span>
+      <span class="en">This page (invoicealert.app) uses the following cookie categories:</span>
+    </p>
+    <ul class="list-disc ml-5 space-y-1 mb-3">
+      <li>
+        <span class="bg"><strong>Необходими</strong> — запомняне на избрания език на страницата. Не изисква съгласие.</span>
+        <span class="en"><strong>Necessary</strong> — remembers your chosen page language. Doesn't require consent.</span>
+      </li>
+      <li>
+        <span class="bg"><strong>Анализ</strong> (Google Analytics) — анонимизирана статистика за посещения, само след Ваше съгласие.</span>
+        <span class="en"><strong>Analytics</strong> (Google Analytics) — anonymized visit statistics, only after your consent.</span>
+      </li>
+      <li>
+        <span class="bg"><strong>Реклама</strong> (напр. Google Ads) — измерва резултата от рекламни кампании, само след Ваше съгласие.</span>
+        <span class="en"><strong>Marketing</strong> (e.g. Google Ads) — measures ad-campaign performance, only after your consent.</span>
+      </li>
+    </ul>
+    <p>
+      <span class="bg">Можете да промените избора си по всяко време през линка "Настройки за бисквитки" долу в страницата. Пълната Политика за поверителност на самия продукт (за клиенти с активен акаунт) е достъпна от таблото на съответната инстанция.</span>
+      <span class="en">You can change your choice at any time via the "Cookie Settings" link at the bottom of the page. The full Privacy Policy for the product itself (for customers with an active account) is available from the relevant instance's dashboard.</span>
+    </p>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer class="bg-gray-900 text-gray-400 py-12 px-4">
   <div class="max-w-7xl mx-auto">
@@ -3106,7 +3180,11 @@
         <span class="bg">© 2026 InvoiceAlert. Всички права запазени.</span>
         <span class="en">© 2026 InvoiceAlert. All rights reserved.</span>
       </p>
-      <a id="footer-email" href="#contact" class="text-sm hover:text-white transition-colors"></a>
+      <div class="flex items-center gap-4 text-sm">
+        <a href="#cookie-policy" class="hover:text-white transition-colors"><span class="bg">Бисквитки</span><span class="en">Cookies</span></a>
+        <a href="#" id="cookie-footer-settings" class="hover:text-white transition-colors"><span class="bg">Настройки за бисквитки</span><span class="en">Cookie Settings</span></a>
+        <a id="footer-email" href="#contact" class="hover:text-white transition-colors"></a>
+      </div>
     </div>
   </div>
 </footer>
@@ -3488,6 +3566,107 @@
       .then(function(r){return r.json();}).then(applyPrices).catch(function(){});
   });
 })();
+</script>
+
+<!-- ── Cookie consent banner ─────────────────────────────────────── -->
+<div id="cookie-consent-banner" style="display:none" class="fixed bottom-0 left-0 right-0 z-[100] bg-gray-900 text-gray-200 px-4 py-5 shadow-2xl">
+  <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-4">
+    <p class="text-sm flex-1">
+      <span class="bg">Използваме бисквитки за анализ на трафика и рекламни кампании. Задължителните бисквитки за работа на сайта са винаги активни. <a href="#cookie-policy" id="cookie-policy-link-1" class="underline hover:text-white">Научете повече</a>.</span>
+      <span class="en">We use cookies for traffic analytics and ad-campaign tracking. Strictly necessary cookies are always on. <a href="#cookie-policy" id="cookie-policy-link-1-en" class="underline hover:text-white">Learn more</a>.</span>
+    </p>
+    <div class="flex flex-wrap gap-2 justify-center">
+      <button id="cookie-necessary-only" class="px-4 py-2 rounded-lg text-sm font-medium bg-gray-700 hover:bg-gray-600 transition-colors">
+        <span class="bg">Само необходими</span><span class="en">Necessary only</span>
+      </button>
+      <button id="cookie-open-settings" class="px-4 py-2 rounded-lg text-sm font-medium bg-gray-700 hover:bg-gray-600 transition-colors">
+        <span class="bg">Настройки</span><span class="en">Settings</span>
+      </button>
+      <button id="cookie-accept-all" class="px-4 py-2 rounded-lg text-sm font-medium bg-primary hover:bg-blue-700 text-white transition-colors">
+        <span class="bg">Приемам всички</span><span class="en">Accept all</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Cookie settings modal ─────────────────────────────────────── -->
+<div id="cookie-settings-modal" style="display:none" class="fixed inset-0 z-[110] bg-black/60 items-center justify-center p-4">
+  <div class="bg-white rounded-2xl max-w-lg w-full p-6 max-h-[85vh] overflow-y-auto">
+    <div class="flex items-center justify-between mb-4">
+      <h3 class="text-lg font-bold text-gray-900">
+        <span class="bg">Настройки за бисквитки</span><span class="en">Cookie settings</span>
+      </h3>
+      <button id="cookie-close-settings" class="text-gray-400 hover:text-gray-600 text-2xl leading-none">&times;</button>
+    </div>
+
+    <div class="space-y-4">
+      <div class="border border-gray-200 rounded-lg p-4">
+        <div class="flex items-center justify-between mb-1">
+          <span class="font-semibold text-gray-800"><span class="bg">Необходими</span><span class="en">Necessary</span></span>
+          <input type="checkbox" checked disabled class="w-5 h-5">
+        </div>
+        <p class="text-sm text-gray-500">
+          <span class="bg">Нужни за основната работа на сайта (напр. запомняне на избран език). Не могат да се изключат.</span>
+          <span class="en">Required for the site to function (e.g. remembering your chosen language). Cannot be disabled.</span>
+        </p>
+      </div>
+
+      <div class="border border-gray-200 rounded-lg p-4">
+        <div class="flex items-center justify-between mb-1">
+          <span class="font-semibold text-gray-800"><span class="bg">Анализ (Analytics)</span><span class="en">Analytics</span></span>
+          <input type="checkbox" id="cookie-toggle-analytics" class="w-5 h-5">
+        </div>
+        <p class="text-sm text-gray-500">
+          <span class="bg">Помагат ни да разберем колко посетители имаме и кои страници се ползват най-много (Google Analytics).</span>
+          <span class="en">Helps us understand visitor traffic and which pages are used most (Google Analytics).</span>
+        </p>
+      </div>
+
+      <div class="border border-gray-200 rounded-lg p-4">
+        <div class="flex items-center justify-between mb-1">
+          <span class="font-semibold text-gray-800"><span class="bg">Реклама (Marketing)</span><span class="en">Marketing</span></span>
+          <input type="checkbox" id="cookie-toggle-marketing" class="w-5 h-5">
+        </div>
+        <p class="text-sm text-gray-500">
+          <span class="bg">Използват се за измерване на резултатите от рекламните ни кампании (напр. Google Ads).</span>
+          <span class="en">Used to measure the performance of our ad campaigns (e.g. Google Ads).</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="flex gap-2 mt-6">
+      <button id="cookie-save-settings" class="flex-1 px-4 py-2 rounded-lg text-sm font-medium bg-primary hover:bg-blue-700 text-white transition-colors">
+        <span class="bg">Запази избора</span><span class="en">Save choice</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="/cookie-consent.js" defer></script>
+
+<!-- ── Tracking scripts — only fire once the matching consent category is
+     granted (registerTracker queues them until then). Fill in real IDs
+     before going live; GA4_ID/ADS_ID are placeholders on purpose. -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var GA4_ID = 'G-XXXXXXXXXX';   // TODO: real GA4 measurement ID
+    var ADS_ID = 'AW-XXXXXXXXX';   // TODO: real Google Ads conversion ID
+
+    registerTracker('analytics', function () {
+      cookieConsentInjectScript('https://www.googletagmanager.com/gtag/js?id=' + GA4_ID);
+      gtag('js', new Date());
+      gtag('config', GA4_ID);
+    });
+
+    registerTracker('marketing', function () {
+      // Google Ads reuses the same gtag.js loader — only inject once.
+      if (!document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
+        cookieConsentInjectScript('https://www.googletagmanager.com/gtag/js?id=' + ADS_ID);
+      }
+      gtag('config', ADS_ID);
+      // Meta Pixel / other ad platforms: add their own registerTracker('marketing', ...) block here.
+    });
+  });
 </script>
 
 </body>

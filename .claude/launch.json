@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "landing",
+      "runtimeExecutable": "php",
+      "runtimeArgs": ["-S", "0.0.0.0:8899", "-t", "."],
+      "port": 8899
+    }
+  ]
+}
