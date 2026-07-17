@@ -325,7 +325,6 @@
     /* Cards — glass + glow on hover */
     .card-hover {
       transition: transform 0.25s cubic-bezier(.22,.68,0,1.2), box-shadow 0.25s ease;
-      background: #fff;
       border: 1px solid rgba(226,232,240,0.8);
     }
     .card-hover:hover {
@@ -1260,8 +1259,8 @@
           <span class="en">Backup & Restore</span>
         </h3>
         <p class="text-gray-600">
-          <span class="bg">Автоматичен backup преди всеки импорт + ръчен по всяко време. Атомарно възстановяване с 1 клик.</span>
-          <span class="en">Auto backup before every import + manual anytime. Atomic 1-click restore.</span>
+          <span class="bg">Автоматичен ежедневен backup, пазен 7 дни назад — плюс ръчен по всяко време. Атомарно възстановяване с 1 клик.</span>
+          <span class="en">Automatic daily backup, kept for 7 days — plus manual anytime. Atomic 1-click restore.</span>
         </p>
       </div>
 
@@ -1270,8 +1269,8 @@
     <!-- All features toggle -->
     <div class="mt-8 text-center">
       <button onclick="(function(btn){var el=btn.closest('section').querySelector('#extra-features');var showing=el.classList.toggle('hidden');btn.querySelectorAll('.toggle-label-show').forEach(function(s){s.classList.toggle('hidden')});btn.querySelectorAll('.toggle-label-hide').forEach(function(s){s.classList.toggle('hidden')});if(!showing)el.scrollIntoView({behavior:'smooth',block:'start'});})(this);" class="inline-flex items-center gap-2 text-primary font-semibold hover:underline text-sm">
-        <span class="toggle-label-show bg">+ Вижте всички функции (8 още)</span>
-        <span class="toggle-label-show en">+ See all features (8 more)</span>
+        <span class="toggle-label-show bg">+ Вижте всички функции (11 още)</span>
+        <span class="toggle-label-show en">+ See all features (11 more)</span>
         <span class="toggle-label-hide hidden bg">− Скрий</span>
         <span class="toggle-label-hide hidden en">− Hide</span>
       </button>
@@ -1403,6 +1402,34 @@
         <p class="text-gray-600">
           <span class="bg">Системата работи на нашия сървър — без домейн, без хостинг, без IT настройки. Вие само влизате и работите.</span>
           <span class="en">Runs on our server — no domain, no hosting, no IT setup needed. Just log in and work.</span>
+        </p>
+      </div>
+
+      <div class="card-gradient-border card-hover p-8">
+        <div class="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">
+          <span class="bg">Импорт от имейл</span>
+          <span class="en">Email import</span>
+        </h3>
+        <p class="text-gray-600">
+          <span class="bg">Освен Excel — вграден бутон за импорт директно от прикачени имейл файлове, в същия екран.</span>
+          <span class="en">Besides Excel — a built-in button imports directly from email attachments, same screen.</span>
+        </p>
+      </div>
+
+      <div class="card-gradient-border card-hover p-8">
+        <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l18 18"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">
+          <span class="bg">Отписани клиенти</span>
+          <span class="en">Dismissed clients</span>
+        </h3>
+        <p class="text-gray-600">
+          <span class="bg">1 бутон до търсачката скрива клиентите, с които сте прекратили работа — без да ги трие или да пречат в списъка.</span>
+          <span class="en">1 button next to search hides clients you've stopped working with — without deleting them or cluttering the list.</span>
         </p>
       </div>
 
@@ -2564,10 +2591,6 @@
         <span class="bg">🔥 Лятна промоция: −15% на всички планове до 31 Август. След това цените се връщат.</span>
         <span class="en">🔥 Summer promo: −15% on all plans until August 31. Prices return after that.</span>
       </p>
-      <p class="text-orange-500 text-xs mt-1">
-        <span class="bg">Само 3 места останали на Start плана за Юли.</span>
-        <span class="en">Only 3 spots left on the Start plan for July.</span>
-      </p>
     </div>
   </div>
 </section>
@@ -3090,6 +3113,12 @@
       <p class="text-gray-500 text-lg">
         <span class="bg">Отговаряме в рамките на 24 часа.</span>
         <span class="en">We respond within 24 hours.</span>
+      </p>
+      <p class="mt-3 text-sm text-gray-500">
+        <span class="bg">Не искате да чакате? </span><span class="en">Don't want to wait? </span>
+        <a href="https://demo.invoicealert.app" target="_blank" class="text-primary font-semibold hover:underline">
+          <span class="bg">Отворете демото сега →</span><span class="en">Open the demo now →</span>
+        </a>
       </p>
     </div>
     <div data-fs-success class="hidden bg-green-50 border border-green-200 text-green-800 rounded-xl px-6 py-4 mb-4 text-center font-semibold">
