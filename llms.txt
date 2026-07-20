@@ -46,7 +46,7 @@ Bulgarian and English — both the UI and outgoing reminder emails.
 
 ## Pricing
 
-Contact for access: asenov78@gmail.com
+Contact for access: support@invoicealert.app
 
 ## URL
 
@@ -55,4 +55,4 @@ https://karoleva-billing.vercel.app
 ## Source
 
 Landing page: https://karoleva-billing.vercel.app
-Contact: asenov78@gmail.com
+Contact: support@invoicealert.app
