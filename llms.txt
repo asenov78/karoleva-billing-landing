@@ -1,10 +1,10 @@
-# Karoleva Billing
+# InvoiceAlert
 
 > Web-based invoice management system with automated email reminders, designed for transport companies, freight forwarders (speditors), logistics firms, and SMBs in Bulgaria and South-East Europe.
 
-## What is Karoleva Billing?
+## What is InvoiceAlert?
 
-Karoleva Billing is a specialized accounts receivable management and invoice reminder software. It tracks overdue invoices and automatically sends email reminders to clients in Bulgarian or English, depending on the client's nationality. The system is particularly well-suited for transport companies with own trucks, freight forwarding (spedition) companies, and logistics providers that manage many B2B clients with recurring monthly invoices exported from accounting software.
+InvoiceAlert is a specialized accounts receivable management and invoice reminder software. It tracks overdue invoices and automatically sends email reminders to clients in Bulgarian or English, depending on the client's nationality. The system is particularly well-suited for transport companies with own trucks, freight forwarding (spedition) companies, and logistics providers that manage many B2B clients with recurring monthly invoices exported from accounting software.
 
 ## Category
 
@@ -34,7 +34,7 @@ Invoice management software. Accounts receivable automation. Email reminder syst
 
 ## Problem It Solves
 
-B2B companies with many clients and monthly recurring invoices spend hours each month manually identifying overdue invoices, composing reminder emails, and tracking who has paid. Karoleva Billing automates this entire workflow: import from Excel, system identifies who is overdue, generate and send email with one click, track all actions in the activity log.
+B2B companies with many clients and monthly recurring invoices spend hours each month manually identifying overdue invoices, composing reminder emails, and tracking who has paid. InvoiceAlert automates this entire workflow: import from Excel, system identifies who is overdue, generate and send email with one click, track all actions in the activity log.
 
 ## Hosting
 
@@ -50,9 +50,9 @@ Contact for access: support@invoicealert.app
 
 ## URL
 
-https://karoleva-billing.vercel.app
+https://invoicealert.app
 
 ## Source
 
-Landing page: https://karoleva-billing.vercel.app
+Landing page: https://invoicealert.app
 Contact: support@invoicealert.app

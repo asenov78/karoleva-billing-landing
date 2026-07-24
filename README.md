@@ -1,14 +1,14 @@
-# Karoleva Billing
+# InvoiceAlert
 
 **Invoice management system with automated email reminders for transport companies, freight forwarders, and SMBs.**
 
-🌐 **Live:** [karoleva-billing.vercel.app](https://karoleva-billing.vercel.app)
+🌐 **Live:** [invoicealert.app](https://invoicealert.app)
 
 ---
 
-## What is Karoleva Billing?
+## What is InvoiceAlert?
 
-Karoleva Billing is a web-based **accounts receivable automation** tool that tracks overdue invoices and sends email reminders automatically — in Bulgarian or English depending on the client's nationality.
+InvoiceAlert is a web-based **accounts receivable automation** tool that tracks overdue invoices and sends email reminders automatically — in Bulgarian or English depending on the client's nationality.
 
 **Category:** Invoice Management Software · Accounts Receivable Automation · Email Reminder System
 
@@ -24,7 +24,7 @@ B2B companies with 20–200 clients spend **3–8 hours every month** manually:
 - Composing individual reminder emails
 - Tracking who has paid and who hasn't
 
-Karoleva Billing automates this entire workflow. Import from Excel → system identifies overdue clients → generate and send email in one click → track everything in the activity log.
+InvoiceAlert automates this entire workflow. Import from Excel → system identifies overdue clients → generate and send email in one click → track everything in the activity log.
 
 **Result:** 9 minutes of manual work per client reduced to under 1 minute. 78% of clients pay after the first automated reminder.
 
@@ -52,7 +52,7 @@ Karoleva Billing automates this entire workflow. Import from Excel → system id
 ## Performance Metrics
 
 - **9 min** → manual time per client per month (industry average)
-- **<1 min** → time per client with Karoleva Billing
+- **<1 min** → time per client with InvoiceAlert
 - **78%** → clients who pay after the 1st automated reminder
 - **3+ hours** → average time saved per month per company
 - **100%** → automation of the reminder workflow
@@ -85,4 +85,4 @@ Primarily transport and freight forwarding companies in Bulgaria with 20–200 B
 
 For access or demo: **asenov78@gmail.com**
 
-Landing page: [karoleva-billing.vercel.app](https://karoleva-billing.vercel.app)
+Landing page: [invoicealert.app](https://invoicealert.app)
