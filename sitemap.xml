@@ -3,10 +3,34 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://invoicealert.app/</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="bg" href="https://invoicealert.app/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoicealert.app/?lang=en"/>
+  </url>
+  <url>
+    <loc>https://invoicealert.app/blog/</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://invoicealert.app/blog/avtomatichni-napomnianiia-za-plashchane.html</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://invoicealert.app/blog/excel-vs-programa-za-fakturi.html</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://invoicealert.app/blog/kak-da-upravliavame-prosrocheni-fakturi.html</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
