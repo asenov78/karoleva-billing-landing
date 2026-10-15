@@ -587,17 +587,18 @@
 <body class="lang-bg bg-white text-gray-900 font-sans">
 
 <!-- PROMO BAR -->
-<div id="promo-bar" class="fixed top-0 left-0 right-0 z-[60] text-white text-sm font-bold py-2 px-4 text-center flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5">
+<!-- Shown + filled only while admin's /api/prices reports a live promotion. -->
+<div id="promo-bar" style="display:none" class="fixed top-0 left-0 right-0 z-[60] text-white text-sm font-bold py-2 px-4 text-center flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5">
   <span class="text-base">🔥</span>
-  <span class="bg"><span class="hidden sm:inline">Лятна промоция — </span><strong>15% отстъпка</strong><span class="hidden sm:inline"> от всички планове до 31 август!</span></span>
-  <span class="en"><span class="hidden sm:inline">Summer sale — </span><strong>15% off</strong><span class="hidden sm:inline"> all plans until Aug 31!</span></span>
+  <span class="bg promo-bar-text"></span>
+  <span class="en promo-bar-text"></span>
   <a href="#pricing" class="bg-white/20 hover:bg-white/30 text-white font-extrabold px-2.5 py-0.5 rounded-full text-xs transition-all border border-white/30 bg">Виж →</a>
   <a href="#pricing" class="bg-white/20 hover:bg-white/30 text-white font-extrabold px-2.5 py-0.5 rounded-full text-xs transition-all border border-white/30 en">See →</a>
   <button id="promo-close" class="absolute right-2 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-lg leading-none w-8 h-8 flex items-center justify-center" aria-label="Close">×</button>
 </div>
 
 <!-- NAV -->
-<nav id="main-nav" class="fixed left-0 right-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100" style="top:40px"><!-- top updated by JS -->
+<nav id="main-nav" class="fixed left-0 right-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100" style="top:0"><!-- top updated by JS when the promo bar is shown -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
     <!-- Logo -->
     <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="flex items-center gap-3 group">
@@ -698,10 +699,10 @@
   <div class="orb orb-purple"></div>
   <div class="max-w-7xl mx-auto relative">
     <div class="text-center max-w-4xl mx-auto mb-12">
-      <div class="inline-flex items-center gap-2 bg-gradient-to-r from-red-500/30 to-orange-500/30 text-orange-300 text-sm font-bold px-4 py-2 rounded-full mb-6 border border-orange-400/30">
+      <div id="hero-promo" style="display:none" class="inline-flex items-center gap-2 bg-gradient-to-r from-red-500/30 to-orange-500/30 text-orange-300 text-sm font-bold px-4 py-2 rounded-full mb-6 border border-orange-400/30">
         <span class="text-base">🔥</span>
-        <span class="bg">Лятна промоция — <span class="text-white">15% отстъпка</span> от всички планове до 31 август</span>
-        <span class="en">Summer sale — <span class="text-white">15% off</span> all plans until August 31</span>
+        <span class="bg hero-promo-text"></span>
+        <span class="en hero-promo-text"></span>
       </div>
       <!-- Hero rotator -->
       <div class="hero-rotator mb-8" style="min-height:clamp(200px,30vw,320px);position:relative;">
@@ -750,8 +751,8 @@
         </a>
       </div>
       <p class="mt-5 text-slate-500 text-sm">
-        <span class="bg">Планове <a href="#pricing" class="text-blue-400 hover:underline">от 80€/месец</a> · Поддръжка включена · Интеграция за 2–3 дни</span>
-        <span class="en">Plans <a href="#pricing" class="text-blue-400 hover:underline">from 80€/month</a> · Support included · Integration in 2–3 days</span>
+        <span class="bg">Планове <a href="#pricing" class="text-blue-400 hover:underline">от <span class="price-from">12</span>€/месец</a> · Поддръжка включена · Интеграция за 2–3 дни</span>
+        <span class="en">Plans <a href="#pricing" class="text-blue-400 hover:underline">from <span class="price-from">12</span>€/month</a> · Support included · Integration in 2–3 days</span>
       </p>
       <!-- Social proof row -->
       <div class="mt-5 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-slate-500">
@@ -2439,18 +2440,18 @@
         <span class="bg">Поддръжката, актуализациите и интеграцията са включени във всеки план.</span>
         <span class="en">Support, updates and integration are included in every plan.</span>
       </p>
-      <!-- PROMO BANNER -->
-      <div class="inline-flex flex-col sm:flex-row items-center gap-4 bg-gradient-to-r from-red-50 to-orange-50 border-2 border-red-200 rounded-2xl px-6 py-4 mb-2">
+      <!-- PROMO BANNER: shown + filled only while /api/prices reports a live promotion -->
+      <div id="pricing-promo" style="display:none" class="inline-flex flex-col sm:flex-row items-center gap-4 bg-gradient-to-r from-red-50 to-orange-50 border-2 border-red-200 rounded-2xl px-6 py-4 mb-2">
         <div class="promo-stamp">
           <span style="font-size:20px">🔥</span>
-          <span>−15%</span>
-          <span style="font-size:10px;font-weight:700" class="bg">ЛЯТО</span><span style="font-size:10px;font-weight:700" class="en">SALE</span>
+          <span class="promo-stamp-pct"></span>
+          <span style="font-size:10px;font-weight:700" class="bg promo-stamp-label"></span><span style="font-size:10px;font-weight:700" class="en promo-stamp-label"></span>
         </div>
         <div class="text-left">
-          <p class="text-red-700 font-extrabold text-xl bg">🎉 Лятна промоция — 15% отстъпка!</p>
-          <p class="text-red-700 font-extrabold text-xl en">🎉 Summer sale — 15% off!</p>
-          <p class="text-gray-600 text-sm mt-1 bg">Стандартните цени са задраскани. Промоцията важи до:</p>
-          <p class="text-gray-600 text-sm mt-1 en">Standard prices are struck through. Offer valid until:</p>
+          <p class="text-red-700 font-extrabold text-xl bg pricing-promo-title"></p>
+          <p class="text-red-700 font-extrabold text-xl en pricing-promo-title"></p>
+          <p class="text-gray-600 text-sm mt-1 bg">При плащане за 3, 6 или 12 месеца. Стандартните цени са задраскани. Промоцията важи до:</p>
+          <p class="text-gray-600 text-sm mt-1 en">When paying for 3, 6 or 12 months. Standard prices are struck through. Offer valid until:</p>
           <div class="flex items-center gap-2 mt-2">
             <div class="bg-red-600 text-white rounded-lg px-3 py-1.5 text-center min-w-[48px]">
               <div id="cd-days" class="text-2xl font-extrabold leading-none">--</div>
@@ -2479,18 +2480,22 @@
       <div class="inline-flex bg-gray-100 rounded-xl p-1 gap-1">
         <button onclick="setPeriod('3')" id="period-btn-3" class="period-btn active-period px-3 sm:px-5 py-2 rounded-lg text-sm font-bold transition-all">
           <span class="bg"><span class="hidden sm:inline">3 месеца</span><span class="sm:hidden">3М</span></span><span class="en"><span class="hidden sm:inline">3 months</span><span class="sm:hidden">3M</span></span>
-          <span class="ml-1 text-xs text-green-600 font-semibold">−5%</span>
+          <span class="ml-1 text-xs text-green-600 font-semibold period-save" data-period="3" style="display:none"></span>
         </button>
         <button onclick="setPeriod('6')" id="period-btn-6" class="period-btn px-3 sm:px-5 py-2 rounded-lg text-sm font-bold transition-all text-gray-500">
           <span class="bg"><span class="hidden sm:inline">6 месеца</span><span class="sm:hidden">6М</span></span><span class="en"><span class="hidden sm:inline">6 months</span><span class="sm:hidden">6M</span></span>
-          <span class="ml-1 text-xs text-green-600 font-semibold">−10%</span>
+          <span class="ml-1 text-xs text-green-600 font-semibold period-save" data-period="6" style="display:none"></span>
         </button>
         <button onclick="setPeriod('12')" id="period-btn-12" class="period-btn px-3 sm:px-5 py-2 rounded-lg text-sm font-bold transition-all text-gray-500">
           <span class="bg"><span class="hidden sm:inline">12 месеца</span><span class="sm:hidden">12М</span></span><span class="en"><span class="hidden sm:inline">12 months</span><span class="sm:hidden">12M</span></span>
-          <span class="ml-1 text-xs text-green-600 font-semibold">−20%</span>
+          <span class="ml-1 text-xs text-green-600 font-semibold period-save" data-period="12" style="display:none"></span>
         </button>
       </div>
     </div>
+    <p class="text-center text-sm text-gray-400 -mt-6 mb-10">
+      <span class="bg">Всички цени са с включен ДДС.</span>
+      <span class="en">All prices include VAT.</span>
+    </p>
 
     <!-- Plan cards -->
     <div class="grid md:grid-cols-3 gap-6 items-start">
@@ -2499,17 +2504,17 @@
       <div class="bg-white rounded-2xl p-8 border border-gray-100 card-hover">
         <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Beginner</p>
         <div class="mb-1 flex items-baseline gap-2 flex-wrap">
-          <del class="text-xl text-gray-400 price-orig" data-3="95" data-6="90" data-12="80">95€</del>
-          <span class="text-5xl font-extrabold text-red-600 price-mo" data-3="80" data-6="75" data-12="65">80</span>
+          <del class="text-xl text-gray-400 price-orig" style="display:none" data-3="12" data-6="12" data-12="12">12€</del>
+          <span class="text-5xl font-extrabold text-red-600 price-mo" data-3="12" data-6="12" data-12="12">12€</span>
           <span class="text-gray-400 text-lg font-normal bg">/месец</span>
           <span class="text-gray-400 text-lg font-normal en">/month</span>
         </div>
         <p class="text-sm text-gray-400 mb-1">
           <span class="bg">Общо: </span><span class="en">Total: </span>
-          <del class="text-gray-400 price-orig-total" data-3="285" data-6="540" data-12="960">285€</del>
-          <strong class="text-red-600 ml-1 price-total" data-3="240" data-6="450" data-12="780">240€</strong>
+          <del class="text-gray-400 price-orig-total" style="display:none" data-3="36" data-6="72" data-12="144">36€</del>
+          <strong class="text-red-600 ml-1 price-total" data-3="36" data-6="72" data-12="144">36€</strong>
         </p>
-        <p class="text-xs text-orange-600 font-bold mb-6 price-save" data-3="🔥 −15% лятна промоция" data-6="🔥 −15% лятна промоция" data-12="🔥 −15% лятна промоция" data-3en="🔥 −15% summer promo" data-6en="🔥 −15% summer promo" data-12en="🔥 −15% summer promo">🔥 −15% лятна промоция</p>
+        <p class="text-xs text-orange-600 font-bold mb-6 price-save" data-3="" data-6="" data-12="" data-3en="" data-6en="" data-12en=""></p>
         <a href="#contact" class="block text-center border-2 border-primary text-primary font-semibold py-2 text-sm rounded-xl hover:bg-blue-50 transition-colors mb-6 bg">Вижте за 15 мин</a>
         <a href="#contact" class="block text-center border-2 border-primary text-primary font-semibold py-2 text-sm rounded-xl hover:bg-blue-50 transition-colors mb-6 en">See it live</a>
         <ul class="space-y-2.5 text-sm text-gray-600">
@@ -2528,17 +2533,17 @@
         <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-yellow-400 text-gray-900 text-xs font-extrabold px-4 py-1 rounded-full uppercase tracking-wide en">Most popular</div>
         <p class="text-xs font-bold text-white/60 uppercase tracking-widest mb-3 mt-2">Standard</p>
         <div class="mb-1 flex items-baseline gap-2 flex-wrap">
-          <del class="text-xl text-white/50 price-orig" data-3="143" data-6="135" data-12="120">143€</del>
-          <span class="text-5xl font-extrabold text-yellow-300 price-mo" data-3="120" data-6="115" data-12="100">120</span>
+          <del class="text-xl text-white/50 price-orig" style="display:none" data-3="16" data-6="16" data-12="16">16€</del>
+          <span class="text-5xl font-extrabold text-yellow-300 price-mo" data-3="16" data-6="16" data-12="16">16€</span>
           <span class="text-white/70 text-lg font-normal bg">/месец</span>
           <span class="text-white/70 text-lg font-normal en">/month</span>
         </div>
         <p class="text-sm text-white/60 mb-1">
           <span class="bg">Общо: </span><span class="en">Total: </span>
-          <del class="text-white/50 price-orig-total" data-3="428" data-6="810" data-12="1 440">428€</del>
-          <strong class="text-yellow-300 ml-1 price-total" data-3="360" data-6="690" data-12="1 200">360€</strong>
+          <del class="text-white/50 price-orig-total" style="display:none" data-3="48" data-6="96" data-12="192">48€</del>
+          <strong class="text-yellow-300 ml-1 price-total" data-3="48" data-6="96" data-12="192">48€</strong>
         </p>
-        <p class="text-xs text-yellow-300 font-bold mb-6 price-save" data-3="🔥 −15% лятна промоция" data-6="🔥 −15% лятна промоция" data-12="🔥 −15% лятна промоция" data-3en="🔥 −15% summer promo" data-6en="🔥 −15% summer promo" data-12en="🔥 −15% summer promo">🔥 −15% лятна промоция</p>
+        <p class="text-xs text-yellow-300 font-bold mb-6 price-save" data-3="" data-6="" data-12="" data-3en="" data-6en="" data-12en=""></p>
         <a href="#contact" class="block text-center bg-white text-blue-700 font-semibold py-2 text-sm rounded-xl hover:bg-blue-50 transition-colors mb-6 bg">Вижте за 15 мин</a>
         <a href="#contact" class="block text-center bg-white text-blue-700 font-semibold py-2 text-sm rounded-xl hover:bg-blue-50 transition-colors mb-6 en">See it live</a>
         <ul class="space-y-2.5 text-sm text-white/90">
@@ -2556,17 +2561,17 @@
       <div class="bg-white rounded-2xl p-8 border border-gray-100 card-hover">
         <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Pro</p>
         <div class="mb-1 flex items-baseline gap-2 flex-wrap">
-          <del class="text-xl text-gray-400 price-orig" data-3="190" data-6="180" data-12="160">190€</del>
-          <span class="text-5xl font-extrabold text-red-600 price-mo" data-3="160" data-6="150" data-12="135">160</span>
+          <del class="text-xl text-gray-400 price-orig" style="display:none" data-3="24" data-6="24" data-12="24">24€</del>
+          <span class="text-5xl font-extrabold text-red-600 price-mo" data-3="24" data-6="24" data-12="24">24€</span>
           <span class="text-gray-400 text-lg font-normal bg">/месец</span>
           <span class="text-gray-400 text-lg font-normal en">/month</span>
         </div>
         <p class="text-sm text-gray-400 mb-1">
           <span class="bg">Общо: </span><span class="en">Total: </span>
-          <del class="text-gray-400 price-orig-total" data-3="570" data-6="1 080" data-12="1 920">570€</del>
-          <strong class="text-red-600 ml-1 price-total" data-3="480" data-6="900" data-12="1 620">480€</strong>
+          <del class="text-gray-400 price-orig-total" style="display:none" data-3="72" data-6="144" data-12="288">72€</del>
+          <strong class="text-red-600 ml-1 price-total" data-3="72" data-6="144" data-12="288">72€</strong>
         </p>
-        <p class="text-xs text-orange-600 font-bold mb-6 price-save" data-3="🔥 −15% лятна промоция" data-6="🔥 −15% лятна промоция" data-12="🔥 −15% лятна промоция" data-3en="🔥 −15% summer promo" data-6en="🔥 −15% summer promo" data-12en="🔥 −15% summer promo">🔥 −15% лятна промоция</p>
+        <p class="text-xs text-orange-600 font-bold mb-6 price-save" data-3="" data-6="" data-12="" data-3en="" data-6en="" data-12en=""></p>
         <a href="#contact" class="block text-center border-2 border-primary text-primary font-semibold py-2 text-sm rounded-xl hover:bg-blue-50 transition-colors mb-6 bg">Вижте за 15 мин</a>
         <a href="#contact" class="block text-center border-2 border-primary text-primary font-semibold py-2 text-sm rounded-xl hover:bg-blue-50 transition-colors mb-6 en">See it live</a>
         <ul class="space-y-2.5 text-sm text-gray-600">
@@ -2586,10 +2591,10 @@
 
   <!-- Urgency bar -->
   <div class="max-w-2xl mx-auto mt-10 reveal">
-    <div class="bg-orange-50 border border-orange-200 rounded-2xl px-6 py-4 text-center">
+    <div id="promo-urgency" style="display:none" class="bg-orange-50 border border-orange-200 rounded-2xl px-6 py-4 text-center">
       <p class="text-orange-700 font-semibold text-sm">
-        <span class="bg">🔥 Лятна промоция: −15% на всички планове до 31 Август. След това цените се връщат.</span>
-        <span class="en">🔥 Summer promo: −15% on all plans until August 31. Prices return after that.</span>
+        <span class="bg promo-urgency-text"></span>
+        <span class="en promo-urgency-text"></span>
       </p>
     </div>
   </div>
@@ -2622,8 +2627,13 @@
     document.querySelectorAll('.price-orig-total').forEach(function(el){
       el.textContent = el.dataset[p] + '€';
     });
+    // Both languages rendered as .bg/.en spans (CSS picks one) -- the
+    // setLang() re-render hook below gets clobbered by a later global
+    // `function setLang` declaration, so this text never switched language.
     document.querySelectorAll('.price-save').forEach(function(el){
-      el.textContent = isEn ? el.dataset[p+'en'] : el.dataset[p];
+      var e = function(s){ return String(s || '').replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); };
+      var bg = el.dataset[p], en = el.dataset[p+'en'];
+      el.innerHTML = (bg || en) ? '<span class="bg">' + e(bg) + '</span><span class="en">' + e(en) + '</span>' : '';
     });
   }
 
@@ -2644,6 +2654,7 @@
     var h = bar.offsetHeight;
     if (nav) nav.style.top = h + 'px';
   }
+  window.updateNavOffset = updateNavOffset;
 
   // Promo close button
   document.addEventListener('DOMContentLoaded', function(){
@@ -2670,9 +2681,11 @@
       if (nav) nav.style.top = '0';
     }
 
-    // Countdown to Aug 31 2026
+    // Countdown to the live promotion's valid_until (set by applyPrices
+    // from /api/prices -- window.promoEnd stays null without a promotion).
     function updateCountdown() {
-      var end = new Date('2026-08-31T23:59:59');
+      if (!window.promoEnd) return;
+      var end = window.promoEnd;
       var now = new Date();
       var diff = end - now;
       if (diff <= 0) {
@@ -2692,6 +2705,7 @@
       if (h) h.textContent = String(hours).padStart(2,'0');
       if (m) m.textContent = String(mins).padStart(2,'0');
     }
+    window.updateCountdown = updateCountdown;
     updateCountdown();
     setInterval(updateCountdown, 60000);
 
@@ -3559,23 +3573,88 @@
       if (totEls[i]) { totEls[i].dataset['3']=p.total_3m; totEls[i].dataset['6']=p.total_6m; totEls[i].dataset['12']=p.total_12m; }
       if (totOrigEls[i]) { totOrigEls[i].dataset['3']=p.total_3m_orig; totOrigEls[i].dataset['6']=p.total_6m_orig; totOrigEls[i].dataset['12']=p.total_12m_orig; }
     });
+    // ── Promotion (2026-10-15 rewrite) ──────────────────────────────
+    // Every promo element is hidden in the HTML and only shown + filled
+    // here, from the API. Before this, the summer-promo banner, urgency
+    // bar, hero badge and toggle badges were static HTML and kept saying
+    // "−15% until 31 August" for weeks after the promo had ended.
     var promo = data.promo;
-    var bar = document.getElementById('promo-bar');
+    var periods = ['3', '6', '12'];
+    function esc(s) { return String(s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+    function num(v) { var n = parseFloat(v); return isNaN(n) ? null : n; }
+    function fmt(n) { return (Math.round(n * 100) / 100).toString().replace('.', ','); }
+    function pctOff(price, orig) { price = num(price); orig = num(orig); return (price !== null && orig > 0 && price < orig) ? Math.round((1 - price / orig) * 100) : 0; }
+    function setAll(sel, html) { document.querySelectorAll(sel).forEach(function(el){ el.innerHTML = html; }); }
+    function show(id, on) { var el = document.getElementById(id); if (el) el.style.display = on ? '' : 'none'; }
+
+    // "от X€/месец" -- cheapest per-month price currently on offer.
+    var min = null;
+    planOrder.forEach(function(plan){ var p = prices[plan]; if (!p) return;
+      periods.forEach(function(x){ var v = num(p['price_' + x + 'm']); if (v !== null && (min === null || v < min)) min = v; });
+    });
+    if (min !== null) document.querySelectorAll('.price-from').forEach(function(el){ el.textContent = fmt(min); });
+
+    var saveEls = document.querySelectorAll('.price-save');
+    var nav = document.getElementById('main-nav');
+
     if (promo) {
-      if (bar) bar.style.display = '';
-      var stamps = document.querySelectorAll('.promo-stamp span');
-      if (stamps[1]) stamps[1].textContent = '-' + promo.discount_pct + '%';
-      if (stamps[2]) stamps[2].textContent = promo.label_bg;
-      if (stamps[3]) stamps[3].textContent = promo.label_en;
-      document.querySelectorAll('#promo-bar .text-red-700.bg').forEach(function(el){ el.textContent = promo.name_bg + ' — ' + promo.discount_pct + '% отстъпка!'; });
-      document.querySelectorAll('#promo-bar .text-red-700.en').forEach(function(el){ el.textContent = promo.name_en + ' — ' + promo.discount_pct + '% off!'; });
-      document.querySelectorAll('.price-save').forEach(function(el) {
-        ['3','6','12'].forEach(function(x){ el.dataset[x]='-'+promo.discount_pct+'% '+promo.name_bg; el.dataset[x+'en']='-'+promo.discount_pct+'% '+promo.name_en; });
+      // Real discount per plan per period (promo vs normal price) -- they
+      // differ by plan, so the toggle badges say "up to" the largest one.
+      var byPeriod = { '3': [], '6': [], '12': [] }, maxAll = 0;
+      planOrder.forEach(function(plan, i){ var p = prices[plan]; if (!p) return;
+        periods.forEach(function(x){
+          var d = pctOff(p['price_' + x + 'm'], p['price_' + x + 'm_orig']);
+          byPeriod[x].push(d);
+          if (d > maxAll) maxAll = d;
+          if (saveEls[i]) {
+            saveEls[i].dataset[x] = d ? '🔥 −' + d + '% ' + promo.name_bg : '';
+            saveEls[i].dataset[x + 'en'] = d ? '🔥 −' + d + '% ' + promo.name_en : '';
+          }
+        });
       });
+      document.querySelectorAll('.period-save').forEach(function(el){
+        var list = byPeriod[el.dataset.period] || [], d = Math.max.apply(null, list.concat([0]));
+        var same = list.every(function(v){ return v === list[0]; });
+        el.innerHTML = d ? (same ? '' : '<span class="bg">до </span><span class="en">up to </span>') + '−' + d + '%' : '';
+        el.style.display = d ? '' : 'none';
+      });
+      document.querySelectorAll('.price-orig,.price-orig-total').forEach(function(el){ el.style.display = ''; });
+
+      var until = String(promo.valid_until || '').slice(0, 10).split('-');
+      var endDate = until.length === 3 ? new Date(+until[0], +until[1] - 1, +until[2], 23, 59, 59) : null;
+      var dBg = endDate ? endDate.toLocaleDateString('bg-BG', { day: 'numeric', month: 'long' }) : '';
+      var dEn = endDate ? endDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long' }) : '';
+      var upBg = 'до −' + maxAll + '%', upEn = 'up to ' + maxAll + '% off';
+      var nBg = esc(promo.name_bg), nEn = esc(promo.name_en);
+
+      setAll('.promo-bar-text.bg', '<span class="hidden sm:inline">' + nBg + ' — </span><strong>' + upBg + '</strong><span class="hidden sm:inline"> при плащане за 3+ месеца, до ' + esc(dBg) + '!</span>');
+      setAll('.promo-bar-text.en', '<span class="hidden sm:inline">' + nEn + ' — </span><strong>' + upEn + '</strong><span class="hidden sm:inline"> when paying for 3+ months, until ' + esc(dEn) + '!</span>');
+      setAll('.hero-promo-text.bg', nBg + ' — <span class="text-white">' + upBg + '</span> при плащане за 3+ месеца, до ' + esc(dBg));
+      setAll('.hero-promo-text.en', nEn + ' — <span class="text-white">' + upEn + '</span> when paying for 3+ months, until ' + esc(dEn));
+      setAll('.pricing-promo-title.bg', '🎉 ' + nBg + ' — ' + upBg + '!');
+      setAll('.pricing-promo-title.en', '🎉 ' + nEn + ' — ' + upEn + '!');
+      setAll('.promo-urgency-text.bg', '🔥 ' + nBg + ': ' + upBg + ' при плащане за 3, 6 или 12 месеца до ' + esc(dBg) + '. След това важат стандартните цени.');
+      setAll('.promo-urgency-text.en', '🔥 ' + nEn + ': ' + upEn + ' when paying for 3, 6 or 12 months, until ' + esc(dEn) + '. Standard prices apply after that.');
+      setAll('.promo-stamp-pct', '−' + maxAll + '%');
+      setAll('.promo-stamp-label.bg', esc(promo.label_bg));
+      setAll('.promo-stamp-label.en', esc(promo.label_en));
+
+      show('hero-promo', true); show('pricing-promo', true); show('promo-urgency', true);
+      if (sessionStorage.getItem('promo-dismissed') !== '1') {
+        show('promo-bar', true);
+        if (window.updateNavOffset) window.updateNavOffset();
+      }
+      window.promoEnd = endDate;
+      if (window.updateCountdown) window.updateCountdown();
     } else {
-      if (bar) bar.style.display = 'none';
-      document.querySelectorAll('.price-save').forEach(function(el){el.textContent='';});
-      document.querySelectorAll('.price-orig,.price-orig-total').forEach(function(el){el.style.display='none';});
+      ['promo-bar', 'hero-promo', 'pricing-promo', 'promo-urgency'].forEach(function(id){ show(id, false); });
+      if (nav) nav.style.top = '0';
+      document.querySelectorAll('.period-save').forEach(function(el){ el.style.display = 'none'; });
+      document.querySelectorAll('.price-orig,.price-orig-total').forEach(function(el){ el.style.display = 'none'; });
+      // Clear the data-* source too, not just the text -- setPeriod()
+      // re-reads it, which is how the stale summer-promo line kept coming back.
+      saveEls.forEach(function(el){ periods.forEach(function(x){ el.dataset[x] = ''; el.dataset[x + 'en'] = ''; }); el.textContent = ''; });
+      window.promoEnd = null;
     }
     setTimeout(function(){ if(window.setPeriod) window.setPeriod(window.current||'3'); },100);
   }
